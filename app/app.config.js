@@ -20,6 +20,14 @@ angular.module("GuitarPricerApp").config(function ($routeProvider) {
             templateUrl: 'app/guitars/partials/welcomePage.html',
             controller: 'WelcomeSearchesCtrl',
         })
+        .when('/auth/register', {
+            templateUrl: 'app/auth/partials/register.html',
+            controller: 'AuthCtrl',
+        })
+        .when('/guitars/userHomePage', {
+            templateUrl: 'app/guitars/partials/userHomePage.html',
+            controller: 'UserHomePageCtrl'
+        })
         .otherwise('/welcomePage')
 
 })

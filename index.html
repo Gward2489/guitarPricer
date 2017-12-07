@@ -10,6 +10,8 @@
 
     <body ng-app="GuitarPricerApp">
 
+        <nav ng-include="'app/nav/partials/navigation.html'"></nav>
+
         <div ng-view></div>
 
     
@@ -18,8 +20,12 @@
         <script src="./lib/node_modules/angular-route/angular-route.min.js"></script>
         <script src="./app/app.js"></script>
         <script src="./app/app.config.js"></script>
+        <script src="./app/nav/controllers/NavCtrl.js"></script>
+        <script src="./app/auth/controllers/AuthCtrl.js"></script>
+        <script src="./app/auth/factories/AuthFactory.js"></script>
         <script src="./app/guitars/factories/GuitarFactory.js"></script>
         <script src="./app/guitars/controllers/WelcomeSearchesCtrl.js"></script>
+        <script src="./app/guitars/controllers/UserHomePageCtrl.js"></script>
     
     </body>
 </html>

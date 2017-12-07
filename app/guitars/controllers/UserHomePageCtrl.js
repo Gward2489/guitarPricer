@@ -1,6 +1,6 @@
 angular
 .module("GuitarPricerApp")
-.controller("WelcomeSearchesCtrl", function ($scope, GuitarFactory) {
+.controller("UserHomePageCtrl", function ($scope, GuitarFactory) {
 
     
     $scope.getBasicPrice = function (searchInput) {

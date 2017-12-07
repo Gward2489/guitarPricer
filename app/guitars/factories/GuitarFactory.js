@@ -90,7 +90,7 @@ return Object.create(null, {
                 console.log(guitarTitle)
                 console.log(guitarTitle.search("parts"))
 
-                let titleClearance = this.titleCheck(guitarTitle)
+                let titleClearance = titleCheck(guitarTitle)
 
                 if (titleClearance === true) {
                     return guitar
