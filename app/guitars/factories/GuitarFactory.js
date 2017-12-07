@@ -74,7 +74,6 @@ return Object.create(null, {
                     "thumb rest",
                     "broken",
                     "mute",
-                    "case",
                     "repair"
                 ]
                 for (let i = 0; i < titleRestrictions.length; i++) {
