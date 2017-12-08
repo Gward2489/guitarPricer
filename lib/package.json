@@ -1,7 +1,6 @@
 {
   "name": "kellybluesbook",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,6 +10,8 @@
   "dependencies": {
     "angular": "^1.6.7",
     "angular-route": "^1.6.7",
-    "firebase": "^4.7.0"
-  }
+    "firebase": "^4.8.0",
+    "route": "^0.2.5"
+  },
+  "description": ""
 }
