@@ -88,8 +88,6 @@ return Object.create(null, {
 
             return array.filter(guitar => {
                 let guitarTitle = JSON.stringify(guitar.title[0].toLowerCase())
-                console.log(guitarTitle)
-                console.log(guitarTitle.search("parts"))
 
                 let titleClearance = titleCheck(guitarTitle)
 
@@ -143,7 +141,6 @@ return Object.create(null, {
                     {jsonpCallbackParam: 'callback'})
                     .then(response => {
 
-                        console.log(response)
 
                         let initialSearchResults = this.ebayObjToGuitarArray(response)
 
@@ -160,17 +157,40 @@ return Object.create(null, {
                             let refinedPriceArray = this.removeOutliers(guitarPricesArray, stdDev)
                             let mainAvgPrice = this.getAverage(refinedPriceArray)
 
-                            let matchingYearsArray = refinedResultsArray.filter(guitar =>{
-                                let guitarTitle = JSON.stringify(guitar.title[0].toLowerCase())
-                                let yearCheck = JSON.stringify(year.toLowerCase())
-                              if (guitarTitle.search(yearCheck) !== -1) {
-                                return guitar
-                              }  
+                            let matchingYearsArray = refinedResultsArray.filter(guitar => {
+                                if (guitar.title[0].search(year) !== -1) {
+                                    return guitar
+                                }  
+                            })
+
+                            let matchingFinishesArray = refinedResultsArray.filter(guitar => {
+                                let lowerCaseTitle = guitar.title[0].toLowerCase()
+                                let lowerCaseFinish = finish.toLowerCase()
+                                if (lowerCaseTitle.search(lowerCaseFinish) !== -1) {
+                                    return guitar
+                                }    
                             })
 
                             let matchingConditionArray = refinedResultsArray.filter(guitar => {
-                                
+                                if (guitar.hasOwnProperty("condition") === true) {
+                                    let guitarCondition = parseInt(guitar.condition[0].conditionId[0])
+                                    let conditionClearance = false
+                                    conditionValues.forEach(condition => {
+                                        if (condition === guitarCondition) {
+                                           conditionClearance = true
+                                        }
+                                    })
+                                    if (conditionClearance === true) {
+                                        return guitar
+                                    }
+                                }
                             })
+
+                            console.log(matchingConditionArray)
+                            console.log(matchingFinishesArray)
+                            console.log(matchingYearsArray)
+
+
 
                         }
 
