@@ -134,6 +134,48 @@ return Object.create(null, {
 
                 })  
             }
+        },
+        "advancedSearch":{
+            value: function (keyWords, categories, finish, year, conditionValues) {
+                let url = `http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findCompletedItems&SERVICE-VERSION=1.7.0&SECURITY-APPNAME=GarrettW-KellyBlu-PRD-e132041a0-8df2cdd9&RESPONSE-DATA-FORMAT=XML&${categories}itemFilter(0).name=SoldItemsOnly&itemFilter(0).value(0)=true&itemFilter(1).name=ExcludeCategory&itemFilter(1).value(0)=181223&itemFilter(1).value(1)=47067&REST-PAYLOAD&keywords=${keyWords}`
+                let trustedUrl = $sce.trustAsResourceUrl(url)
+                return $http.jsonp(trustedUrl,
+                    {jsonpCallbackParam: 'callback'})
+                    .then(response => {
+
+                        console.log(response)
+
+                        let initialSearchResults = this.ebayObjToGuitarArray(response)
+
+                        if (response.data.findCompletedItemsResponse[0].searchResult[0].item) {
+
+                            const detailedDataSet = new Set() 
+
+                            let refinedResultsArray = this.titleFilter(initialSearchResults)
+
+                            console.log(refinedResultsArray)
+
+                            let guitarPricesArray = this.guitarsToPrices(refinedResultsArray) 
+                            let stdDev = this.getStandardDeviation(guitarPricesArray)
+                            let refinedPriceArray = this.removeOutliers(guitarPricesArray, stdDev)
+                            let mainAvgPrice = this.getAverage(refinedPriceArray)
+
+                            let matchingYearsArray = refinedResultsArray.filter(guitar =>{
+                                let guitarTitle = JSON.stringify(guitar.title[0].toLowerCase())
+                                let yearCheck = JSON.stringify(year.toLowerCase())
+                              if (guitarTitle.search(yearCheck) !== -1) {
+                                return guitar
+                              }  
+                            })
+
+                            let matchingConditionArray = refinedResultsArray.filter(guitar => {
+                                
+                            })
+
+                        }
+
+                    })
+            }
         }
     })
 })
