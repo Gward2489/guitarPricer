@@ -74,8 +74,10 @@ return Object.create(null, {
                     "thumb rest",
                     "broken",
                     "mute",
+                    "case for",
                     "repair"
                 ]
+                
                 for (let i = 0; i < titleRestrictions.length; i++) {
                     if (title.search(`${titleRestrictions[i]}`) !== -1) {
                         titleClearance = false
