@@ -48,9 +48,9 @@
 
 .logOutButtonWrapper {
     grid-area: logOutButton;
-}
+} 
 
-.contentWrapper {
+ .basicSearchContentWrapper {
     display: grid;
     background-color: lightgrey;
     grid-area: body;

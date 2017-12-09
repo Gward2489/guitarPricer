@@ -1,0 +1,76 @@
+<div ng-include="'app/userGear/partials/userNav.html'"></div>
+
+<div class="advancedSearchContentWrapper">
+
+    <div class="basicSearchLinkWrapper">
+        <button ng-click="toBasicSearch()">Basic Search</button>
+    </div>
+
+    <div class="advancedSearchDivWrapper">
+            <h3>Advanced Search:</h3>
+            <div class="advancedSearchDivWrapperTwo">
+                <div class="advSearchRowOne">
+                    <div class="brandInputWrapper">
+                        <h5>Guitar Brand</h5>
+                        <input type="text" ng-model="guitarBrandInput">
+                    </div>
+                    <div class="modelInputWrapper">
+                        <h5>Guitar model</h5>
+                        <input type="text" ng-model="guitarModelInput">
+                    </div>
+                    <div class="yearInputWrapper">
+                        <h5>Year of Production</h5>
+                        <input type="text" ng-model="yearInput">
+                    </div class="guitarOrBassWrapper">
+                        <h5>Guitar or Bass?</h5>
+                        <label class="electricButton">
+                                Guitar
+                                <input ng-model="guitarBass" value="guitar" type="radio" name="guitarOrBass">
+                            </label>
+                            <label class="acousticButton">
+                                Bass
+                                <input ng-model="guitarBass" value="bass" type="radio" name="guitarOrBass">
+                            <label>
+    
+    
+                    </div>
+                
+                </div>
+                <div class="advSearchRowTwo">
+                    <div class="conditionInputWrapper">
+                        <h5>Select Instrument Condition</h5>
+                        <select ng-options="value for value in conditionValues" ng-model="selectedCondition">
+                            <option value="">select condition</option>
+                        </select>
+                    </div>
+                    <div class="FinishInputWrapper">
+                        <h5>Color and/or Finish</h5>
+                        <input type="text" ng-model="finishInput">
+                    </div>
+                    <div class="electricAcousticWrapper">
+                        <h5>Electric or Acoustic?</h5>
+                        <label class="electricButton">
+                            Electric
+                            <input ng-model="electricAcoustic" value="electric" type="radio" name="guitarType">
+                        </label>
+                        <label class="acousticButton">
+                            Acoustic
+                            <input ng-model="electricAcoustic" value="acoustic" type="radio" name="guitarType">
+                        <label>
+                    </div>
+                    <div class="vintageWrapper">
+                        <h5>Is it vintage?(30 years or older)</h5>
+                        <label class="vintageYesButton">
+                                Yes
+                                <input ng-model="vintageCheck" value="yes" type="radio" name="vintageSelect">
+                            </label>
+                            <label class="vintageNoButton">
+                                No
+                                <input ng-model="vintageCheck" value="no" type="radio" name="vintageSelect">
+                            <label>
+                    </div>
+                </div>
+            </div>
+            <button ng-click="getAdvancedPrice(guitarBrandInput, guitarModelInput, electricAcoustic, vintageCheck, selectedCondition, finishInput, yearInput, guitarBass)">Search</button>
+        </div>
+</div>
