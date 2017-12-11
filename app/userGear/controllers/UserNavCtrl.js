@@ -4,6 +4,10 @@ angular.module("GuitarPricerApp")
 
 $scope.isAuthenticated = () => AuthFactory.isAuthenticated()
 
+$scope.toGuitarIntakeForm = function() {
+    $location.url('/userGear/guitarIntakeForm')
+}
+
 $scope.toSearches = function() {
     $location.url('/guitars/welcomePage')
 }

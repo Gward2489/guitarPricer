@@ -2,6 +2,7 @@ angular
 .module("GuitarPricerApp")
 .controller("UserHomePageCtrl", function ($scope, GuitarFactory) {
 
+
     
     $scope.getBasicPrice = function (searchInput) {
         let removedDoublespaces = searchInput.replace(/  /g, "+")
