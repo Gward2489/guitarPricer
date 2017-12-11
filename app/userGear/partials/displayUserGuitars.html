@@ -4,9 +4,16 @@
 
 <div class="guitarDisplayWrapper">
     <div ng-repeat="row in guitarRows" class="guitarDisplayInnerWrapper">
-        WOOT
         <div ng-repeat="guitar in row" class="rowOfGuitars">
-            YEAHHH
+            <div>
+                {{guitar.year}}
+            </div>
+            <div>
+                {{guitar.guitarBrand}}
+            </div>
+            <div>
+                {{guitar.guitarModel}}
+            </div>
         </div>
         
     </div>
