@@ -2,10 +2,11 @@ angular.module("GuitarPricerApp")
 .factory("AuthFactory", function ($http, $timeout, $location, $route) {
 
     let currentUserData = null
-
+    
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             currentUserData = user
+            console.log("user is authenticated")
             if ($location.url() !== "/userGear/displayUserGuitars") {
                 $timeout(function () {
                     $location.url("/userGear/displayUserGuitars")
@@ -24,6 +25,13 @@ angular.module("GuitarPricerApp")
     })
     
     return Object.create(null, {
+        currentUserCache: {
+            value: function () {
+                return currentUserData
+            },
+            enumerable: true,
+            writable: true
+        },
         isAuthenticated: {
             value: () => {
                 const user = currentUserData

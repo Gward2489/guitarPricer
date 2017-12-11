@@ -5,7 +5,8 @@ angular
     return Object.create(null, {
         "cache": {
             value: null,
-            enumerable: true
+            enumerable: true,
+            writable: true
         },
         "createGuitarObject": {
             value: function (guitarBrand, guitarModel, 
@@ -77,29 +78,27 @@ angular
         },
         "getGuitars": {
             value: function () {
-                return firebase.auth().currentUser.getIdToken(true)
-                    .then(idToken => {
-                        $http({
-                            "method": "GET",
-                            "url": `https://guitar-pricer.firebaseio.com/guitars/.json?auth=${idToken}`
+                    return $http({
+                        "method": "GET",
+                        "url": `https://guitar-pricer.firebaseio.com/guitars/.json`
                         }).then(response => {
-
                             const data = response.data
-
-                            let currentUser = AuthFactory.getUser()
-
+                            let currentUser = AuthFactory.currentUserCache()
                             let guitarsWithIdsArray = Object.keys(data).map(key => {
                                 data[key].id = key
                                 return data[key]
-
+                            
+                            })
+                        
                             this.cache = guitarsWithIdsArray.filter(guitar => {
+
                                 if (currentUser.uid === guitar.guitarOwner) {
                                     return guitar
                                 }
                             })
-                            
+                        
+                            return this.cache                            
                         })
-                    }) 
             }
         }
     })
