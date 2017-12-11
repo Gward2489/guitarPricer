@@ -11,6 +11,7 @@ angular
             acousticOrElectric, vintageCheck, condition, finish, year, guitarOrBass)
 
         
+        UserGearFactory.storeGuitar(guitarObject)
     }
 
 })

@@ -4,13 +4,13 @@ angular.module("GuitarPricerApp")
 
     $scope.logoutUser = function () {
         AuthFactory.logout()
-        $location.url('/auth')
+        $location.url('/guitars/welcomePage')
     }
 
     $scope.logMeIn = function () {
         AuthFactory.authenticate($scope.auth).then(function (didLogin) {
             $scope.login = {}
-            $location.url("/employees/list")
+            $location.url("/userGear/displayUserGuitars")
         })
     }
 

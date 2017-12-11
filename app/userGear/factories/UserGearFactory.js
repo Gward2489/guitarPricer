@@ -1,8 +1,12 @@
 angular
 .module("GuitarPricerApp")
-.factory("UserGearFactory", function ($http, $sce, AuthFactory) {
+.factory("UserGearFactory", function ($http, AuthFactory) {
 
     return Object.create(null, {
+        "cache": {
+            value: null,
+            enumerable: true
+        },
         "createGuitarObject": {
             value: function (guitarBrand, guitarModel, 
                 acousticOrElectric, vintageCheck, condition, finish, year, guitarOrBass) {
@@ -12,43 +16,90 @@ angular
                     return Object.create(null, {
                         "guitarBrand": {
                             value: guitarBrand,
-                            writable: true
+                            writable: true,
+                            enumerable: true
                         },
                         "guitarModel": {
                             value: guitarModel,
-                            writable: true
+                            writable: true,
+                            enumerable: true
                         },
                         "acousticOrElectric": {
                             value: acousticOrElectric,
                             writable: true,
+                            enumerable: true
                         },
                         "vintageCheck": {
                             value: vintageCheck,
-                            writable: true                   
+                            writable: true,
+                            enumerable: true                 
                         },
                         "condition": {
                             value: condition,
-                            writable: true
+                            writable: true,
+                            enumerable: true
                         },
                         "finish": {
                             value: finish,
-                            writable: true
+                            writable: true,
+                            enumerable: true
                         },
                         "year": { 
                             value: year,
-                            writable: true
+                            writable: true,
+                            enumerable: true
                         },
                         "guitarOrBass": {
                             value: guitarOrBass,
-                            writable: true
+                            writable: true,
+                            enumerable: true
                         },
                         "guitarOwner": {
                             value: user.uid,
-                            writable: false
+                            writable: false,
+                            enumerable: true
                         }
                     })
+            }
+        },
 
+        "storeGuitar": {
+            value: function (guitarObj) {
+                return firebase.auth().currentUser.getIdToken(true)
+                    .then(idToken => {
+                        $http({
+                            "method": "POST",
+                            "url": `https://guitar-pricer.firebaseio.com/guitars/.json?auth=${idToken}`,
+                            "data": JSON.stringify(guitarObj)
+                        })
+                    })        
+            }
+        },
+        "getGuitars": {
+            value: function () {
+                return firebase.auth().currentUser.getIdToken(true)
+                    .then(idToken => {
+                        $http({
+                            "method": "GET",
+                            "url": `https://guitar-pricer.firebaseio.com/guitars/.json?auth=${idToken}`
+                        }).then(response => {
 
+                            const data = response.data
+
+                            let currentUser = AuthFactory.getUser()
+
+                            let guitarsWithIdsArray = Object.keys(data).map(key => {
+                                data[key].id = key
+                                return data[key]
+
+                            this.cache = guitarsWithIdsArray.filter(guitar => {
+                                if (currentUser.uid === guitar.guitarOwner) {
+                                    return guitar
+                                }
+                            })
+                            
+                        })
+                    }) 
             }
         }
     })

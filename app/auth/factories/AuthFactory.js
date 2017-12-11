@@ -6,9 +6,9 @@ angular.module("GuitarPricerApp")
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             currentUserData = user
-            if ($location.url() !== "/guitars/userHomePage") {
+            if ($location.url() !== "/userGear/displayUserGuitars") {
                 $timeout(function () {
-                    $location.url("/guitars/userHomePage")
+                    $location.url("/userGear/displayUserGuitars")
                 }, 100)
             } else {
                 $route.reload()
