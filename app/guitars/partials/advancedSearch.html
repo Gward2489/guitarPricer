@@ -73,4 +73,17 @@
             </div>
             <button ng-click="getAdvancedPrice(guitarBrandInput, guitarModelInput, electricAcoustic, vintageCheck, selectedCondition, finishInput, yearInput, guitarBass)">Search</button>
         </div>
+
+    <div class="advancedSearchResultsDisplayWrapper">
+        <div class="advancedSearchResultsDisplay">
+            <div ng-repeat="prices in searchResults" class="resultsWrapper">
+                    <div>
+                        the {{prices.priceCategory}} average for a {{guitarUserSearchedFor}}
+                        is {{prices.avgPrice}} with a price range of {{prices.lowPrice}} to {{prices.highPrice}}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

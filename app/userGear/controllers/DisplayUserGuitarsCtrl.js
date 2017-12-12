@@ -19,10 +19,14 @@ angular
         return arrayOfRows
     }
 
+    $scope.guitarsWithPriceArray = []
+
     UserGearFactory.getGuitars().then(data => {
         $scope.guitars = data
         $scope.guitarRows = makeRowsArray($scope.guitars)
-        console.log($scope.guitarRows)
+        data.forEach(guitar => {
+            
+        })
     })
 
 })
