@@ -1,6 +1,7 @@
 angular
 .module("GuitarPricerApp")
-.controller("DisplayUserGuitarsCtrl", function($scope, $location, UserGearFactory, GuitarFactory, AuthFactory) {
+.controller("DisplayUserGuitarsCtrl", 
+    function($scope, $location, UserGearFactory, GuitarFactory, AuthFactory) {
     
     $scope.guitars = []
     $scope.guitarRows = []
