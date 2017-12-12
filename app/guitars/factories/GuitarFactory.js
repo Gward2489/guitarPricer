@@ -189,23 +189,32 @@ return Object.create(null, {
                 {jsonpCallbackParam: 'callback'})
                 .then(response => {
 
-                    console.log(response)
-                    console.log(response.data.findCompletedItemsResponse[0].searchResult[0])
-
+                   
                     let initialSearchResults = this.ebayObjToGuitarArray(response)
 
                     if (response.data.findCompletedItemsResponse[0].searchResult[0].item) {
                         
                         let refinedResultsArray = this.titleFilter(initialSearchResults)
 
-                        console.log(refinedResultsArray)
 
                         let guitarPricesArray = this.guitarsToPrices(refinedResultsArray) 
 
                         let stdDev = this.getStandardDeviation(guitarPricesArray)
                         let refinedPriceArray = this.removeOutliers(guitarPricesArray, stdDev)
                         let avgPrice = this.getAverage(refinedPriceArray)
-                        console.log(avgPrice)
+                        let lowPrice = (parseFloat(avgPrice) - parseFloat(stdDev)).toFixed(2)
+                        let highPrice = (parseFloat(avgPrice) + parseFloat(stdDev)).toFixed(2)
+                        let results = [
+                            {
+                            "avgPrice": avgPrice,
+                            "highPrice": highPrice,
+                            "lowPrice": lowPrice
+                            }
+                        ]
+
+                        return results
+
+
                     } else {
                         alert("no search results")
                     }

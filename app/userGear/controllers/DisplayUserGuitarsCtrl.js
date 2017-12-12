@@ -19,25 +19,10 @@ angular
         return arrayOfRows
     }
 
-    $scope.$on('$viewContentLoaded', function(event) {
-        if (!UserGearFactory.cache) {
-            console.info("No cached data")
-            UserGearFactory.getGuitars().then(data => {
-                $scope.guitars = data
-                $scope.guitarRows = makeRowsArray($scope.guitars)
-                console.log($scope.guitarRows)
-            })
-        } else {
-            console.info("Using cached data")
-            $scope.guitars = UserGearFactory.cache
-            UserGearFactory.getGuitars().then(data => {
-                $scope.guitars = data
-                $scope.guitarRows = makeRowsArray($scope.guitars)
-                console.log($scope.guitarRows)
-            })
-            
-        }
+    UserGearFactory.getGuitars().then(data => {
+        $scope.guitars = data
+        $scope.guitarRows = makeRowsArray($scope.guitars)
+        console.log($scope.guitarRows)
     })
-
 
 })
