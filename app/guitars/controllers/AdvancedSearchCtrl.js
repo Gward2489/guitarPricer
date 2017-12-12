@@ -18,6 +18,7 @@ angular
         GuitarFactory.filterAdvancedSearch(guitarBrand, guitarModel, 
             acousticOrElectric, vintageCheck, condition, finish, year, guitarOrBass).then(data => {
                 $scope.searchResults = data
+                console.log(data)
             })
 
         }

@@ -6,13 +6,16 @@
     <div ng-repeat="row in guitarRows" class="guitarDisplayInnerWrapper">
         <div ng-repeat="guitar in row" class="rowOfGuitars">
             <div>
-                {{guitar.year}}
+                <h2>{{guitar.year}} {{guitar.guitarBrand}} {{guitar.guitarModel}}</h2>
             </div>
+            <ul>
+                <li>Current average value: {{guitar.mainAvgPrice}}</li>
+                <li>Similiar guitars from the same year have an average value of: {{guitar.yearAvgPrice}}</li>
+                <li>Guitars of your model in the same condition have an average value of: {{guitar.conditionAvgPrice}}</li>
+                <li>Guitars with the same finish have an avergae value of: {{guitar.finishAvgPrice}}</li>
+            </ul>
             <div>
-                {{guitar.guitarBrand}}
-            </div>
-            <div>
-                {{guitar.guitarModel}}
+                
             </div>
         </div>
         

@@ -19,8 +19,11 @@
     <div class="basicSearchResultsDisplay">
         <div ng-repeat="prices in resultsArray">
             <div>
-                The average price for a {{userSearchTitle}} is ${{prices.avgPrice}}
-                with a price range of ${{prices.lowPrice}} to ${{prices.highPrice}}
+                <h2>Current values for a {{userSearchTitle}}</h2>
+                <ul>
+                    <li>Average Price: {{prices.avgPrice}}</li>
+                    <li>Price Range: ${{prices.lowPrice}} to ${{prices.highPrice}}</li>
+                </ul>
             </div>
         </div>
     </div>
