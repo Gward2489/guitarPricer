@@ -247,7 +247,6 @@ return Object.create(null, {
 
                             let refinedResultsArray = this.titleFilter(initialSearchResults)
 
-                            console.log(refinedResultsArray)
 
                             
                             if (refinedResultsArray.length > 1) {
@@ -260,6 +259,10 @@ return Object.create(null, {
                                 let finalStdDev = this.getStandardDeviation(refinedPriceArray)
                                 let lowPrice = (parseFloat(mainAvgPrice) - parseFloat(finalStdDev)).toFixed(2)
                                 let highPrice = (parseFloat(mainAvgPrice) + parseFloat(finalStdDev)).toFixed(2)
+
+                                if (lowPrice < 0) {
+                                    lowPrice = .99
+                                }
 
                                 let mainPrices = {
                                     "priceCategory": "main",
@@ -301,12 +304,6 @@ return Object.create(null, {
                                     }
                                 })
 
-                                console.log(matchingConditionArray)
-                                console.log(matchingFinishesArray)
-                                console.log(matchingYearsArray)
-
-                            
-
                                 if (matchingConditionArray.length > 0 ) {
                                     let matchingConditionPrices = this.guitarsToPrices(matchingConditionArray)
 
@@ -319,6 +316,10 @@ return Object.create(null, {
 
                                         let lowPrice = (parseFloat(avgConditionPrice) - parseFloat(finalStdDev)).toFixed(2)
                                         let highPrice = (parseFloat(avgConditionPrice) + parseFloat(finalStdDev)).toFixed(2)
+
+                                        if (lowPrice < 0) {
+                                            lowPrice = .99
+                                        }
 
                                         let conditionPrices = {
                                             "priceCategory": "condition",
@@ -371,6 +372,10 @@ return Object.create(null, {
                                         let lowPrice = (parseFloat(avgFinishPrice) - parseFloat(finalStdDev)).toFixed(2)
                                         let highPrice = (parseFloat(avgFinishPrice) + parseFloat(finalStdDev)).toFixed(2)
 
+                                        if (lowPrice < 0) {
+                                            lowPrice = .99
+                                        }
+
                                         let finishPrices = {
                                             "priceCategory": "finish",
                                             "avgPrice": avgFinishPrice,
@@ -422,6 +427,10 @@ return Object.create(null, {
 
                                         let lowPrice = (parseFloat(avgYearPrice) - parseFloat(finalStdDev)).toFixed(2)
                                         let highPrice = (parseFloat(avgYearPrice) + parseFloat(finalStdDev)).toFixed(2)
+
+                                        if (lowPrice < 0) {
+                                            lowPrice = .99
+                                        }
 
                                         let yearPrices = {
                                             "priceCategory": "year",
