@@ -66,19 +66,18 @@ angular
                             guitar.finishAvgPrice = priceObj.avgPrice
                             guitar.finishLowPrice = priceObj.lowPrice
                             guitar.finishHighPrice = priceObj.highPrice
-                        }
-                        
+                        }          
                     })
+
                     newGuitarsArray.push(guitar)
                     
                     guitarCounter ++
+
                     if (guitarCounter === guitarArrayLength) {
                         $scope.guitarRows = makeRowsArray(newGuitarsArray)
                         console.log("rowsknow", $scope.guitarRows)
                     }
-
             })
         })
     })
-
 })
