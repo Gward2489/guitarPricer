@@ -9,6 +9,14 @@ angular
         $location.url('/guitars/welcomePage')
     }
 
+    if ($scope.guitarBass === "bass") {
+        $scope.showme = false
+    }
+
+    if ($scope.guitarBass === "guitar") {
+        $scope.showme = true
+    }
+
     $scope.searchResults = []
     $scope.getAdvancedPrice = function (guitarBrand, guitarModel, 
         acousticOrElectric, vintageCheck, condition, finish, year, guitarOrBass) {

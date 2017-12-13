@@ -9,10 +9,14 @@
                 <h2>{{guitar.year}} {{guitar.guitarBrand}} {{guitar.guitarModel}}</h2>
             </div>
             <ul>
-                <li>Current average value: {{guitar.mainAvgPrice}}</li>
-                <li>Similiar guitars from the same year have an average value of: {{guitar.yearAvgPrice}}</li>
+                <li ng-if="isItTrue(guitar.mainAvgPrice)">Current average value for a {{guitar.guitarBrand}} {{guitar.guitarModel}}:  {{guitar.mainAvgPrice}}</li>
+                <li ng-if="isItFalse(guitar.mainAvgPrice)">No recent sales for {{guitar.guitarBrand}} {{guitar.guitarModel}}s</li>
+                <li ng-if="isItFalse(guitar.mainLowPrice && isItTrue(guitar.mainAvgPrice))">There was only one recent sale for a {{guitar.guitarBrand}}{{guitar.guitarModel}}</li>
+                <li ng-if="isItTrue(guitar.yearAvgPrice)">{{guitar.guitarBrand}} {{guitar.guitarModel}}s from {{guitar.year}} have an average value of: {{guitar.yearAvgPrice}}</li>
                 <li>Guitars of your model in the same condition have an average value of: {{guitar.conditionAvgPrice}}</li>
-                <li>Guitars with the same finish have an avergae value of: {{guitar.finishAvgPrice}}</li>
+                <li ng-if="isItTrue(guitar.finishAvgPrice)">{{guitar.guitarBrand}} {{guitar.guitarModel}}s in {{guitar.finish}} have an avergae value of: {{guitar.finishAvgPrice}}</li>
+                <li ng-if="isItFalse(guitar.finishAvgPrice)"> There are no recent sales for a {{guitar.guitarBrand}} {{guitar.guitarModel}} in {{guitar.finish}}</li>
+                <li ng-if="isItFalse(guitar.finishLowPrice) && isItTrue(guitar.finishAvgPrice)">There was only one recent sale for a {{guitar.guitarBrand}} {{guitar.guitarModel}} in {{guitar.finish}}</li>
             </ul>
             <div>
                 

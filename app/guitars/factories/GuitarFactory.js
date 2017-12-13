@@ -73,16 +73,24 @@ return Object.create(null, {
                     "truss rod cover", 
                     "thumb rest",
                     "broken",
-                    "mute",
+                    "mute for",
                     "case for",
                     "repair"
                 ]
+
                 
                 for (let i = 0; i < titleRestrictions.length; i++) {
                     if (title.search(`${titleRestrictions[i]}`) !== -1) {
                         titleClearance = false
                     }
                 }
+
+                if (title.search("gibson") !== -1) {
+                    if (title.search("epiphone") !== -1) {
+                        titleClearance = false
+                    }
+                }
+
                 return titleClearance
             }
 
@@ -106,7 +114,7 @@ return Object.create(null, {
                 let valueObjects = [
                     {
                         "value1": 4000,
-                        "value2": 2500
+                        "value2": 2000
                     },
                     {
                         "value1": 5000,

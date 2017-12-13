@@ -5,6 +5,24 @@ angular
     
     $scope.guitars = []
     $scope.guitarRows = []
+    $scope.guitarsWithPriceArray = []
+    
+    $scope.isItTrue = function (objProp) {
+        if (objProp !== false) {
+            return true
+        } else {
+            return false
+        }
+
+    }
+
+    $scope.isItFalse = function (objProp) {
+        if (objProp === false) {
+            return true
+        } else {
+            return false 
+        }
+    }
     
     let makeRowsArray = function (guitarsArray) {
         let arrayOfRows = []
@@ -20,7 +38,6 @@ angular
         return arrayOfRows
     }
 
-    $scope.guitarsWithPriceArray = []
 
     UserGearFactory.getGuitars().then(data => {
         $scope.guitars = data
