@@ -1,0 +1,30 @@
+{
+  "name": "kellybluesbook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gward2489/kellyBluesBook.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gward2489/kellyBluesBook/issues"
+  },
+  "homepage": "https://github.com/Gward2489/kellyBluesBook#readme",
+  "dependencies": {
+    "eslint": "^4.13.1",
+    "grunt": "^1.0.1",
+    "grunt-eslint": "^20.1.0"
+  },
+  "devDependencies": {
+    "eslint-plugin-angular": "^3.1.1"
+  }
+}

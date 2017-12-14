@@ -73,16 +73,65 @@
             </div>
             <button ng-click="getAdvancedPrice(guitarBrandInput, guitarModelInput, electricAcoustic, vintageCheck, selectedCondition, finishInput, yearInput, guitarBass)">Search</button>
         </div>
-
-    <div class="advancedSearchResultsDisplayWrapper">
+<div class="advancedSearchResultsDisplayWrapper">
         <div class="advancedSearchResultsDisplay">
             <div ng-repeat="prices in searchResults" class="resultsWrapper">
-                    <div>
-                        <h2></h2>
-                        the {{prices.priceCategory}} average for a {{guitarUserSearchedFor}}
-                        is {{prices.avgPrice}} with a price range of {{prices.lowPrice}} to {{prices.highPrice}}
+                    <div ng-if="isItMain(prices.priceCategory)">
+                        <div ng-if="isItTrue(prices.avgPrice && isItTrue(prices.lowPrice))">
+                            The average price for a {{guitarUserSearchedFor}}
+                            is {{prices.avgPrice}} with a price range of {{prices.lowPrice}} to {{prices.highPrice}}.
+                        </div>
+                        <div ng-if="isItFalse(prices.lowPrice) && isItTrue(prices.avgPrice)">
+                            There was only one recent sale for a {{guitarUserSearchedFor}}, it sold for ${{prices.avgPrice}}.
+                        </div>
+                        <div ng-if="isItFalse(prices.avgPrice)">
+                            There were no recent sales for a {{guitarUserSearchedFor}}.
+                        </div>
                     </div>
-
+            
+                    <div ng-if="isItYear(prices.priceCategory)">
+            
+                        <div ng-if="isItTrue(prices.avgPrice) && isItTrue(prices.lowPrice)">
+                            The average price for a {{guitarUserSearchedFor}}
+                            from {{searchedGuitarYear}} is {{prices.avgPrice}} 
+                            with a price range of {{prices.lowPrice}} to {{prices.highPrice}}.
+                        </div>
+                        <div ng-if="isItFalse(prices.lowPrice) && isItTrue(prices.avgPrice)">
+                            There was only one recent sale for a {{searchedGuitarYear}} {{guitarUserSearchedFor}}, it sold for {{prices.avgPrice}}.
+                        </div>
+                        <div ng-if="isItFalse(prices.avgPrice)">
+                            There were no recent sales for a {{searchedGuitarYear}} {{guitarUserSearchedFor}}.
+                        </div>
+            
+                    </div>
+            
+                    <div ng-if="isItCondition(prices.priceCategory)">
+                        <div ng-if="isItTrue(prices.avgPrice) && isItTrue(prices.lowPrice)">
+                            The average price for a {{guitarUserSearchedFor}}
+                            in {{searchedGuitarCondition}} condition
+                            is {{prices.avgPrice}} with a price range of {{prices.lowPrice}} to {{prices.highPrice}}.
+                        </div>
+                        <div ng-if="isItFalse(prices.lowPrice) && isItTrue(prices.avgPrice)">
+                            There was only one recent sale for a {{guitarUserSearchedFor}} in {{searchedGuitarCondition}} condition, it sold for {{price.avgPrice}}.
+                        </div>
+                        <div ng-if="isItFalse(prices.avgPrice)">
+                            There were no recent sales for a {{guitarUserSearchedFor}} in {{searchedGuitarCondition}} condition.
+                        </div>
+                    </div>
+            
+                    <div ng-if="isItFinish(prices.priceCategory)">
+                        <div ng-if="isItTrue(prices.avgPrice) && isItTrue(prices.lowPrice)">
+                            The average price for a {{guitarUserSearchedFor}}
+                            in {{searchedGuitarFinish}} is {{prices.avgPrice}} 
+                            with a price range of {{prices.lowPrice}} to {{prices.highPrice}}.
+                        </div>
+                        <div ng-if="isItFalse(prices.lowPrice) && isItTrue(prices.avgPrice)">
+                            There was only one recent sale for a {{guitarUserSearchedFor}} in {{searchedGuitarFinish}}, it sold for {{prices.avgPrice}}.
+                        </div>
+                        <div ng-if="isItFalse(prices.avgPrice)">
+                            There were no recent sales for a {{guitarUserSearchedFor}} in {{searchedGuitarFinish}}.
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

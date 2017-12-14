@@ -13,7 +13,6 @@ angular
         } else {
             return false
         }
-
     }
 
     $scope.isItFalse = function (objProp) {
