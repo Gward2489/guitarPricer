@@ -2,7 +2,8 @@ angular
     .module("GuitarPricerApp")
     .controller("DisplayUserGuitarsCtrl", 
         function($scope, $location, UserGearFactory, GuitarFactory) {
-    
+            
+            $scope.loading = true
             $scope.guitars = []
             $scope.guitarRows = []
             $scope.guitarsWithPriceArray = []
@@ -99,6 +100,7 @@ angular
                         guitarCounter ++
 
                         if (guitarCounter === guitarArrayLength) {
+                            $scope.loading = false
                             $scope.guitarRows = makeRowsArray(newGuitarsArray)
                         }
                     })

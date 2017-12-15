@@ -14,15 +14,15 @@ angular
             $scope.searchedGuitarFinish = finish
             $scope.searchedGuitarCountry = country
     
-            if (year === undefined || ""|| "  ") {
+            if (year === undefined || year === "" || year === " ") {
                 $scope.searchedGuitarYear = "n/a"
             }
     
-            if (finish === undefined || "" || "  ") {
+            if (finish === undefined || finish === "" || finish === " ") {
                 $scope.searchedGuitarFinish = "n/a"
             }
     
-            if (country === undefined || "" || "  ") {
+            if (country === undefined || country === "" || country === " ") {
                 $scope.searchedGuitarCountry = "n/a"
             }
 

@@ -2,6 +2,10 @@
 
 <h2>Your Guitars</h2>
 
+<div>
+    <img ng-show="loading" src="../images/ajax-loader.gif">
+</div>
+
 <div class="guitarDisplayWrapper">
     <div ng-repeat="row in guitarRows" class="guitarDisplayInnerWrapper">
         <div ng-repeat="guitar in row" class="rowOfGuitars">

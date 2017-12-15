@@ -6,6 +6,7 @@
         <button ng-click="toBasicSearch()">Basic Search</button>
     </div>
 
+
     <div class="advancedSearchDivWrapper">
             <h3>Advanced Search:</h3>
             <div class="advancedSearchDivWrapperTwo">
@@ -74,6 +75,10 @@
                 </div>
             </div>
             <button ng-click="getAdvancedPrice(guitarBrandInput, guitarModelInput, electricAcoustic, vintageCheck, selectedCondition, finishInput, yearInput, guitarBass, guitarCountryInput)">Search</button>
+        </div>
+
+        <div>
+            <img ng-show="loading" src="../images/ajax-loader.gif">
         </div>
         
 <div class="advancedSearchResultsDisplayWrapper">

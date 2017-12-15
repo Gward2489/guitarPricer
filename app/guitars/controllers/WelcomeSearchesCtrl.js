@@ -2,6 +2,7 @@ angular
     .module("GuitarPricerApp")
     .controller("WelcomeSearchesCtrl", function ($scope, GuitarFactory, $location) {
     
+        $scope.loading = false
         $scope.resultsArray = []
         $scope.userSearchTitle = ""
 
@@ -22,11 +23,12 @@ angular
         }
 
         $scope.getBasicPrice = function (searchInput) {
+            $scope.loading = true
             $scope.userSearchTitle = searchInput
             let convertedSearch = searchInput.replace(/ {2}/g, "+").replace(/ /g, "+")
             GuitarFactory.basicSearch(convertedSearch).then(results => {
+                $scope.loading = false
                 $scope.resultsArray = results
-                console.log($scope.resultsArray)
             })      
         }
 

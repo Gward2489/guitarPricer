@@ -2,7 +2,7 @@ angular
     .module("GuitarPricerApp")
     .controller("AdvancedSearchCtrl", function($scope, $location, GuitarFactory) {
 
-    
+        $scope.loading = false
         $scope.conditionValues = ["Excellent", "Good", "Usable"]
         
         $scope.mainPrices = {}
@@ -95,21 +95,21 @@ angular
 
         $scope.getAdvancedPrice = function (guitarBrand, guitarModel, 
             acousticOrElectric, vintageCheck, condition, finish, year, guitarOrBass, country) {
-            
+            $scope.loading = true
             $scope.searchedGuitarYear = year
             $scope.searchedGuitarCondition = condition
             $scope.searchedGuitarFinish = finish
             $scope.searchedGuitarCountry = country
 
-            if (year === undefined || ""|| "  ") {
+            if (year === undefined || year === "" || year === " ") {
                 $scope.searchedGuitarYear = "n/a"
             }
 
-            if (finish === undefined || "" || "  ") {
+            if (finish === undefined || finish === "" || finish === " ") {
                 $scope.searchedGuitarFinish = "n/a"
             }
 
-            if (country === undefined || "" || "  ") {
+            if (country === undefined || country === "" || country === " ") {
                 $scope.searchedGuitarCountry = "n/a"
             }
         
@@ -119,9 +119,11 @@ angular
                 GuitarFactory.filterAdvancedSearch(guitarBrand, guitarModel, 
                     acousticOrElectric, vintageCheck, condition, $scope.searchedGuitarFinish, $scope.searchedGuitarYear, guitarOrBass, $scope.searchedGuitarCountry).then(data => {
                     $scope.searchResults = data
+                    $scope.loading = false
                     $scope.makeScopes(data)
                 })
             } else {
+                $scope.loading = false
                 alert("please complete all required fields")
             }
 
