@@ -96,18 +96,28 @@ angular
         $scope.getAdvancedPrice = function (guitarBrand, guitarModel, 
             acousticOrElectric, vintageCheck, condition, finish, year, guitarOrBass, country) {
             
-            
-            
             $scope.searchedGuitarYear = year
             $scope.searchedGuitarCondition = condition
             $scope.searchedGuitarFinish = finish
             $scope.searchedGuitarCountry = country
+
+            if (year === undefined || ""|| "  ") {
+                $scope.searchedGuitarYear = "n/a"
+            }
+
+            if (finish === undefined || "" || "  ") {
+                $scope.searchedGuitarFinish = "n/a"
+            }
+
+            if (country === undefined || "" || "  ") {
+                $scope.searchedGuitarCountry = "n/a"
+            }
         
             $scope.guitarUserSearchedFor = guitarBrand + " " + guitarModel
 
-            if (guitarBrand !== undefined && guitarModel !== undefined && guitarOrBass !== undefined && condition !== null) {
+            if (guitarBrand !== undefined && guitarModel !== undefined && guitarOrBass !== undefined && condition !== null && vintageCheck !== undefined) {
                 GuitarFactory.filterAdvancedSearch(guitarBrand, guitarModel, 
-                    acousticOrElectric, vintageCheck, condition, finish, year, guitarOrBass, country).then(data => {
+                    acousticOrElectric, vintageCheck, condition, $scope.searchedGuitarFinish, $scope.searchedGuitarYear, guitarOrBass, $scope.searchedGuitarCountry).then(data => {
                     $scope.searchResults = data
                     $scope.makeScopes(data)
                 })

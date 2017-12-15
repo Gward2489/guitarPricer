@@ -322,54 +322,56 @@ angular
                                         }
                                     })
 
-                                    if (matchingCountryArray.length > 0) {
-                                        let matchingCountryPrices = this.guitarsToPrices(matchingCountryArray)
+                                    if (country !== "n/a") {
+                                        if (matchingCountryArray.length > 0) {
+                                            let matchingCountryPrices = this.guitarsToPrices(matchingCountryArray)
 
-                                        if (matchingCountryPrices.length > 1) {
+                                            if (matchingCountryPrices.length > 1) {
 
-                                            let stdDev = this.getStandardDeviation(matchingCountryPrices)
-                                            let refinedCountryArray = this.removeOutliers(matchingCountryPrices, stdDev)
-                                            let avgCountryPrice = this.getAverage(refinedCountryArray)
-                                            let finalStdDev = this.getStandardDeviation(refinedCountryArray)
+                                                let stdDev = this.getStandardDeviation(matchingCountryPrices)
+                                                let refinedCountryArray = this.removeOutliers(matchingCountryPrices, stdDev)
+                                                let avgCountryPrice = this.getAverage(refinedCountryArray)
+                                                let finalStdDev = this.getStandardDeviation(refinedCountryArray)
 
-                                            let lowPrice = (parseFloat(avgCountryPrice) - parseFloat(finalStdDev)).toFixed(2)
-                                            let highPrice = (parseFloat(avgCountryPrice) + parseFloat(finalStdDev)).toFixed(2)
+                                                let lowPrice = (parseFloat(avgCountryPrice) - parseFloat(finalStdDev)).toFixed(2)
+                                                let highPrice = (parseFloat(avgCountryPrice) + parseFloat(finalStdDev)).toFixed(2)
 
-                                            if (lowPrice < 0) {
-                                                lowPrice = .99
+                                                if (lowPrice < 0) {
+                                                    lowPrice = .99
+                                                }
+
+                                                let countryPrices = {
+                                                    "priceCategory": "country",
+                                                    "avgPrice": avgCountryPrice,
+                                                    "lowPrice": lowPrice,
+                                                    "highPrice": highPrice
+                                                }
+
+                                                finalPrices.push(countryPrices)
+
+                                            } else {
+
+                                                let avgPrice = matchingCountryPrices[0]
+                                                let avgCountryPrice = (parseFloat(avgPrice)).toFixed(2)
+
+                                                let countryPrices = {
+                                                    "priceCategory": "country",
+                                                    "avgPrice": avgCountryPrice,
+                                                    "lowPrice": false,
+                                                    "highPrice": false
+                                                }
+                                                finalPrices.push(countryPrices)
                                             }
-
+                                        }  else {
+                                        
                                             let countryPrices = {
                                                 "priceCategory": "country",
-                                                "avgPrice": avgCountryPrice,
-                                                "lowPrice": lowPrice,
-                                                "highPrice": highPrice
-                                            }
-
-                                            finalPrices.push(countryPrices)
-
-                                        } else {
-
-                                            let avgPrice = matchingCountryPrices[0]
-                                            let avgCountryPrice = (parseFloat(avgPrice)).toFixed(2)
-
-                                            let countryPrices = {
-                                                "priceCategory": "country",
-                                                "avgPrice": avgCountryPrice,
+                                                "avgPrice": false,
                                                 "lowPrice": false,
                                                 "highPrice": false
                                             }
                                             finalPrices.push(countryPrices)
                                         }
-                                    }  else {
-                                        
-                                        let countryPrices = {
-                                            "priceCategory": "country",
-                                            "avgPrice": false,
-                                            "lowPrice": false,
-                                            "highPrice": false
-                                        }
-                                        finalPrices.push(countryPrices)
                                     }
 
                                     if (matchingConditionArray.length > 0 ) {
@@ -426,115 +428,118 @@ angular
                                         finalPrices.push(conditionPrices)
                                     }
 
+                                    if (finish !== "n/a") {
+                                        if (matchingFinishesArray.length > 0) {
+                                            let matchingFinishesPrices = this.guitarsToPrices(matchingFinishesArray)
 
-                                    if (matchingFinishesArray.length > 0) {
-                                        let matchingFinishesPrices = this.guitarsToPrices(matchingFinishesArray)
+                                            if (matchingFinishesPrices.length > 1) {
 
-                                        if (matchingFinishesPrices.length > 1) {
+                                                let stdDev = this.getStandardDeviation(matchingFinishesPrices)
+                                                let refinedFinishesArray = this.removeOutliers(matchingFinishesPrices, stdDev)
+                                                let avgFinishPrice = this.getAverage(refinedFinishesArray)
+                                                let finalStdDev = this.getStandardDeviation(refinedFinishesArray)
 
-                                            let stdDev = this.getStandardDeviation(matchingFinishesPrices)
-                                            let refinedFinishesArray = this.removeOutliers(matchingFinishesPrices, stdDev)
-                                            let avgFinishPrice = this.getAverage(refinedFinishesArray)
-                                            let finalStdDev = this.getStandardDeviation(refinedFinishesArray)
+                                                let lowPrice = (parseFloat(avgFinishPrice) - parseFloat(finalStdDev)).toFixed(2)
+                                                let highPrice = (parseFloat(avgFinishPrice) + parseFloat(finalStdDev)).toFixed(2)
 
-                                            let lowPrice = (parseFloat(avgFinishPrice) - parseFloat(finalStdDev)).toFixed(2)
-                                            let highPrice = (parseFloat(avgFinishPrice) + parseFloat(finalStdDev)).toFixed(2)
+                                                if (lowPrice < 0) {
+                                                    lowPrice = .99
+                                                }
 
-                                            if (lowPrice < 0) {
-                                                lowPrice = .99
+                                                let finishPrices = {
+                                                    "priceCategory": "finish",
+                                                    "avgPrice": avgFinishPrice,
+                                                    "lowPrice": lowPrice,
+                                                    "highPrice": highPrice
+                                                }
+
+                                                finalPrices.push(finishPrices)
+
+                                            } else {
+
+                                                let avgPrice = matchingFinishesPrices[0]
+
+                                                let avgFinishPrice = (parseFloat(avgPrice)).toFixed(2)
+
+                                                let finishPrices = {
+                                                    "priceCategory": "finish",
+                                                    "avgPrice": avgFinishPrice,
+                                                    "lowPrice": false,
+                                                    "highPrice": false
+                                                }
+
+                                                finalPrices.push(finishPrices)
                                             }
-
-                                            let finishPrices = {
-                                                "priceCategory": "finish",
-                                                "avgPrice": avgFinishPrice,
-                                                "lowPrice": lowPrice,
-                                                "highPrice": highPrice
-                                            }
-
-                                            finalPrices.push(finishPrices)
 
                                         } else {
 
-                                            let avgPrice = matchingFinishesPrices[0]
-
-                                            let avgFinishPrice = (parseFloat(avgPrice)).toFixed(2)
-
                                             let finishPrices = {
                                                 "priceCategory": "finish",
-                                                "avgPrice": avgFinishPrice,
+                                                "avgPrice": false,
                                                 "lowPrice": false,
                                                 "highPrice": false
                                             }
 
                                             finalPrices.push(finishPrices)
-                                        }
-
-                                    } else {
-
-                                        let finishPrices = {
-                                            "priceCategory": "finish",
-                                            "avgPrice": false,
-                                            "lowPrice": false,
-                                            "highPrice": false
-                                        }
-
-                                        finalPrices.push(finishPrices)
                                 
+                                        }
                                     }
 
-                                    if (matchingYearsArray.length > 0) {
+                                    if (year !== "n/a") {
+                                        if (matchingYearsArray.length > 0) {
 
-                                        let matchingYearsPrices = this.guitarsToPrices(matchingYearsArray)
+                                            let matchingYearsPrices = this.guitarsToPrices(matchingYearsArray)
 
-                                        if (matchingYearsPrices.length > 1) {
+                                            if (matchingYearsPrices.length > 1) {
 
-                                            let stdDev = this.getStandardDeviation(matchingYearsPrices)
-                                            let refinedYearsArray = this.removeOutliers(matchingYearsPrices, stdDev)
-                                            let avgYearPrice = this.getAverage(refinedYearsArray)
-                                            let finalStdDev = this.getStandardDeviation(refinedYearsArray)
+                                                let stdDev = this.getStandardDeviation(matchingYearsPrices)
+                                                let refinedYearsArray = this.removeOutliers(matchingYearsPrices, stdDev)
+                                                let avgYearPrice = this.getAverage(refinedYearsArray)
+                                                let finalStdDev = this.getStandardDeviation(refinedYearsArray)
 
-                                            let lowPrice = (parseFloat(avgYearPrice) - parseFloat(finalStdDev)).toFixed(2)
-                                            let highPrice = (parseFloat(avgYearPrice) + parseFloat(finalStdDev)).toFixed(2)
+                                                let lowPrice = (parseFloat(avgYearPrice) - parseFloat(finalStdDev)).toFixed(2)
+                                                let highPrice = (parseFloat(avgYearPrice) + parseFloat(finalStdDev)).toFixed(2)
 
-                                            if (lowPrice < 0) {
-                                                lowPrice = .99
+                                                if (lowPrice < 0) {
+                                                    lowPrice = .99
+                                                }
+
+                                                let yearPrices = {
+                                                    "priceCategory": "year",
+                                                    "avgPrice": avgYearPrice,
+                                                    "lowPrice": lowPrice,
+                                                    "highPrice": highPrice
+                                                }
+
+                                                finalPrices.push(yearPrices)
+
+                                            } else {
+
+                                                let avgPrice = matchingYearsPrices[0]
+
+                                                let avgYearPrice = (parseFloat(avgPrice)).toFixed(2)
+
+                                                let yearPrices = {
+                                                    "priceCategory": "year",
+                                                    "avgPrice": avgYearPrice,
+                                                    "lowPrice": false,
+                                                    "highPrice": false
+                                                }
+
+                                                finalPrices.push(yearPrices)
                                             }
-
-                                            let yearPrices = {
-                                                "priceCategory": "year",
-                                                "avgPrice": avgYearPrice,
-                                                "lowPrice": lowPrice,
-                                                "highPrice": highPrice
-                                            }
-
-                                            finalPrices.push(yearPrices)
 
                                         } else {
 
-                                            let avgPrice = matchingYearsPrices[0]
-
-                                            let avgYearPrice = (parseFloat(avgPrice)).toFixed(2)
-
                                             let yearPrices = {
                                                 "priceCategory": "year",
-                                                "avgPrice": avgYearPrice,
+                                                "avgPrice": false,
                                                 "lowPrice": false,
                                                 "highPrice": false
                                             }
 
                                             finalPrices.push(yearPrices)
                                         }
-
-                                    } else {
-
-                                        let yearPrices = {
-                                            "priceCategory": "year",
-                                            "avgPrice": false,
-                                            "lowPrice": false,
-                                            "highPrice": false
-                                        }
-
-                                        finalPrices.push(yearPrices)
                                     }
 
                                 } else {
