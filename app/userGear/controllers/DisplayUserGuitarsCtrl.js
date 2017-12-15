@@ -22,6 +22,7 @@ angular
                     return false 
                 }
             }
+
     
             let makeRowsArray = function (guitarsArray) {
                 let arrayOfRows = []
