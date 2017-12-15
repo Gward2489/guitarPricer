@@ -140,6 +140,8 @@ angular
                             } else if (acousticOrElectric === "electric") {
                                 categoriesArray.push(118985)
                             }
+                        } else {
+                            categoriesArray.push(3858)
                         }
                     }
 
@@ -152,6 +154,8 @@ angular
                             } else if (acousticOrElectric === "electric") {
                                 categoriesArray.push(33034)
                             }
+                        } else {
+                            categoriesArray.push(118985)
                         }
                     }
 
