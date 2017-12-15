@@ -18,21 +18,23 @@
                         <h5>Guitar model</h5>
                         <input type="text" ng-model="guitarModelInput">
                     </div>
+                    <div>
+                        <h5>Country of Origin</h5>
+                        <input type="text" ng-model="guitarCountryInput">
+                    </div>
                     <div class="yearInputWrapper">
                         <h5>Year of Production</h5>
                         <input type="text" ng-model="yearInput">
                     </div class="guitarOrBassWrapper">
                         <h5>Guitar or Bass?</h5>
                         <label class="electricButton">
-                                Guitar
-                                <input ng-model="guitarBass" value="guitar" type="radio" name="guitarOrBass">
-                            </label>
-                            <label class="acousticButton">
-                                Bass
-                                <input ng-model="guitarBass" value="bass" type="radio" name="guitarOrBass">
-                            <label>
-    
-    
+                            Guitar
+                            <input ng-model="guitarBass" value="guitar" type="radio" name="guitarOrBass">
+                        </label>
+                        <label class="acousticButton">
+                            Bass
+                            <input ng-model="guitarBass" value="bass" type="radio" name="guitarOrBass">
+                        </label>
                     </div>
                 
                 </div>
@@ -56,18 +58,18 @@
                         <label class="acousticButton">
                             Acoustic
                             <input ng-model="electricAcoustic" value="acoustic" type="radio" name="guitarType">
-                        <label>
+                        </label>
                     </div>
                     <div class="vintageWrapper">
                         <h5>Is it vintage?(30 years or older)</h5>
                         <label class="vintageYesButton">
-                                Yes
-                                <input ng-model="vintageCheck" value="yes" type="radio" name="vintageSelect">
-                            </label>
-                            <label class="vintageNoButton">
+                            Yes
+                            <input ng-model="vintageCheck" value="yes" type="radio" name="vintageSelect">
+                        </label>
+                        <label class="vintageNoButton">
                                 No
-                                <input ng-model="vintageCheck" value="no" type="radio" name="vintageSelect">
-                            <label>
+                            <input ng-model="vintageCheck" value="no" type="radio" name="vintageSelect">
+                        </label>
                     </div>
                 </div>
             </div>

@@ -85,19 +85,18 @@ angular
 
         $scope.searchResults = []
         $scope.getAdvancedPrice = function (guitarBrand, guitarModel, 
-            acousticOrElectric, vintageCheck, condition, finish, year, guitarOrBass) {
+            acousticOrElectric, vintageCheck, condition, finish, year, guitarOrBass, country) {
         
             $scope.searchedGuitarYear = year
             $scope.searchedGuitarCondition = condition
             $scope.searchedGuitarFinish = finish
+            $scope.searchedGuitarCountry = country
         
-
             $scope.guitarUserSearchedFor = guitarBrand + " " + guitarModel
 
             GuitarFactory.filterAdvancedSearch(guitarBrand, guitarModel, 
-                acousticOrElectric, vintageCheck, condition, finish, year, guitarOrBass).then(data => {
+                acousticOrElectric, vintageCheck, condition, finish, year, guitarOrBass, country).then(data => {
                 $scope.searchResults = data
-                console.log(data)
                 $scope.makeScopes(data)
             })
 

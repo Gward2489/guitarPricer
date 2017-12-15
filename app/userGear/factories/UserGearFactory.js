@@ -1,16 +1,16 @@
 angular
-.module("GuitarPricerApp")
-.factory("UserGearFactory", function ($http, AuthFactory) {
+    .module("GuitarPricerApp")
+    .factory("UserGearFactory", function ($http, AuthFactory) {
 
-    return Object.create(null, {
-        "cache": {
-            value: null,
-            enumerable: true,
-            writable: true
-        },
-        "createGuitarObject": {
-            value: function (guitarBrand, guitarModel, 
-                acousticOrElectric, vintageCheck, condition, finish, year, guitarOrBass) {
+        return Object.create(null, {
+            "cache": {
+                value: null,
+                enumerable: true,
+                writable: true
+            },
+            "createGuitarObject": {
+                value: function (guitarBrand, guitarModel, 
+                    acousticOrElectric, vintageCheck, condition, finish, year, guitarOrBass) {
 
                     let user = AuthFactory.getUser()
 
@@ -61,26 +61,26 @@ angular
                             enumerable: true
                         }
                     })
-            }
-        },
+                }
+            },
 
-        "storeGuitar": {
-            value: function (guitarObj) {
-                return firebase.auth().currentUser.getIdToken(true)
-                    .then(idToken => {
-                        $http({
-                            "method": "POST",
-                            "url": `https://guitar-pricer.firebaseio.com/guitars/.json?auth=${idToken}`,
-                            "data": JSON.stringify(guitarObj)
-                        })
-                    })        
-            }
-        },
-        "getGuitars": {
-            value: function () {
-                return $http({
-                    "method": "GET",
-                    "url": `https://guitar-pricer.firebaseio.com/guitars/.json`
+            "storeGuitar": {
+                value: function (guitarObj) {
+                    return firebase.auth().currentUser.getIdToken(true)
+                        .then(idToken => {
+                            $http({
+                                "method": "POST",
+                                "url": `https://guitar-pricer.firebaseio.com/guitars/.json?auth=${idToken}`,
+                                "data": JSON.stringify(guitarObj)
+                            })
+                        })        
+                }
+            },
+            "getGuitars": {
+                value: function () {
+                    return $http({
+                        "method": "GET",
+                        "url": "https://guitar-pricer.firebaseio.com/guitars/.json"
                     }).then(response => {
                         const data = response.data
                         let currentUser = AuthFactory.currentUserCache()
@@ -98,7 +98,7 @@ angular
                     
                         return this.cache                            
                     })
+                }
             }
-        }
+        })
     })
-})

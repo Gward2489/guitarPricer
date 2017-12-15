@@ -108,7 +108,7 @@ angular
 
             "filterAdvancedSearch": {
                 value: function (guitarBrand, guitarModel, 
-                    acousticOrElectric, vintageCheck, condition, finish, year, guitarOrBass) {
+                    acousticOrElectric, vintageCheck, condition, finish, year, guitarOrBass, country) {
                             
             
                     let valueObjects = [
@@ -172,7 +172,7 @@ angular
                     let brandString = guitarBrand.replace(/ {2}/g, "+").replace(/ /g, "+")
                     let modelString = guitarModel.replace(/ {2}/g, "+").replace(/ /g, "+")
                     let finishString = finish.replace(/ {2}/g, "+").replace(/ /g, "+")
-                    let yearString = year.replace(/ {2}/g, "").replace(/ /g, "")
+                    let yearString = year.replace(/ {2}/g, "").replace(/ /g, "").replace(/'/g, "")
 
                     keyWordsString = brandString + "+" + modelString
 
@@ -185,7 +185,7 @@ angular
                         }
                     })
 
-                    return this.advancedSearch(keyWordsString, categoriesString, finishString, yearString, conditionValuesArray).then(data => {
+                    return this.advancedSearch(keyWordsString, categoriesString, finishString, yearString, conditionValuesArray, country).then(data => {
                         return data
                     })
 
@@ -239,13 +239,12 @@ angular
             },
 
             "advancedSearch":{
-                value: function (keyWords, categories, finish, year, conditionValues) {
+                value: function (keyWords, categories, finish, year, conditionValues, country) {
                     let url = `http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findCompletedItems&SERVICE-VERSION=1.7.0&SECURITY-APPNAME=${ebayKey}&RESPONSE-DATA-FORMAT=XML&${categories}itemFilter(0).name=SoldItemsOnly&itemFilter(0).value(0)=true&itemFilter(1).name=ExcludeCategory&itemFilter(1).value(0)=181223&itemFilter(1).value(1)=47067&REST-PAYLOAD&keywords=${keyWords}`
                     let trustedUrl = $sce.trustAsResourceUrl(url)
                     return $http.jsonp(trustedUrl,
                         {jsonpCallbackParam: "callback"})
                         .then(response => {
-
 
                             let initialSearchResults = this.ebayObjToGuitarArray(response)
                             let finalPrices = []
@@ -282,6 +281,13 @@ angular
                                     finalPrices.push(mainPrices)
 
 
+                                    let matchingCountryArray = refinedResultsArray.filer(guitar => {
+                                        let lowerCaseTitle = guitar.title[0].toLowerCase()
+                                        let lowerCaseCountry = country.toLowerCase()
+                                        if (lowerCaseTitle.search(lowerCaseCountry) !== -1) {
+                                            return guitar
+                                        }
+                                    })
 
                                     let matchingYearsArray = refinedResultsArray.filter(guitar => {
                                         if (guitar.title[0].search(year) !== -1) {
@@ -311,6 +317,28 @@ angular
                                             }
                                         }
                                     })
+
+                                    if (matchingCountryArray.length > 0) {
+                                        let matchingCountryPrices = this.guitarsToPrices(matchingCountryArray)
+
+                                        if (matchingCountryPrices.length > 1) {
+
+                                        } else {
+
+                                            let avgPrice = matchingCountryPrices[0]
+
+                                            let avgCountryPrice = (parseFloat(avgPrice)).toFixed(2)
+
+                                            let countryPrices = {
+                                                "priceCategory": "country",
+                                                "avgPrice": avgCountryPrice,
+                                                "lowPrice": false,
+                                                "highPrice": false
+                                            }
+
+                                            finalPrices.push(conditionPrices)
+                                        
+                                    }
 
                                     if (matchingConditionArray.length > 0 ) {
                                         let matchingConditionPrices = this.guitarsToPrices(matchingConditionArray)
