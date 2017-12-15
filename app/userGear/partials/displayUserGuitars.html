@@ -21,11 +21,14 @@
                 <li ng-if="isItTrue(guitar.finishAvgPrice) && isItTrue(guitar.finishLowPrice)">{{guitar.guitarBrand}} {{guitar.guitarModel}}s in {{guitar.finish}} have an avergae value of: {{guitar.finishAvgPrice}}</li>
                 <li ng-if="isItFalse(guitar.finishAvgPrice)"> There are no recent sales for a {{guitar.guitarBrand}} {{guitar.guitarModel}} in {{guitar.finish}}</li>
                 <li ng-if="isItFalse(guitar.finishLowPrice) && isItTrue(guitar.finishAvgPrice)">There was only one recent sale for a {{guitar.guitarBrand}} {{guitar.guitarModel}} in {{guitar.finish}}, it sold for {{guitar.finishAvgPrice}}</li>
+                <li ng-if="isItTrue(guitar.countryAvgPrice) && isItTrue(guitar.countryLowPrice)">Made in {{guitar.country}} {{guitar.guitarBrand}} {{guitar.guitarModel}}s have an avergae value of: {{guitar.countryAvgPrice}}</li>
+                <li ng-if="isItFalse(guitar.countryAvgPrice)"> There are no recent sales for a made in {{guitar.country}} {{guitar.guitarBrand}} {{guitar.guitarModel}}</li>
+                <li ng-if="isItFalse(guitar.countryLowPrice) && isItTrue(guitar.countryAvgPrice)">There was only one recent sale for a made in {{guitar.country}} {{guitar.guitarBrand}} {{guitar.guitarModel}}, it sold for {{guitar.countryAvgPrice}}</li>
             </ul>
+
             <div>
                 
             </div>
         </div>
-        
     </div>
 </div>

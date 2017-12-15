@@ -73,8 +73,9 @@
                     </div>
                 </div>
             </div>
-            <button ng-click="getAdvancedPrice(guitarBrandInput, guitarModelInput, electricAcoustic, vintageCheck, selectedCondition, finishInput, yearInput, guitarBass)">Search</button>
+            <button ng-click="getAdvancedPrice(guitarBrandInput, guitarModelInput, electricAcoustic, vintageCheck, selectedCondition, finishInput, yearInput, guitarBass, guitarCountryInput)">Search</button>
         </div>
+        
 <div class="advancedSearchResultsDisplayWrapper">
         <div class="advancedSearchResultsDisplay">
             <div ng-repeat="prices in searchResults" class="resultsWrapper">
@@ -134,6 +135,21 @@
                             There were no recent sales for a {{guitarUserSearchedFor}} in {{searchedGuitarFinish}}.
                         </div>
                     </div>
+
+                    <div ng-if="isItCountry(prices.priceCategory)">
+                        <div ng-if="isItTrue(prices.avgPrice) && isItTrue(prices.lowPrice)">
+                            The average price for a made in {{searchedGuitarCountry}}
+                            {{guitarUserSearchedFor}} is {{prices.avgPrice}} 
+                            with a price range of {{prices.lowPrice}} to {{prices.highPrice}}.
+                        </div>
+                        <div ng-if="isItFalse(prices.lowPrice) && isItTrue(prices.avgPrice)">
+                            There was only one recent sale for a made in {{searchedGuitarCountry}} {{guitarUserSearchedFor}}, it sold for {{prices.avgPrice}}.
+                        </div>
+                        <div ng-if="isItFalse(prices.avgPrice)">
+                            There were no recent sales for a made in {{searchedGuitarCountry}} {{guitarUserSearchedFor}}.
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>

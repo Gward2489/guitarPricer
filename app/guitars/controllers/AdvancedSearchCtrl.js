@@ -38,6 +38,14 @@ angular
             }
         }
 
+        $scope.isItCountry = function (priceCategory) {
+            if (priceCategory === "country") {
+                return true
+            } else {
+                return false
+            }
+        }
+
         $scope.isItYear = function (priceCategory) {
             if (priceCategory === "year") {
                 return true

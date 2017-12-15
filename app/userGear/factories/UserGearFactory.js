@@ -10,7 +10,7 @@ angular
             },
             "createGuitarObject": {
                 value: function (guitarBrand, guitarModel, 
-                    acousticOrElectric, vintageCheck, condition, finish, year, guitarOrBass) {
+                    acousticOrElectric, vintageCheck, condition, finish, year, guitarOrBass, country) {
 
                     let user = AuthFactory.getUser()
 
@@ -22,6 +22,11 @@ angular
                         },
                         "guitarModel": {
                             value: guitarModel,
+                            writable: true,
+                            enumerable: true
+                        },
+                        "country": {
+                            value: country,
                             writable: true,
                             enumerable: true
                         },

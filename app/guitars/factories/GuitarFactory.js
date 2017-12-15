@@ -281,7 +281,7 @@ angular
                                     finalPrices.push(mainPrices)
 
 
-                                    let matchingCountryArray = refinedResultsArray.filer(guitar => {
+                                    let matchingCountryArray = refinedResultsArray.filter(guitar => {
                                         let lowerCaseTitle = guitar.title[0].toLowerCase()
                                         let lowerCaseCountry = country.toLowerCase()
                                         if (lowerCaseTitle.search(lowerCaseCountry) !== -1) {
@@ -323,10 +323,30 @@ angular
 
                                         if (matchingCountryPrices.length > 1) {
 
+                                            let stdDev = this.getStandardDeviation(matchingCountryPrices)
+                                            let refinedCountryArray = this.removeOutliers(matchingCountryPrices, stdDev)
+                                            let avgCountryPrice = this.getAverage(refinedCountryArray)
+                                            let finalStdDev = this.getStandardDeviation(refinedCountryArray)
+
+                                            let lowPrice = (parseFloat(avgCountryPrice) - parseFloat(finalStdDev)).toFixed(2)
+                                            let highPrice = (parseFloat(avgCountryPrice) + parseFloat(finalStdDev)).toFixed(2)
+
+                                            if (lowPrice < 0) {
+                                                lowPrice = .99
+                                            }
+
+                                            let countryPrices = {
+                                                "priceCategory": "country",
+                                                "avgPrice": avgCountryPrice,
+                                                "lowPrice": lowPrice,
+                                                "highPrice": highPrice
+                                            }
+
+                                            finalPrices.push(countryPrices)
+
                                         } else {
 
                                             let avgPrice = matchingCountryPrices[0]
-
                                             let avgCountryPrice = (parseFloat(avgPrice)).toFixed(2)
 
                                             let countryPrices = {
@@ -335,9 +355,17 @@ angular
                                                 "lowPrice": false,
                                                 "highPrice": false
                                             }
-
-                                            finalPrices.push(conditionPrices)
+                                            finalPrices.push(countryPrices)
+                                        }
+                                    }  else {
                                         
+                                        let countryPrices = {
+                                            "priceCategory": "country",
+                                            "avgPrice": false,
+                                            "lowPrice": false,
+                                            "highPrice": false
+                                        }
+                                        finalPrices.push(countryPrices)
                                     }
 
                                     if (matchingConditionArray.length > 0 ) {
@@ -537,3 +565,13 @@ angular
             }
         })
     })
+
+
+
+
+
+
+
+
+
+

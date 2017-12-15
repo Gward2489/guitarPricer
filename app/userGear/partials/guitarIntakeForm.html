@@ -20,6 +20,10 @@
                         <h5>Guitar model</h5>
                         <input type="text" ng-model="guitarModelInput">
                     </div>
+                    <div>
+                        <h5>Country of Origin</h5>
+                        <input type="text" ng-model="guitarCountryInput">
+                    </div>
                     <div class="intakeYearInputWrapper">
                         <h5>Year of Production</h5>
                         <input type="text" ng-model="yearInput">
@@ -71,7 +75,7 @@
                     </div>
                 </div>
             </div>
-            <button ng-click="storeGuitarInfo(guitarBrandInput, guitarModelInput, electricAcoustic, vintageCheck, selectedCondition, finishInput, yearInput, guitarBass)">Submit</button>
+            <button ng-click="storeGuitarInfo(guitarBrandInput, guitarModelInput, electricAcoustic, vintageCheck, selectedCondition, finishInput, yearInput, guitarBass, guitarCountryInput)">Submit</button>
         </div>
     </div>
 </div>

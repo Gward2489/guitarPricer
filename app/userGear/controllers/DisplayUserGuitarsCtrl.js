@@ -1,7 +1,7 @@
 angular
     .module("GuitarPricerApp")
     .controller("DisplayUserGuitarsCtrl", 
-        function($scope, $location, UserGearFactory, GuitarFactory, AuthFactory) {
+        function($scope, $location, UserGearFactory, GuitarFactory) {
     
             $scope.guitars = []
             $scope.guitarRows = []
@@ -55,10 +55,11 @@ angular
                     let finish = guitar.finish
                     let year = guitar.year
                     let guitarOrBass = guitar.guitarOrBass
+                    let guitarCountry = guitar.country
 
 
                     GuitarFactory.filterAdvancedSearch(guitarBrand, guitarModel,
-                        acousticOrElectric, vintageCheck, condition, finish, year, guitarOrBass).then(data => {
+                        acousticOrElectric, vintageCheck, condition, finish, year, guitarOrBass, guitarCountry).then(data => {
                     
                         data.forEach(priceObj => {
                             if (priceObj.priceCategory === "main") {
@@ -83,7 +84,13 @@ angular
                                 guitar.finishAvgPrice = priceObj.avgPrice
                                 guitar.finishLowPrice = priceObj.lowPrice
                                 guitar.finishHighPrice = priceObj.highPrice
-                            }          
+                            }
+                            
+                            if (priceObj.priceCategory === "country") {
+                                guitar.countryAvgPrice = priceObj.avgPrice
+                                guitar.countryLowPrice = priceObj.lowPrice
+                                guitar.countryHighPrice = priceObj.highPrice
+                            }
                         })
 
                         newGuitarsArray.push(guitar)
@@ -92,7 +99,6 @@ angular
 
                         if (guitarCounter === guitarArrayLength) {
                             $scope.guitarRows = makeRowsArray(newGuitarsArray)
-                            console.log("rowsknow", $scope.guitarRows)
                         }
                     })
                 })
