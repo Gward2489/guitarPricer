@@ -1,0 +1,9 @@
+.mainGrid {
+    display: grid;
+    grid-template-rows: 10% 10% 80%;
+    grid-template-areas: 
+    "nav"
+    "userNav"
+    "body"
+    ;
+}

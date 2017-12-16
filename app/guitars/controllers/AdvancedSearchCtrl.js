@@ -4,7 +4,6 @@ angular
 
         $scope.loading = false
         $scope.conditionValues = ["Excellent", "Good", "Usable"]
-        
         $scope.mainPrices = {}
         $scope.yearPrices = {}
         $scope.conditionPrices = {}

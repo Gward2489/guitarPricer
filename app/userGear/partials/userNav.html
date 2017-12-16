@@ -1,14 +1,18 @@
 <div  class="userNavButtonsWrapper" ng-controller="UserNavCtrl">
 
-    <div ng-if="isAuthenticated()" class="userNavButtonsRown">
-        <div class="searchForPricesButtonWrapper">
-            <button ng-click="toSearches()">Search For Prices</button>
-        </div>
-        <div class="showYourGuitarsButtonWrapper">  
-            <button ng-click="toDisplayUserGuitars()">Show Your Guitars</button>
-        </div>
-        <div class="enterNewGuitarButtonWrapper">
-            <button ng-click="toGuitarIntakeForm()">Enter New Guitar</button>
+    <div class="userNavWrapper">
+
+        <div class="userNavButtonsRow" ng-if="isAuthenticated()">
+            <div class="searchForPricesButtonWrapper">
+                <button ng-click="toSearches()">Search For Prices</button>
+            </div>
+            <div class="showYourGuitarsButtonWrapper">  
+                <button ng-click="toDisplayUserGuitars()">Show Your Guitars</button>
+            </div>
+            <div class="enterNewGuitarButtonWrapper">
+                <button ng-click="toGuitarIntakeForm()">Enter New Guitar</button>
+            </div>
+
         </div>
 
     </div>

@@ -1,12 +1,3 @@
-.mainGrid {
-    display: grid;
-    grid-template-rows: 10% 90%;
-    grid-template-areas: 
-    "nav"
-    "body"
-    ;
-}
-
 .navGrid {
     display: grid;
     background-color: lightskyblue; 
@@ -49,35 +40,4 @@
 .logOutButtonWrapper {
     grid-area: logOutButton;
 } 
-
- .basicSearchContentWrapper {
-    display: grid;
-    background-color: lightgrey;
-    grid-area: body;
-    grid-template-columns: 10% 80% 10%;
-    grid-template-rows: 20% 60% 20%;
-    grid-template-areas: 
-    ". search ."
-    ". results ."
-    ". . ."
-    ;
-}
-
-.searchDivWrapper {
-    display: subgrid;
-    grid-area: search;
-    grid-template-rows: 60% 40%;
-    grid-template-areas:
-    "basicSearchBar"
-    "basicSearchButton"
-    ; 
-}
-
-.basicSearchWrapper {
-    grid-area: basicSearchBar;
-}
-
-.basicSearchButtonWrapper {
-    grid-area: basicSearchButton;
-}
 

@@ -1,10 +1,10 @@
 <div ng-include="'app/userGear/partials/userNav.html'"></div>
 
-<div class="~~killClass~~basicSearchContentWrapper">
+<div class="basicSearchContentWrapper">
 
     <div class="advancedSearchLinkWrapper">
         <button ng-click="toAdvancedSearch()">Advanced Search</button>
-    <div>
+    </div>
 
     <div class="searchDivWrapper">
         <h3>Basic Search:</h3>
@@ -13,7 +13,7 @@
         </div>
         <div class="basicSearchButtonWrapper">
             <button ng-click="getBasicPrice(basicSearchInput)">Search</button>
-        <div>
+        </div>
     </div>
 
     <div>
@@ -26,7 +26,7 @@
                 <h4>Current values for a {{userSearchTitle}}:</h2>
                 <ul>
                     <li ng-if="isItFalse(prices.lowPrice)">There was only one recent sale for a {{userSearchTitle}}</li>
-                    <li ng-if="isItTrue(prices.avgPrice)">Average Price: {{prices.avgPrice}}</li>
+                    <li ng-if="isItTrue(prices.avgPrice)">Average Price: ${{prices.avgPrice}}</li>
                     <li ng-if="isItTrue(prices.lowPrice)">Price Range: ${{prices.lowPrice}} to ${{prices.highPrice}}</li>
                 </ul>
             </div>

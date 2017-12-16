@@ -1,0 +1,31 @@
+.userNavWrapper {
+    display: grid;
+    grid-area: userNav;
+    grid-auto-rows: 1fr 8fr 1fr;
+    grid-template-areas: 
+    "."
+    "userNavBar"
+    "."
+    ;
+}
+
+.userNavButtonsRow {
+    display: grid;
+    grid-area: userNavBar;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "searchPrices showGuitars enterGuitars"
+    ;
+}
+
+.searchForPricesButtonWrapper {
+    grid-area: searchPrices;
+}
+
+.showYourGuitarsButtonWrapper {
+    grid-area: showGuitars;
+}
+
+.enterNewGuitarButtonWrapper {
+    grid-area: enterGuitars;
+}

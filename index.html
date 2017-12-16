@@ -6,17 +6,19 @@
         <title>
             Guitar Pricer
         </title>
-        <link href="./css/styles.css" rel="stylesheet">
+        <link href="./css/mainGrid.css" rel="stylesheet">
+        <link href="./css/navBar.css" rel="stylesheet">
+        <link href="./css/userNav.css" rel="stylesheet">
+        <link href="./css/basicSearch.css" rel="stylesheet">
+        
     </header>
 
     <body class="mainGrid" ng-app="GuitarPricerApp">
 
         <nav ng-include="'app/nav/partials/navigation.html'"></nav>
-
-
+        
         <div ng-view></div>
 
-    
         <script src="./lib/node_modules/angular/angular.min.js"></script>
         <script src="./lib/node_modules/firebase/firebase.js"></script>
         <script src="./lib/node_modules/angular-route/angular-route.min.js"></script>

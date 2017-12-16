@@ -1,0 +1,45 @@
+.basicSearchContentWrapper {
+    display: grid;
+    background-color: lightgrey;
+    grid-area: body;
+    grid-template-columns:1fr 4fr 1fr;
+    grid-template-rows: 1fr 2fr 2fr 1fr;
+    grid-template-areas: 
+    ". adv ."
+    ". search ."
+    ". results ."
+    ". . ."
+    ;
+}
+
+.advancedSearchLinkWrapper {
+    display: grid;
+    grid-area: adv;
+    align-self: center;
+    justify-self: center;
+}
+
+.searchDivWrapper {
+    display: subgrid;
+    grid-area: search;
+    align-self: center;
+    justify-self: center;
+    grid-template-rows: 2fr 4fr;
+    grid-template-areas:
+    "basicSearchBar"
+    "basicSearchButton"
+    ; 
+}
+
+.basicSearchResultsDisplay {
+    display: subgrid;
+    grid-area: results;
+}
+
+.basicSearchWrapper {
+    grid-area: basicSearchBar;
+}
+
+.basicSearchButtonWrapper {
+    grid-area: basicSearchButton;
+}
