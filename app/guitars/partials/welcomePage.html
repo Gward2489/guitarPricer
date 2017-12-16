@@ -3,16 +3,16 @@
 <div class="basicSearchContentWrapper">
 
     <div class="advancedSearchLinkWrapper">
-        <button ng-click="toAdvancedSearch()">Advanced Search</button>
+        <button class="toAdvancedSearchButton" ng-click="toAdvancedSearch()">Advanced Search</button>
     </div>
 
     <div class="searchDivWrapper">
-        <h3>Basic Search:</h3>
+        <h3 class="basicSearchTitle">Basic Search</h3>
         <div class="basicSearchWrapper">
-            <input type="text" ng-model="basicSearchInput">
+            <input class="basicSearchBar" type="text" ng-model="basicSearchInput">
         </div>
         <div class="basicSearchButtonWrapper">
-            <button ng-click="getBasicPrice(basicSearchInput)">Search</button>
+            <button class="basicSearchButton" ng-click="getBasicPrice(basicSearchInput)">Search</button>
         </div>
     </div>
 

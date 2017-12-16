@@ -2,7 +2,7 @@
     display: grid;
     background-color: lightskyblue; 
     grid-area: nav;
-    grid-template-columns: 20% 45% 35%;
+    grid-template-columns: 1fr 4fr 2fr;
     grid-template-areas: 
     "navBarLeft . navBarRight"
     ;
@@ -19,7 +19,7 @@
 .navRight {
     display: subgrid;
     grid-area: navBarRight;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 10%;
     grid-template-areas: 
     "currentUser logInButton logOutButton"
     ;

@@ -1,7 +1,8 @@
 .userNavWrapper {
     display: grid;
     grid-area: userNav;
-    grid-auto-rows: 1fr 8fr 1fr;
+    background-color: lightgray;
+    grid-template-rows: 1fr 2fr 1fr;
     grid-template-areas: 
     "."
     "userNavBar"
@@ -11,21 +12,101 @@
 
 .userNavButtonsRow {
     display: grid;
+    border: 2px solid #fbfeffe0;
+    margin: -.8em 18em -1em 18em;
+    padding: 0 0 1.1em 0;
     grid-area: userNavBar;
-    grid-template-columns: 1fr 1fr 1fr;
+    box-shadow: .1em .2em 1em .1em #b9b9b9a1;
+    background-color: #cacacad9;
+    grid-template-columns: 1fr 2fr 1fr 2fr 1fr 2fr 1fr;
     grid-template-areas: 
-    "searchPrices showGuitars enterGuitars"
+    ". searchPrices . showGuitars . enterGuitars ."
     ;
 }
 
 .searchForPricesButtonWrapper {
     grid-area: searchPrices;
+    justify-self: center;
+    align-self: center;
 }
 
 .showYourGuitarsButtonWrapper {
     grid-area: showGuitars;
+    justify-self: center;
+    align-self: center;
 }
 
 .enterNewGuitarButtonWrapper {
     grid-area: enterGuitars;
+    justify-self: center;
+    align-self: center;
+}
+
+.searchForPricesButton {
+    background-color: lightskyblue;
+    overflow: hidden;
+    margin-top: 1.2em;
+    padding: 12px 12px;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+    text-transform: none;
+    color: #fff;
+    border: 0 none;
+    border-radius: 4px;
+    font-size: 1em;
+    font-weight: 500;
+    line-height: .8em;
+    width: 10em;
+    justify-content: center;
+    align-self: start;
+    box-shadow: .1em .2em 1em .1em #b9b9b9a1;
+}
+
+.showYourGuitarsButton {
+    background-color: lightskyblue;
+    overflow: hidden;
+    margin-top: 1.2em;
+    padding: 12px 12px;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+    text-transform: none;
+    color: #fff;
+    border: 0 none;
+    border-radius: 4px;
+    font-size: 1em;
+    font-weight: 500;
+    line-height: .8em;
+    width: 10em;
+    justify-content: center;
+    align-self: start;
+    box-shadow: .1em .2em 1em .1em #b9b9b9a1;
+}
+
+.enterNewGuitarButton {
+    background-color: lightskyblue;
+    overflow: hidden;
+    margin-top: 1.2em;
+    padding: 12px 12px;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+    text-transform: none;
+    color: #fff;
+    border: 0 none;
+    border-radius: 4px;
+    font-size: 1em;
+    font-weight: 500;
+    line-height: .8em;
+    width: 10em;
+    justify-content: center;
+    align-self: start;
+    box-shadow: .1em .2em 1em .1em #b9b9b9a1;
 }
