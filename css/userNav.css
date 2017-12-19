@@ -1,7 +1,7 @@
 .userNavWrapper {
     display: grid;
     grid-area: userNav;
-    background-color: lightgray;
+    background-color: #678CB1;
     grid-template-rows: 1fr 2fr 1fr;
     grid-template-areas: 
     "."
@@ -12,12 +12,11 @@
 
 .userNavButtonsRow {
     display: grid;
-    border: 2px solid #fbfeffe0;
+    border: 2px solid #E0E2E4;
     margin: -.8em 18em -1em 18em;
     padding: 0 0 1.1em 0;
     grid-area: userNavBar;
-    box-shadow: .1em .2em 1em .1em #b9b9b9a1;
-    background-color: #cacacad9;
+    background-color: #657b8387;
     grid-template-columns: 1fr 2fr 1fr 2fr 1fr 2fr 1fr;
     grid-template-areas: 
     ". searchPrices . showGuitars . enterGuitars ."
@@ -43,7 +42,7 @@
 }
 
 .searchForPricesButton {
-    background-color: lightskyblue;
+    background-color: #268bd263;
     overflow: hidden;
     margin-top: 1.2em;
     padding: 12px 12px;
@@ -53,8 +52,8 @@
     white-space: nowrap;
     text-decoration: none;
     text-transform: none;
-    color: #fff;
-    border: 0 none;
+    color: #E0E2E4;
+    border: solid 1px #E0E2E4;
     border-radius: 4px;
     font-size: 1em;
     font-weight: 500;
@@ -62,11 +61,10 @@
     width: 10em;
     justify-content: center;
     align-self: start;
-    box-shadow: .1em .2em 1em .1em #b9b9b9a1;
 }
 
 .showYourGuitarsButton {
-    background-color: lightskyblue;
+    background-color: #268bd263;
     overflow: hidden;
     margin-top: 1.2em;
     padding: 12px 12px;
@@ -76,8 +74,8 @@
     white-space: nowrap;
     text-decoration: none;
     text-transform: none;
-    color: #fff;
-    border: 0 none;
+    color: #E0E2E4;
+    border: solid 1px #E0E2E4;
     border-radius: 4px;
     font-size: 1em;
     font-weight: 500;
@@ -85,11 +83,10 @@
     width: 10em;
     justify-content: center;
     align-self: start;
-    box-shadow: .1em .2em 1em .1em #b9b9b9a1;
 }
 
 .enterNewGuitarButton {
-    background-color: lightskyblue;
+    background-color: #268bd263;
     overflow: hidden;
     margin-top: 1.2em;
     padding: 12px 12px;
@@ -99,8 +96,8 @@
     white-space: nowrap;
     text-decoration: none;
     text-transform: none;
-    color: #fff;
-    border: 0 none;
+    color: #E0E2E4;
+    border: solid 1px #E0E2E4;
     border-radius: 4px;
     font-size: 1em;
     font-weight: 500;
@@ -108,5 +105,4 @@
     width: 10em;
     justify-content: center;
     align-self: start;
-    box-shadow: .1em .2em 1em .1em #b9b9b9a1;
 }
