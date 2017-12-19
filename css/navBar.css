@@ -1,6 +1,10 @@
 .navGrid {
     display: grid;
-    background-color: lightskyblue; 
+    max-height: 4em;    
+    background-color: #FFF;
+    margin-top: -1em;
+    padding-bottom: .3em;
+    border-bottom: .3em solid rgba(216, 216, 216, 0.959);
     grid-area: nav;
     grid-template-columns: 1fr 4fr 2fr;
     grid-template-areas: 
@@ -9,7 +13,7 @@
 }
 
 .navLeft {
-    display: subgrid;
+    display: grid;
     grid-area: navBarLeft;
     grid-template-areas: 
     "logo"
@@ -17,20 +21,28 @@
 }
 
 .navRight {
-    display: subgrid;
+    display: grid;
     grid-area: navBarRight;
-    grid-template-columns: 2fr 1fr 10%;
+    grid-template-columns: 2fr 1fr 1fr;
     grid-template-areas: 
     "currentUser logInButton logOutButton"
     ;
 }
 
 .logoWrapper {
-    grid-area: logo; 
+    grid-area: logo;
+    white-space: nowrap;
+    align-self: center;
+    justify-self: center;
+    font-size: 1.4em; 
+    font-weight: 900;
+    color: rgba(155, 155, 155, 0.952);
 }
 
 .currentUserWrapper {
     grid-area: currentUser;
+    align-self: center;
+    justify-content: center;
 }
 
 .logInButtonWrapper {
@@ -39,5 +51,64 @@
 
 .logOutButtonWrapper {
     grid-area: logOutButton;
-} 
+    align-self: center;
+    justify-self: center;
+}
+
+.logInButtonClass {
+    background-color: #FFF;
+    overflow: hidden;
+    padding: .5em;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+    text-transform: none;
+    color: rgb(111, 225, 253);
+    border: solid .3em rgb(111, 225, 253);
+    border-radius: 4px;
+    font-size: .9em;
+    font-weight: 900;
+    line-height: .8em;
+    width: 6em;
+}
+
+.logOutButtonClass {
+    background-color: #FFF;
+    overflow: hidden;
+    padding: .5em;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+    text-transform: none;
+    color: rgb(111, 225, 253);
+    border: solid .3em rgb(111, 225, 253);
+    border-radius: 4px;
+    font-size: .9em;
+    font-weight: 900;
+    line-height: .8em;
+    width: 6em;
+}
+
+.logOutButtonClass:hover {
+    background-color: #FFF;
+    overflow: hidden;
+    padding: .5em;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+    text-transform: none;
+    color: rgba(111, 225, 253, 0.678);
+    border: solid .3em rgba(111, 225, 253, 0.678);
+    border-radius: 4px;
+    font-size: .9em;
+    font-weight: 900;
+    line-height: .8em;
+    width: 6em;
+}
 

@@ -1,6 +1,8 @@
 .basicSearchContentWrapper {
     display: grid;
     background-color: #678CB1;
+    border: .13em solid #E0E2E4;
+    margin: 1.5em 5em 3em 5em;    
     grid-area: body;
     grid-template-columns:1fr 5fr 5fr 5fr 1fr;
     grid-template-rows: 2fr 1fr 6fr 8fr 1fr;
@@ -13,13 +15,11 @@
     ;
 }
 
-
 .advancedSearchLinkWrapper {
     grid-area: adv;
     align-self: center;
     justify-self: center;
 }
-
 
 .searchDivWrapper {
     display: grid;

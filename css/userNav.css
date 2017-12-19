@@ -1,25 +1,29 @@
 .userNavWrapper {
     display: grid;
     grid-area: userNav;
-    background-color: #678CB1;
-    grid-template-rows: 1fr 2fr 1fr;
+    max-height: 3em;
+    margin: .3em 8em 0 8em;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: .85fr 4fr .85fr;
     grid-template-areas: 
-    "."
-    "userNavBar"
-    "."
+    ". . ."
+    ". userNavBar ."
+    ". . ."
     ;
 }
 
 .userNavButtonsRow {
     display: grid;
-    border: 2px solid #E0E2E4;
-    margin: -.8em 18em -1em 18em;
-    padding: 0 0 1.1em 0;
+    border-bottom: .3em solid rgba(216, 216, 216, 0.959);
+    max-height: 4em;
+    background-color: #FFF;
     grid-area: userNavBar;
-    background-color: #657b8387;
     grid-template-columns: 1fr 2fr 1fr 2fr 1fr 2fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas: 
+    ". . . . . . ."
     ". searchPrices . showGuitars . enterGuitars ."
+    ". . . . . . ."
     ;
 }
 
@@ -42,67 +46,115 @@
 }
 
 .searchForPricesButton {
-    background-color: #268bd263;
+    background-color: #FFF;
     overflow: hidden;
-    margin-top: 1.2em;
-    padding: 12px 12px;
+    padding: .5em;
     cursor: pointer;
     user-select: none;
     text-align: center;
     white-space: nowrap;
     text-decoration: none;
     text-transform: none;
-    color: #E0E2E4;
-    border: solid 1px #E0E2E4;
+    color: rgb(111, 225, 253);
+    border: solid .3em rgb(111, 225, 253);
     border-radius: 4px;
-    font-size: 1em;
-    font-weight: 500;
+    font-size: .9em;
+    font-weight: 900;
     line-height: .8em;
-    width: 10em;
-    justify-content: center;
-    align-self: start;
+    width: 11em;
+}
+
+.searchForPricesButton:hover {
+    background-color: #FFF;
+    overflow: hidden;
+    padding: .5em;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+    text-transform: none;
+    color:  rgba(111, 225, 253, 0.644);
+    border: solid .3em rgba(111, 225, 253, 0.644);
+    border-radius: 4px;
+    font-size: .9em;
+    font-weight: 900;
+    line-height: .8em;
+    width: 11em;
 }
 
 .showYourGuitarsButton {
-    background-color: #268bd263;
+    background-color: #FFF;
     overflow: hidden;
-    margin-top: 1.2em;
-    padding: 12px 12px;
+    padding: .5em;
     cursor: pointer;
     user-select: none;
     text-align: center;
     white-space: nowrap;
     text-decoration: none;
     text-transform: none;
-    color: #E0E2E4;
-    border: solid 1px #E0E2E4;
+    color: rgb(111, 225, 253);
+    border: solid .3em rgb(111, 225, 253);
     border-radius: 4px;
-    font-size: 1em;
-    font-weight: 500;
+    font-size: .9em;
+    font-weight: 900;
     line-height: .8em;
-    width: 10em;
-    justify-content: center;
-    align-self: start;
+    width: 11em;
+}
+
+.showYourGuitarsButton:hover {
+    background-color: #FFF;
+    overflow: hidden;
+    padding: .5em;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+    text-transform: none;
+    color:  rgba(111, 225, 253, 0.644);
+    border: solid .3em  rgba(111, 225, 253, 0.644);
+    border-radius: 4px;
+    font-size: .9em;
+    font-weight: 900;
+    line-height: .8em;
+    width: 11em;
 }
 
 .enterNewGuitarButton {
-    background-color: #268bd263;
+    background-color: #FFF;
     overflow: hidden;
-    margin-top: 1.2em;
-    padding: 12px 12px;
+    padding: .5em;
     cursor: pointer;
     user-select: none;
     text-align: center;
     white-space: nowrap;
     text-decoration: none;
     text-transform: none;
-    color: #E0E2E4;
-    border: solid 1px #E0E2E4;
+    color: rgb(111, 225, 253);
+    border: solid .3em rgb(111, 225, 253);
     border-radius: 4px;
-    font-size: 1em;
-    font-weight: 500;
+    font-size: .9em;
+    font-weight: 900;
     line-height: .8em;
-    width: 10em;
-    justify-content: center;
-    align-self: start;
+    width: 11em;
+}
+
+.enterNewGuitarButton:hover {
+    background-color: #FFF;
+    overflow: hidden;
+    padding: .5em;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+    text-transform: none;
+    color:  rgba(111, 225, 253, 0.644);
+    border: solid .3em rgba(111, 225, 253, 0.644);
+    border-radius: 4px;
+    font-size: .9em;
+    font-weight: 900;
+    line-height: .8em;
+    width: 11em;
 }

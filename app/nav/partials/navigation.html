@@ -10,10 +10,10 @@
             <div class="currentUserDisplay"></div>
         </div>
         <div class="logInButtonWrapper">
-            <button ng-if="!isAuthenticated()" ng-click="routeToRegister()">Log In/Sign Up</button>
+            <button ng-if="!isAuthenticated()" class="logInButtonClass" ng-click="routeToRegister()">Log In/Sign Up</button>
         </div>
         <div class="logOutButtonWrapper">
-            <button ng-if="isAuthenticated()" ng-click="logout()">Log Out</button>
+            <button ng-if="isAuthenticated()" class="logOutButtonClass" ng-click="logout()">Log Out</button>
         </div>
     </div>
 </div>
