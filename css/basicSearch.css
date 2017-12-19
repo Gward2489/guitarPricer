@@ -17,6 +17,8 @@
     display: grid;
     grid-area: adv;
     align-self: center;
+    margin-left: .6em;
+    max-height: 11  em;
     justify-self: center;
     grid-template-rows: 1fr 1fr;
     grid-template-areas: 
@@ -27,7 +29,8 @@
 
 .advSearchInstructionsClass {
     grid-area: advInstructions;
-    margin-left: .6em;
+    max-height: 2em;
+    margin-bottom: 2.4em;
     text-align: center;
     color: rgba(155, 155, 155, 0.945);
 }
@@ -123,7 +126,7 @@
 }
 
 .toAdvancedSearchButton {
-    margin-top: .8em;
+    margin-top: 1.3em;
     grid-area: advButton;
     align-self: center;
     justify-self: center;
