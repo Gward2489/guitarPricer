@@ -1,15 +1,13 @@
 .basicSearchContentWrapper {
     display: grid;
-    background-color: #678CB1;
-    border: .13em solid #E0E2E4;
     margin: 1.5em 5em 3em 5em;    
     grid-area: body;
-    grid-template-columns:1fr 5fr 5fr 5fr 1fr;
-    grid-template-rows: 2fr 1fr 6fr 8fr 1fr;
+    grid-template-columns:1fr 5fr 2fr 5fr 5fr;
+    grid-template-rows: 1fr 2fr 4fr 8fr 1fr;
     grid-template-areas: 
-    ". . adv . ."
+    ". . search adv ."
     ". . . . ."
-    ". . search . ."
+    ". . . . ."
     ". . results . ."
     ". . . . ."
     ;
@@ -25,15 +23,15 @@
     display: grid;
     grid-area: search;
     align-self: center;
-    background-color: #657b8387;
+    background-color: #FFF;
     justify-self: center;
-    border: .13em solid #E0E2E4;
     padding: 0 2em 0 2em;
-    grid-template-rows: 4fr 2fr 4fr;
+    border: .3em solid rgba(216, 216, 216, 0.959);
+    grid-template-rows: 4fr 2fr;
+    grid-template-columns: 3fr 1fr;
     grid-template-areas:
-    "title"
-    "basicSearchBar"
-    "basicSearchButton"
+    "title title"
+    "basicSearchBar basicSearchButton"
     ; 
 }
 
@@ -51,13 +49,16 @@
 }
 
 .basicSearchBar {
+    outline: none;
     width: 20em;
     height: 1.4em;
     font-size: 1.3em;
+    border: .1em solid rgba(216, 216, 216, 0.959);
+    border-radius: 7px;
     justify-self: center;
     align-self: center;
     text-align: center;
-    background-color: #E0E2E4;
+    background-color: #FFF;
 }
 
 .basicSearchWrapper {
@@ -70,33 +71,29 @@
 
 .basicSearchButtonWrapper {
     grid-area: basicSearchButton;
-    justify-self: center;
-    align-self: center;
-    margin-top: -1.3em;
-  
+    margin-left: .2em;
 }
 
 .basicSearchButton {
-  background-color: #268bd263;
-  border: solid 1px #E0E2E4;
-  display: flex;
-  overflow: hidden;
-  margin-bottom: -.5em;
-  padding: 12px 12px;
-  cursor: pointer;
-  user-select: none;
-  text-align: center;
-  white-space: nowrap;
-  text-decoration: none;
-  text-transform: none;
-  color: #E0E2E4;
-  border-radius: 4px;
-  font-size: 1.3em;
-  font-weight: 500;
-  line-height: 1.3;
-  width: 7em;
-  justify-content: center;
-  align-items: center;
+    align-self: center;
+    justify-self: center;
+    background-color: #FFF;
+    outline: none;
+    overflow: hidden;
+    padding: .5em;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+    text-transform: none;
+    color: rgb(111, 225, 253);
+    border: solid .3em rgb(111, 225, 253);
+    border-radius: 4px;
+    font-size: .9em;
+    font-weight: 900;
+    line-height: .8em;
+    width: 11em;
 }
 
 .toAdvancedSearchButton {

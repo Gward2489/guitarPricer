@@ -47,6 +47,7 @@
 
 .searchForPricesButton {
     background-color: #FFF;
+    outline: none;
     overflow: hidden;
     padding: .5em;
     cursor: pointer;
@@ -66,6 +67,7 @@
 
 .searchForPricesButton:hover {
     background-color: #FFF;
+    outline: none;
     overflow: hidden;
     padding: .5em;
     cursor: pointer;
@@ -85,6 +87,7 @@
 
 .showYourGuitarsButton {
     background-color: #FFF;
+    outline: none;
     overflow: hidden;
     padding: .5em;
     cursor: pointer;
@@ -104,6 +107,7 @@
 
 .showYourGuitarsButton:hover {
     background-color: #FFF;
+    outline: none;
     overflow: hidden;
     padding: .5em;
     cursor: pointer;
@@ -123,6 +127,7 @@
 
 .enterNewGuitarButton {
     background-color: #FFF;
+    outline: none;
     overflow: hidden;
     padding: .5em;
     cursor: pointer;
@@ -142,6 +147,7 @@
 
 .enterNewGuitarButton:hover {
     background-color: #FFF;
+    outline: none;
     overflow: hidden;
     padding: .5em;
     cursor: pointer;

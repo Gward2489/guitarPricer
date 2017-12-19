@@ -57,6 +57,7 @@
 
 .logInButtonClass {
     background-color: #FFF;
+    outline: none;
     overflow: hidden;
     padding: .5em;
     cursor: pointer;
@@ -76,6 +77,7 @@
 
 .logOutButtonClass {
     background-color: #FFF;
+    outline: none;
     overflow: hidden;
     padding: .5em;
     cursor: pointer;
@@ -95,6 +97,7 @@
 
 .logOutButtonClass:hover {
     background-color: #FFF;
+    outline: none;
     overflow: hidden;
     padding: .5em;
     cursor: pointer;
