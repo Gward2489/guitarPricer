@@ -3,13 +3,10 @@
     margin: 3em 5em 3em 5em;    
     grid-area: body;
     grid-template-columns:1fr 5fr 2fr 5fr 5fr;
-    grid-template-rows: 1fr 2fr 4fr 8fr 1fr;
+    grid-template-rows: 1fr 2fr;
     grid-template-areas: 
     ". . search adv ."
-    ". . . . ."
-    ". . . . ."
-    ". . results . ."
-    ". . . . ."
+    ". . results results ."
     ;
 }
 
@@ -70,6 +67,8 @@
 .basicSearchResultsDisplay {
     display: grid;
     grid-area: results;
+    
+
 }
 
 .basicSearchBar {
@@ -100,6 +99,12 @@
     justify-self: center;
     text-align: center;
     margin-left: .2em;
+}
+
+.basicSearhResultsDisplay {
+    display: grid;
+    grid-area: results;
+
 }
 
 .basicSearchButton {

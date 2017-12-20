@@ -216,6 +216,7 @@ angular
 
                                 let stdDev = this.getStandardDeviation(guitarPricesArray)
                                 let refinedPriceArray = this.removeOutliers(guitarPricesArray, stdDev)
+                                let numberOfMatches = refinedPriceArray.length
                                 let avgPrice = this.getAverage(refinedPriceArray)
                                 let refinedStdDev = this.getStandardDeviation(refinedPriceArray)
                                 let lowPrice = (parseFloat(avgPrice) - parseFloat(refinedStdDev)).toFixed(2)
@@ -227,7 +228,8 @@ angular
                                     {
                                         "avgPrice": avgPrice,
                                         "highPrice": highPrice,
-                                        "lowPrice": lowPrice
+                                        "lowPrice": lowPrice,
+                                        "searchCount": numberOfMatches
                                     }
                                 ]
 

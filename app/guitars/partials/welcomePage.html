@@ -31,12 +31,13 @@
     <div class="basicSearchResultsDisplay">
         <div ng-repeat="prices in resultsArray">
             <div>
-                <h4>Current values for a {{userSearchTitle}}:</h2>
-                <ul>
-                    <li ng-if="isItFalse(prices.lowPrice)">There was only one recent sale for a {{userSearchTitle}}</li>
-                    <li ng-if="isItTrue(prices.avgPrice)">Average Price: ${{prices.avgPrice}}</li>
-                    <li ng-if="isItTrue(prices.lowPrice)">Price Range: ${{prices.lowPrice}} to ${{prices.highPrice}}</li>
-                </ul>
+                <h4>Current values for a {{userSearchTitle}}:</h4>
+                <h5 ng-if="isItTrue(prices.lowPrice)">Based off of {{prices.searchCount}} recent sales</h5>
+            </div>
+            <div>
+                <p ng-if="isItFalse(prices.lowPrice)">There was only one recent sale for a {{userSearchTitle}}</p>
+                <p ng-if="isItTrue(prices.avgPrice)">Average Price: ${{prices.avgPrice}}</p>
+                <p ng-if="isItTrue(prices.lowPrice)">Price Range: ${{prices.lowPrice}} to ${{prices.highPrice}}</p>
             </div>
         </div>
     </div>
