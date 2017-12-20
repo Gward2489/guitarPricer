@@ -1,0 +1,12 @@
+.advancedSearchContentWrapper {
+    display: grid;
+    margin: 3em 5em 3em 5em;    
+    grid-area: body;
+    grid-template-columns:1fr 5fr 2fr 5fr 5fr;
+    grid-template-rows: 1fr 1fr 2fr;
+    grid-template-areas: 
+    ". search search basic ."
+    ". searchTwo searchTwo basic ."
+    ". . results results ."
+    ;
+}

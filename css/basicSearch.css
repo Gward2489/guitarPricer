@@ -10,6 +10,12 @@
     ;
 }
 
+.basicSearchLoadingGif {
+    grid-area: results;
+    justify-self: center;
+    margin-top: 2em;
+}
+
 .advancedSearchLinkWrapper {
     display: grid;
     grid-area: adv;
@@ -37,6 +43,7 @@
     display: grid;
     grid-area: search;
     align-self: center;
+    text-align: center;
     background-color: #FFF;
     justify-self: center;
     padding: 0 2em 0 2em;

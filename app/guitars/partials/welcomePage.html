@@ -24,11 +24,11 @@
         </div>
     </div>
 
-    <div>
+    <div class="basicSearchLoadingGif">
         <img ng-show="loading" src="../images/ajax-loader.gif">
     </div>
 
-    <div class="basicSearchResultsDisplay">
+    <div ng-show="!loading" class="basicSearchResultsDisplay">
         <div class="basicSearchResultsWrapper" ng-repeat="prices in resultsArray">
 
             <div class="basicSearchResultsTitles">

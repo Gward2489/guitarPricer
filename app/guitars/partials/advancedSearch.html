@@ -16,34 +16,22 @@
                         <h6>*required</h6>
                         <input type="text" ng-model="guitarBrandInput">
                     </div>
+                    
                     <div class="modelInputWrapper">
                         <h5>Guitar model</h5>
                         <h6>*required</h6>
                         <input type="text" ng-model="guitarModelInput">
                     </div>
-                    <div>
-                        <h5>Country of Origin</h5>
-                        <h6>(optional)</h6>
-                        <input type="text" ng-model="guitarCountryInput">
-                    </div>
+                    
                     <div class="yearInputWrapper">
                         <h5>Year of Production</h5>
                         <h6>(optional)</h6>
                         <input type="text" ng-model="yearInput">
-                    </div class="guitarOrBassWrapper">
-                        <h5>Guitar or Bass?</h5>
-                        <h6>*required</h6>
-                        <label class="electricButton">
-                            Guitar
-                            <input ng-model="guitarBass" value="guitar" type="radio" name="guitarOrBass">
-                        </label>
-                        <label class="acousticButton">
-                            Bass
-                            <input ng-model="guitarBass" value="bass" type="radio" name="guitarOrBass">
-                        </label>
                     </div>
+                    
                 
                 </div>
+
                 <div class="advSearchRowTwo">
                     <div class="conditionInputWrapper">
                         <h5>Select Instrument Condition</h5>
@@ -81,6 +69,28 @@
                             <input ng-model="vintageCheck" value="no" type="radio" name="vintageSelect">
                         </label>
                     </div>
+                </div>
+                <div class="advSearchRowThree">
+
+                    <div>
+                        <h5>Country of Origin</h5>
+                        <h6>(optional)</h6>
+                        <input type="text" ng-model="guitarCountryInput">
+                    </div>
+
+                    <div class="guitarOrBassWrapper">
+                        <h5>Guitar or Bass?</h5>
+                        <h6>*required</h6>
+                        <label class="guitarRadio">
+                            Guitar
+                            <input ng-model="guitarBass" value="guitar" type="radio" name="guitarOrBass">
+                        </label>
+                        <label class="bassRadio">
+                            Bass
+                            <input ng-model="guitarBass" value="bass" type="radio" name="guitarOrBass">
+                        </label>
+                    </div>
+
                 </div>
             </div>
             <button ng-click="getAdvancedPrice(guitarBrandInput, guitarModelInput, electricAcoustic, vintageCheck, selectedCondition, finishInput, yearInput, guitarBass, guitarCountryInput)">Search</button>
