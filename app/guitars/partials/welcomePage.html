@@ -30,17 +30,25 @@
 
     <div class="basicSearchResultsDisplay">
         <div class="basicSearchResultsWrapper" ng-repeat="prices in resultsArray">
+
             <div class="basicSearchResultsTitles">
                 <h4>Current values for a {{userSearchTitle}}:</h4>
                 <p ng-if="isItTrue(prices.lowPrice)">(based off of {{prices.searchCount}} recent sales)</p>
                 <p ng-if="isItFalse(prices.lowPrice)">(There was only one recent sale for a {{userSearchTitle}})</p>
             </div>
+
             <div class="basicSearchResultsNumbers">
-                <p ng-if="isItTrue(prices.avgPrice) && isItTrue(prices.lowPrice)">Average Price: ${{prices.avgPrice}}</p>
-                <p ng-if="isItTrue(prices.avgPrice) && isItFalse(prices.lowPrice)">Value of recent sale: ${{prices.avgPrice}}</p>
-                <p ng-if="isItTrue(prices.lowPrice)">Range:</p>
-                <p ng-if="isItTrue(prices.lowPrice)">High Price: ${{prices.highPrice}}</p>
-                <p ng-if="isItTrue(prices.lowPrice)">Low Price: ${{prices.lowPrice}}</p>                
+                <p class="averagePriceTitle" ng-if="isItTrue(prices.avgPrice) && isItTrue(prices.lowPrice)">Average Price</p>
+                <p class="averagePriceNumbers" ng-if="isItTrue(prices.avgPrice) && isItTrue(prices.lowPrice)"><span class="averagePrice">${{prices.avgPrice}}</span></p>
+                
+                <p class="highPriceTitle" ng-if="isItTrue(prices.lowPrice)">High Price</p>
+                <p class="highPriceNumbers" ng-if="isItTrue(prices.lowPrice)"><span class="highPrice">${{prices.highPrice}}</span></p>
+
+                <p class="lowPriceTitle" ng-if="isItTrue(prices.lowPrice)">Low Price</p>
+                <p class="lowPriceNumbers" ng-if="isItTrue(prices.lowPrice)"><span class="lowPrice">${{prices.lowPrice}}</span></p>
+
+                <p class="singleSaleTitle" ng-if="isItTrue(prices.avgPrice) && isItFalse(prices.lowPrice)">Price</p>
+                <p class="singleSaleNumbers" ng-if="isItTrue(prices.avgPrice) && isItFalse(prices.lowPrice)"><span class="averagePrice">${{prices.avgPrice}}</span></p>
             </div>
         </div>
     </div>

@@ -14,7 +14,8 @@
     display: grid;
     grid-area: adv;
     align-self: center;
-    margin-left: .6em;
+    margin-left: 1.5em;
+    margin-top: .3em; 
     max-height: 11  em;
     justify-self: center;
     grid-template-rows: 1fr 1fr;
@@ -75,6 +76,7 @@
 .basicSearchResultsWrapper {
     display: grid;
     grid-area: resultsSection;
+    border-top: .3em solid rgba(216, 216, 216, 0.959);    
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
     "resultsTitle resultsNumbers"
@@ -83,10 +85,71 @@
 
 .basicSearchResultsTitles {
     grid-area: resultsTitle;
+    text-align: center;
 }
 
 .basicSearchResultsNumbers {
+    display: grid;
     grid-area: resultsNumbers;
+    grid-template-rows: 1fr 3fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 1em;
+    grid-template-areas: 
+    "averageTitle highTitle lowTitle"
+    "averageNumbers highNumbers lowNumbers"
+    ;
+}
+
+.averagePriceTitle {
+    grid-area: averageTitle;
+    border-bottom: .3em solid rgba(216, 216, 216, 0.959);
+    align-self: center;
+    justify-self: center;    
+}
+
+.averagePriceNumbers {
+    grid-area: averageNumbers;
+    justify-self: center;
+    margin-top: -1.3em; 
+}
+
+.highPriceTitle {
+    grid-area: highTitle;
+    border-bottom: .3em solid rgba(216, 216, 216, 0.959);    
+    align-self: center;
+    justify-self: center;
+}
+
+.highPriceNumbers {
+    grid-area: highNumbers;
+    justify-self: center;
+    margin-top: -1.3em; 
+}
+
+.lowPriceTitle {
+    grid-area: lowTitle; 
+    border-bottom: .3em solid rgba(216, 216, 216, 0.959);    
+    align-self: center;
+    justify-self: center;
+}
+
+.lowPriceNumbers {
+    grid-area: lowNumbers;
+    justify-self: center;
+    margin-top: -1.3em; 
+}
+
+.singleSaleTitle {
+    grid-area:  averageTitle;
+    border-bottom: .3em solid rgba(216, 216, 216, 0.959);    
+    align-self: center;
+    justify-self: center;
+}
+
+.singleSaleNumbers {
+    grid-area: averageNumbers;
+    justify-self: center;
+    margin-top: -1.3em; 
 }
 
 .basicSearchBar {
