@@ -67,8 +67,26 @@
 .basicSearchResultsDisplay {
     display: grid;
     grid-area: results;
-    
+    grid-template-areas: 
+    "resultsSection"
+    ;
+}
 
+.basicSearchResultsWrapper {
+    display: grid;
+    grid-area: resultsSection;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    "resultsTitle resultsNumbers"
+    ;
+}
+
+.basicSearchResultsTitles {
+    grid-area: resultsTitle;
+}
+
+.basicSearchResultsNumbers {
+    grid-area: resultsNumbers;
 }
 
 .basicSearchBar {

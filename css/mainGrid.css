@@ -1,7 +1,7 @@
 .mainGrid {
     display: grid;
     background-color: #FFF;
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif
+    font-family: "Rubik", Arial, Helvetica, sans-serif;
     grid-template-rows: 10% 10% 80%;
     grid-template-areas: 
     "nav"
