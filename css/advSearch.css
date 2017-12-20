@@ -1,12 +1,178 @@
 .advancedSearchContentWrapper {
     display: grid;
-    margin: 3em 5em 3em 5em;    
     grid-area: body;
-    grid-template-columns:1fr 5fr 2fr 5fr 5fr;
-    grid-template-rows: 1fr 1fr 2fr;
+    margin:3em 5em 3em 5em;
+    grid-template-rows: 1fr 1fr;
     grid-template-areas: 
-    ". search search basic ."
-    ". searchTwo searchTwo basic ."
-    ". . results results ."
+    "advSearchArea"
+    "advSearchResults"
     ;
+}
+
+.advancedSearchDivWrapper {
+    display: grid;
+    grid-area: advSearchArea;
+    grid-template-rows: 1fr 4fr 1fr;
+    grid-template-columns: 1fr 6fr 1fr;
+    grid-template-areas: 
+    ". advSearchTitle basicSearchLink"
+    ". advSearchForm ."
+    ". advSearchFooter ."
+    ;
+}
+
+.advancedSearchDivWrapperTwo {
+    display: grid;
+    grid-area: advSearchForm;
+    grid-template-columns:1fr 5fr 5fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+    ". searchFormOne searchFormOne . "
+    ". searchFormTwo searchFormTwo . "
+    ". searchFormThree searchFormThree . "
+    ;
+}
+
+.advSearchRowOne {
+    display: grid;
+    grid-area: searchFormOne;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 3fr;
+    grid-template-areas:
+    "rowOneTitleOne rowOneTitleTwo rowOneTitleThree"
+    "rowOneSubTitleOne rowOneSubTitleTwo rowOneSubTitleThree"
+    "rowOneInputOne rowOneInputTwo rowOneInputThree"
+    ;
+}
+
+.guitarBrandTitle {
+    grid-area: rowOneTitleOne;
+}
+
+.guitarBrandSubTitle {
+    grid-area: rowOneSubTitleOne;
+}
+
+.guitarBrandInput {
+    grid-area: rowOneInputOne;
+}
+
+.guitarModelTitle {
+    grid-area: rowOneTitleTwo;
+}
+
+.guitarModelSubTitle {
+    grid-area: rowOneSubTitleTwo;
+}
+
+.guitarModelInput {
+    grid-area: rowOneInputTwo;
+}
+
+.guitarYearTitle {
+    grid-area: rowOneTitleThree;
+}
+
+.guitarYearSubTitle {
+    grid-area: rowOneSubTitleThree;
+}
+
+.guitarYearInput {
+    grid-area: rowOneInputThree;
+}
+
+.advSearchRowTwo {
+    display: grid;
+    grid-area: searchFormTwo;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 3fr;
+    grid-template-areas:
+    "rowTwoTitleOne rowTwoTitleTwo rowTwoTitleThree"
+    "rowTwoSubTitleOne rowTwoSubTitleTwo rowTwoSubTitleThree"
+    "rowTwoInputOne rowTwoInputTwo rowTwoInputThree"
+    ;
+}
+
+.guitarConditionTitle {
+    grid-area: rowTwoTitleOne;
+}
+
+.guitarConditionSubTitle {
+    grid-area: rowTwoSubTitleOne;
+}
+
+.guitarConditionInput {
+    grid-area: rowTwoInputOne;
+}
+
+.guitarOrBassTitle {
+    grid-area: rowTwoTitleTwo;
+}
+
+.guitarOrBassSubTitle {
+    grid-area: rowTwoSubTitleTwo;
+}
+
+.guitarOrBassInput {
+    grid-area: rowTwoInputTwo;
+}
+
+.electricAcousticTitle {
+    grid-area: rowTwoTitleThree;
+}
+
+.electricAcousticSubTitle {
+    grid-area: rowTwoSubTitleThree;
+}
+
+.electricAcousticInput {
+    grid-area: rowTwoInputThree;
+}
+
+.advSearchRowThree {
+    display: grid;
+    grid-area: searchFormThree;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 3fr;
+    grid-template-areas:
+    "rowThreeTitleOne rowThreeTitleTwo rowThreeTitleThree"
+    "rowThreeSubTitleOne rowThreeSubTitleTwo rowThreeSubTitleThree"
+    "rowThreeInputOne rowThreeInputTwo rowThreeInputThree"
+    ;
+}
+
+.guitarFinishTitle {
+    grid-area: rowThreeTitleOne;
+}
+
+.guitarFinishSubTitle {
+    grid-area: rowThreeSubTitleOne;
+}
+
+.guitarFinishInput {
+    grid-area: rowThreeInputOne;
+}
+
+.guitarCountryTitle {
+    grid-area: rowThreeTitleTwo;
+}
+
+.guitarCountrySubTitle {
+    grid-area: rowThreeSubTitleTwo;
+}
+
+.guitarCountryInput {
+    grid-area: rowThreeInputTwo;
+}
+
+.vintageTitle {
+    grid-area: rowThreeTitleThree;
+}
+
+.vintageSubTitle {
+    grid-area: rowThreeSubTitleThree;
+}
+
+.vintageInput {
+    grid-area: rowThreeInputThree;
 }

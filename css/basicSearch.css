@@ -22,7 +22,7 @@
     align-self: center;
     margin-left: 1.5em;
     margin-top: .3em; 
-    max-height: 11  em;
+    max-height: 11em;
     justify-self: center;
     grid-template-rows: 1fr 1fr;
     grid-template-areas: 
