@@ -32,12 +32,15 @@
         <div class="basicSearchResultsWrapper" ng-repeat="prices in resultsArray">
             <div class="basicSearchResultsTitles">
                 <h4>Current values for a {{userSearchTitle}}:</h4>
-                <h5 ng-if="isItTrue(prices.lowPrice)">Based off of {{prices.searchCount}} recent sales</h5>
+                <p ng-if="isItTrue(prices.lowPrice)">(based off of {{prices.searchCount}} recent sales)</p>
+                <p ng-if="isItFalse(prices.lowPrice)">(There was only one recent sale for a {{userSearchTitle}})</p>
             </div>
             <div class="basicSearchResultsNumbers">
-                <p ng-if="isItFalse(prices.lowPrice)">There was only one recent sale for a {{userSearchTitle}}</p>
-                <p ng-if="isItTrue(prices.avgPrice)">Average Price: ${{prices.avgPrice}}</p>
-                <p ng-if="isItTrue(prices.lowPrice)">Price Range: ${{prices.lowPrice}} to ${{prices.highPrice}}</p>
+                <p ng-if="isItTrue(prices.avgPrice) && isItTrue(prices.lowPrice)">Average Price: ${{prices.avgPrice}}</p>
+                <p ng-if="isItTrue(prices.avgPrice) && isItFalse(prices.lowPrice)">Value of recent sale: ${{prices.avgPrice}}</p>
+                <p ng-if="isItTrue(prices.lowPrice)">Range:</p>
+                <p ng-if="isItTrue(prices.lowPrice)">High Price: ${{prices.highPrice}}</p>
+                <p ng-if="isItTrue(prices.lowPrice)">Low Price: ${{prices.lowPrice}}</p>                
             </div>
         </div>
     </div>

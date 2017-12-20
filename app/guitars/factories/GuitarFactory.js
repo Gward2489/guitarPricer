@@ -208,33 +208,50 @@ angular
                             let initialSearchResults = this.ebayObjToGuitarArray(response)
 
                             if (response.data.findCompletedItemsResponse[0].searchResult[0].item) {
-                        
+                                
+                                
                                 let refinedResultsArray = this.titleFilter(initialSearchResults)
 
+                                if (refinedResultsArray.length > 1) {
 
-                                let guitarPricesArray = this.guitarsToPrices(refinedResultsArray) 
+                                    let guitarPricesArray = this.guitarsToPrices(refinedResultsArray) 
 
-                                let stdDev = this.getStandardDeviation(guitarPricesArray)
-                                let refinedPriceArray = this.removeOutliers(guitarPricesArray, stdDev)
-                                let numberOfMatches = refinedPriceArray.length
-                                let avgPrice = this.getAverage(refinedPriceArray)
-                                let refinedStdDev = this.getStandardDeviation(refinedPriceArray)
-                                let lowPrice = (parseFloat(avgPrice) - parseFloat(refinedStdDev)).toFixed(2)
-                                if (lowPrice < 0) {
-                                    lowPrice = .99
-                                }
-                                let highPrice = (parseFloat(avgPrice) + parseFloat(refinedStdDev)).toFixed(2)
-                                let results = [
-                                    {
-                                        "avgPrice": avgPrice,
-                                        "highPrice": highPrice,
-                                        "lowPrice": lowPrice,
-                                        "searchCount": numberOfMatches
+                                    let stdDev = this.getStandardDeviation(guitarPricesArray)
+                                    let refinedPriceArray = this.removeOutliers(guitarPricesArray, stdDev)
+                                    let numberOfMatches = refinedPriceArray.length
+                                    let avgPrice = this.getAverage(refinedPriceArray)
+                                    let refinedStdDev = this.getStandardDeviation(refinedPriceArray)
+                                    let lowPrice = (parseFloat(avgPrice) - parseFloat(refinedStdDev)).toFixed(2)
+                                    if (lowPrice < 0) {
+                                        lowPrice = .99
                                     }
-                                ]
+                                    let highPrice = (parseFloat(avgPrice) + parseFloat(refinedStdDev)).toFixed(2)
+                                    let results = [
+                                        {
+                                            "avgPrice": avgPrice,
+                                            "highPrice": highPrice,
+                                            "lowPrice": lowPrice,
+                                            "searchCount": numberOfMatches
+                                        }
+                                    ]
 
-                                return results
+                                    return results
 
+                                } else {
+                                    let prices = this.guitarsToPrices(refinedResultsArray)
+                                    let avgPrice = prices[0]
+
+                                    let results = [
+                                        {
+                                            "avgPrice": avgPrice,
+                                            "highPrice": false,
+                                            "lowPrice": false,
+                                            "searchCount": 1
+                                        }
+                                    ]
+
+                                    return results
+                                }
 
                             } else {
                                 alert("no search results")
