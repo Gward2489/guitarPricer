@@ -438,3 +438,13 @@
 }
 
 
+/*button styling attempts*/
+
+input[type="radio"] {
+    display: none;
+}
+
+.honk {
+    background-color: aqua;
+    border-radius: 100%;
+}

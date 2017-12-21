@@ -2,6 +2,8 @@ angular
     .module("GuitarPricerApp")
     .controller("AdvancedSearchCtrl", function($scope, $location, GuitarFactory) {
 
+        console.log($scope.guitarBass)
+        
         $scope.loading = false
         $scope.conditionValues = ["Excellent", "Good", "Usable"]
         $scope.mainPrices = {}
