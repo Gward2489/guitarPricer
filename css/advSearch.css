@@ -1,7 +1,7 @@
 .advancedSearchContentWrapper {
     display: grid;
     grid-area: body;
-    margin:3em 5em 3em 5em;
+    margin: 3em 5em 3em 5em;
     grid-template-rows: 1fr 1fr;
     grid-template-areas: 
     "advSearchArea"
@@ -12,8 +12,8 @@
 .advancedSearchDivWrapper {
     display: grid;
     grid-area: advSearchArea;
-    grid-template-rows: 1fr 4fr 1fr;
-    grid-template-columns: 1fr 6fr 1fr;
+    grid-template-rows: .1fr 4fr 1fr;
+    grid-template-columns: 1fr 4fr 1fr;
     grid-template-areas: 
     ". advSearchTitle basicSearchLink"
     ". advSearchForm ."
@@ -21,15 +21,28 @@
     ;
 }
 
+.basicSearchLinkWrapper {
+    grid-area: basicSearchLink;
+}
+
+.advSearchTitleClass {
+    grid-area: advSearchTitle;
+}
+
+.advSearchButtonClass {
+    grid-area: advSearchFooter;
+    margin-top: 5em;
+}
+
 .advancedSearchDivWrapperTwo {
     display: grid;
     grid-area: advSearchForm;
-    grid-template-columns:1fr 5fr 5fr 1fr;
+    grid-template-columns: 1fr 5fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas: 
-    ". searchFormOne searchFormOne . "
-    ". searchFormTwo searchFormTwo . "
-    ". searchFormThree searchFormThree . "
+    ". searchFormOne . "
+    ". searchFormTwo . "
+    ". searchFormThree . "
     ;
 }
 
@@ -37,142 +50,70 @@
     display: grid;
     grid-area: searchFormOne;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 3fr;
     grid-template-areas:
-    "rowOneTitleOne rowOneTitleTwo rowOneTitleThree"
-    "rowOneSubTitleOne rowOneSubTitleTwo rowOneSubTitleThree"
-    "rowOneInputOne rowOneInputTwo rowOneInputThree"
+    "brand model year"
     ;
 }
 
-.guitarBrandTitle {
-    grid-area: rowOneTitleOne;
+.guitarBrandWrapper {
+    display: grid;
+    grid-area: brand;
 }
 
-.guitarBrandSubTitle {
-    grid-area: rowOneSubTitleOne;
+.guitarModelWrapper {
+    display: grid;
+    grid-area: model;
 }
 
-.guitarBrandInput {
-    grid-area: rowOneInputOne;
-}
-
-.guitarModelTitle {
-    grid-area: rowOneTitleTwo;
-}
-
-.guitarModelSubTitle {
-    grid-area: rowOneSubTitleTwo;
-}
-
-.guitarModelInput {
-    grid-area: rowOneInputTwo;
-}
-
-.guitarYearTitle {
-    grid-area: rowOneTitleThree;
-}
-
-.guitarYearSubTitle {
-    grid-area: rowOneSubTitleThree;
-}
-
-.guitarYearInput {
-    grid-area: rowOneInputThree;
+.guitarYearWrapper {
+    display: grid;
+    grid-area: year;
 }
 
 .advSearchRowTwo {
     display: grid;
     grid-area: searchFormTwo;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 3fr;
-    grid-template-areas:
-    "rowTwoTitleOne rowTwoTitleTwo rowTwoTitleThree"
-    "rowTwoSubTitleOne rowTwoSubTitleTwo rowTwoSubTitleThree"
-    "rowTwoInputOne rowTwoInputTwo rowTwoInputThree"
+    grid-template-areas: 
+    "condition guitarOrBass electricOrAcoustic"
     ;
 }
 
-.guitarConditionTitle {
-    grid-area: rowTwoTitleOne;
+.guitarConditionWrapper {
+    display: grid;
+    grid-area: condition;
 }
 
-.guitarConditionSubTitle {
-    grid-area: rowTwoSubTitleOne;
+.guitarOrBassWrapper {
+    display: grid;
+    grid-area: guitarOrBass;
 }
 
-.guitarConditionInput {
-    grid-area: rowTwoInputOne;
-}
-
-.guitarOrBassTitle {
-    grid-area: rowTwoTitleTwo;
-}
-
-.guitarOrBassSubTitle {
-    grid-area: rowTwoSubTitleTwo;
-}
-
-.guitarOrBassInput {
-    grid-area: rowTwoInputTwo;
-}
-
-.electricAcousticTitle {
-    grid-area: rowTwoTitleThree;
-}
-
-.electricAcousticSubTitle {
-    grid-area: rowTwoSubTitleThree;
-}
-
-.electricAcousticInput {
-    grid-area: rowTwoInputThree;
+.electricAcousticWrapper {
+    display: grid;
+    grid-area: electricOrAcoustic;
 }
 
 .advSearchRowThree {
     display: grid;
     grid-area: searchFormThree;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 3fr;
-    grid-template-areas:
-    "rowThreeTitleOne rowThreeTitleTwo rowThreeTitleThree"
-    "rowThreeSubTitleOne rowThreeSubTitleTwo rowThreeSubTitleThree"
-    "rowThreeInputOne rowThreeInputTwo rowThreeInputThree"
+    grid-template-areas: 
+    "finish country vintage"
     ;
 }
 
-.guitarFinishTitle {
-    grid-area: rowThreeTitleOne;
+.guitarFinishWrapper {
+    display: grid;
+    grid-area: finish;
 }
 
-.guitarFinishSubTitle {
-    grid-area: rowThreeSubTitleOne;
+.guitarCountryWrapper {
+    display: grid;
+    grid-area: country;
 }
 
-.guitarFinishInput {
-    grid-area: rowThreeInputOne;
-}
-
-.guitarCountryTitle {
-    grid-area: rowThreeTitleTwo;
-}
-
-.guitarCountrySubTitle {
-    grid-area: rowThreeSubTitleTwo;
-}
-
-.guitarCountryInput {
-    grid-area: rowThreeInputTwo;
-}
-
-.vintageTitle {
-    grid-area: rowThreeTitleThree;
-}
-
-.vintageSubTitle {
-    grid-area: rowThreeSubTitleThree;
-}
-
-.vintageInput {
-    grid-area: rowThreeInputThree;
+.vintageWrapper {
+    display: grid;
+    grid-area: vintage;
 }
