@@ -1,3 +1,4 @@
+/* main grid for adv search */
 .advancedSearchContentWrapper {
     display: grid;
     grid-area: body;
@@ -9,6 +10,7 @@
     ;
 }
 
+/* grid for searching area */
 .advancedSearchDivWrapper {
     display: grid;
     grid-area: advSearchArea;
@@ -21,6 +23,7 @@
     ;
 }
 
+/* place title and basic search link */
 .basicSearchLinkWrapper {
     grid-area: basicSearchLink;
 }
@@ -30,6 +33,7 @@
     justify-self: center
 }
 
+/* grid for searching area footer */
 .advSearchFooterWrapper {
     display: grid;
     grid-area: advSearchFooter;
@@ -40,6 +44,7 @@
     ;
 }
 
+/* place footer contents */
 .advSearchButtonWrapper {
     grid-area: advSearchButton;
     align-self: center;
@@ -107,8 +112,7 @@
     width: 7em;
 }
 
-
-
+/* grid for rows of the search form */
 .advancedSearchDivWrapperTwo {
     display: grid;
     max-height: 19em;
@@ -125,6 +129,9 @@
     ". searchFormThree . "
     ;
 }
+
+/* establish row one grid, establish grid for each form section, 
+place elemets in form sections, place form sections in rows */
 
 .advSearchRowOne {
     display: grid;
@@ -166,6 +173,11 @@
     grid-area: brandInput;
     justify-self: center;
     margin-top: -1em;
+    text-align: center;
+    outline: none;
+    border-radius: 7px;
+    width: 10em;
+    border: .1em solid rgba(216, 216, 216, 0.959);
 }
 
 .guitarModelWrapper {
@@ -196,6 +208,11 @@
     grid-area: modelInput;
     justify-self: center;
     margin-top: -1em;
+    text-align: center;
+    outline: none;
+    border-radius: 7px;
+    width: 10em;
+    border: .1em solid rgba(216, 216, 216, 0.959);
 }
 
 .guitarYearWrapper {
@@ -218,6 +235,7 @@
 
 .guitarYearSubTitle {
     grid-area: yearSubTitle;
+    white-space: nowrap;
     font-size: .9em;
     text-align: center;
     margin-top: -1em;
@@ -227,8 +245,14 @@
     grid-area: yearInput;
     justify-self: center;
     margin-top: -.8em;
+    text-align: center;
+    outline: none;
+    border-radius: 7px;
+    width: 10em;
+    border: .1em solid rgba(216, 216, 216, 0.959);
 }
 
+/* row two */
 .advSearchRowTwo {
     display: grid;
     grid-area: searchFormTwo;
@@ -255,6 +279,7 @@
 
 .guitarConditionTitle {
     grid-area: conditionTitle;
+    white-space: nowrap;
     border-bottom: .2em solid rgba(216, 216, 216, 0.959);
     text-align: center;
 }
@@ -269,6 +294,9 @@
     grid-area: conditionInput;
     justify-self: center;
     margin-top: -1em;
+    outline: none;
+    border-radius: 7px;
+    border: .1em solid rgba(216, 216, 216, 0.959);
 }
 
 .guitarOrBassWrapper {
@@ -285,6 +313,7 @@
 
 .guitarOrBassTitle {
     grid-area: guitarOrBassTitle;
+    white-space: nowrap;
     border-bottom: .2em solid rgba(216, 216, 216, 0.959);
     justify-self: center;
 }
@@ -297,6 +326,7 @@
 
 .guitarOrBassInput {
     grid-area: guitarOrBassInput;
+    white-space: nowrap;
     justify-self: center;
     margin-top: -.4em;
 }
@@ -317,6 +347,7 @@
     grid-area: electricOrAcousticTitle;
     border-bottom: .2em solid rgba(216, 216, 216, 0.959);
     justify-self: center;
+    white-space: nowrap;
 }
 
 .electricAcousticSubTitle {
@@ -333,6 +364,7 @@
     margin-top: -.6em;
 }
 
+/* row three */
 .advSearchRowThree {
     display: grid;
     grid-column-gap: 1em;
@@ -359,6 +391,7 @@
     grid-area: finishTitle;
     border-bottom: .2em solid rgba(216, 216, 216, 0.959);
     justify-self: center;
+    white-space: nowrap;
 }
 
 .guitarFinishSubTitle {
@@ -366,12 +399,18 @@
     justify-self: center;
     font-size: .9em;
     margin-top: -1em;
+    white-space: nowrap;
 }
 
 .guitarFinishInput {
     grid-area: finishInput;
     justify-self: center;
     margin-top: -1em;
+    text-align: center;
+    outline: none;
+    border-radius: 7px;
+    width: 10em;
+    border: .1em solid rgba(216, 216, 216, 0.959);
 }
 
 .guitarCountryWrapper {
@@ -390,6 +429,7 @@
     grid-area: countryTitle;
     border-bottom: .2em solid rgba(216, 216, 216, 0.959);
     justify-self: center;
+    white-space: nowrap;
 }
 
 .guitarCountrySubTitle {
@@ -397,12 +437,18 @@
     justify-self: center;
     font-size: .9em;
     margin-top: -1em;
+    white-space: nowrap;
 }
 
 .guitarCountryInput {
     grid-area: countryInput;
     justify-self: center;
     margin-top: -1em;
+    text-align: center;
+    outline: none;
+    border-radius: 7px;
+    width: 10em;
+    border: .1em solid rgba(216, 216, 216, 0.959);
 }
 
 .vintageWrapper {
@@ -422,6 +468,7 @@
     justify-self: center;
     border-bottom: .2em solid rgba(216, 216, 216, 0.959);
     text-align: center;
+    white-space: nowrap;
 }
 
 .vintageSubTitle {
@@ -429,16 +476,18 @@
     font-size: .8em;
     justify-self: center;
     margin-top: -1em;
+    white-space: nowrap;
 }
 
 .vintageInput {
     grid-area: vintageInput;
     justify-self: center;
     margin-top: -.5em;
+    white-space: nowrap;
 }
 
 
-/*button styling attempts*/
+/*radio buttons and select bar stylings*/
 
 input[type="radio"] {
     display: none;
@@ -447,4 +496,9 @@ input[type="radio"] {
 .honk {
     background-color: aqua;
     border-radius: 100%;
+}
+
+select {
+    background-color: #ffffff00;    
+    outline: none;
 }
