@@ -1,7 +1,7 @@
 .advancedSearchContentWrapper {
     display: grid;
     grid-area: body;
-    margin: 3em 5em 3em 5em;
+    margin: 1em 5em 3em 5em;
     grid-template-rows: 1fr 1fr;
     grid-template-areas: 
     "advSearchArea"
@@ -27,16 +27,96 @@
 
 .advSearchTitleClass {
     grid-area: advSearchTitle;
+    justify-self: center
+}
+
+.advSearchFooterWrapper {
+    display: grid;
+    grid-area: advSearchFooter;
+    margin: 0 9em 0 9em;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "advSearchButton basicLinkTitle basicLink"
+    ;
+}
+
+.advSearchButtonWrapper {
+    grid-area: advSearchButton;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+}
+
+.basicSearchLinkTitle {
+    grid-area: basicLinkTitle;
+    align-self: center;
+    justify-self: end;
+    text-align: left;
+}
+
+.basicSearchLinkWrapper {
+    grid-area: basicLink;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+}
+
+.basicSearchLinkButton {
+    grid-area: advButton;
+    align-self: center;
+    justify-self: center;
+    background-color: #FFF;
+    outline: none;
+    overflow: hidden;
+    padding: .5em;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+    text-transform: none;
+    color: rgb(111, 225, 253);
+    border: solid .3em rgb(111, 225, 253);
+    border-radius: 4px;
+    font-size: .9em;
+    font-weight: 900;
+    line-height: .8em;
+    width: 9em;
 }
 
 .advSearchButtonClass {
-    grid-area: advSearchFooter;
-    margin-top: 5em;
+    grid-area: advButton;
+    align-self: center;
+    justify-self: center;
+    background-color: #FFF;
+    outline: none;
+    overflow: hidden;
+    padding: .5em;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+    text-transform: none;
+    color: rgb(111, 225, 253);
+    border: solid .3em rgb(111, 225, 253);
+    border-radius: 4px;
+    font-size: .9em;
+    font-weight: 900;
+    line-height: .8em;
+    width: 7em;
 }
+
+
 
 .advancedSearchDivWrapperTwo {
     display: grid;
-    grid-area: advSearchForm;
+    max-height: 19em;
+    margin: 0 10em 0 10em;
+    padding: 0 1em 0 1em;
+    grid-area: advSearchForm; 
+    border: .3em solid rgba(216, 216, 216, 0.959);
+    border-radius: 2em;
     grid-template-columns: 1fr 5fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas: 
@@ -48,7 +128,10 @@
 
 .advSearchRowOne {
     display: grid;
+    padding-bottom: 1.8em;
+    border-bottom: .2em solid rgba(111, 225, 253, 0.67);
     grid-area: searchFormOne;
+    grid-column-gap: 1em;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
     "brand model year"
@@ -58,21 +141,100 @@
 .guitarBrandWrapper {
     display: grid;
     grid-area: brand;
+    max-height: 2em;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+    "brandTitle"
+    "brandSubTitle"
+    "brandInput"
+    ;
+}
+
+.guitarBrandTitle {
+    grid-area: brandTitle;
+    justify-self: center;
+    border-bottom: .2em solid rgba(216, 216, 216, 0.959);
+}
+
+.guitarBrandSubTitle {
+    grid-area: brandSubTitle;
+    justify-self: center;
+    margin-top: -1em;
+}
+
+.guitarBrandInput {
+    grid-area: brandInput;
+    justify-self: center;
+    margin-top: -1em;
 }
 
 .guitarModelWrapper {
     display: grid;
     grid-area: model;
+    max-height: 4em;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+    "modelTitle"
+    "modelSubTitle"
+    "modelInput"
+    ;
+}
+
+.guitarModelTitle {
+    grid-area: modelTitle;
+    border-bottom: .2em solid rgba(216, 216, 216, 0.959);
+    justify-self: center;
+}
+
+.guitarModelSubTitle {
+    grid-area: modelSubTitle;
+    justify-self: center;
+    margin-top: -1em;
+}
+
+.guitarModelInput {
+    grid-area: modelInput;
+    justify-self: center;
+    margin-top: -1em;
 }
 
 .guitarYearWrapper {
     display: grid;
     grid-area: year;
+    max-height: 4em;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+    "yearTitle"
+    "yearSubTitle"
+    "yearInput"
+    ;
+}
+
+.guitarYearTitle {
+    grid-area: yearTitle;
+    border-bottom: .2em solid rgba(216, 216, 216, 0.959);
+    justify-self: center;
+}
+
+.guitarYearSubTitle {
+    grid-area: yearSubTitle;
+    font-size: .9em;
+    text-align: center;
+    margin-top: -1em;
+}
+
+.guitarYearInput {
+    grid-area: yearInput;
+    justify-self: center;
+    margin-top: -.8em;
 }
 
 .advSearchRowTwo {
     display: grid;
     grid-area: searchFormTwo;
+    padding-bottom: 3em;
+    border-bottom: .2em solid rgba(111, 225, 253, 0.67);
+    grid-column-gap: 1em;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: 
     "condition guitarOrBass electricOrAcoustic"
@@ -82,20 +244,98 @@
 .guitarConditionWrapper {
     display: grid;
     grid-area: condition;
+    max-height: 4em;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+    "conditionTitle"
+    "conditionSubTitle"
+    "conditionInput"
+    ;
+}
+
+.guitarConditionTitle {
+    grid-area: conditionTitle;
+    border-bottom: .2em solid rgba(216, 216, 216, 0.959);
+    text-align: center;
+}
+
+.guitarConditionSubTitle {
+    grid-area: conditionSubTitle;
+    justify-self: center;
+    margin-top: -1em;
+}
+
+.guitarConditionInput {
+    grid-area: conditionInput;
+    justify-self: center;
+    margin-top: -1em;
 }
 
 .guitarOrBassWrapper {
     display: grid;
     grid-area: guitarOrBass;
+    max-height: 4em;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+    "guitarOrBassTitle"
+    "guitarOrBassSubTitle"
+    "guitarOrBassInput"
+    ;
+}
+
+.guitarOrBassTitle {
+    grid-area: guitarOrBassTitle;
+    border-bottom: .2em solid rgba(216, 216, 216, 0.959);
+    justify-self: center;
+}
+
+.guitarOrBassSubTitle {
+    grid-area: guitarOrBassSubTitle;
+    justify-self: center;
+    margin-top: -1em;  
+}
+
+.guitarOrBassInput {
+    grid-area: guitarOrBassInput;
+    justify-self: center;
+    margin-top: -.4em;
 }
 
 .electricAcousticWrapper {
     display: grid;
+    max-height: 4em;
     grid-area: electricOrAcoustic;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+    "electricOrAcousticTitle"
+    "electricOrAcousticSubTitle"
+    "electricOrAcousticInput"
+    ;
+}
+
+.electricAcousticTitle {
+    grid-area: electricOrAcousticTitle;
+    border-bottom: .2em solid rgba(216, 216, 216, 0.959);
+    justify-self: center;
+}
+
+.electricAcousticSubTitle {
+    grid-area: electricOrAcousticSubTitle;
+    text-align: center;
+    font-size: .9em;
+    margin-top: -1em;
+}
+
+.electricAcousticInput {
+    grid-area: electricOrAcousticInput;
+    white-space: nowrap;
+    justify-self: center;
+    margin-top: -.6em;
 }
 
 .advSearchRowThree {
     display: grid;
+    grid-column-gap: 1em;
     grid-area: searchFormThree;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: 
@@ -106,14 +346,95 @@
 .guitarFinishWrapper {
     display: grid;
     grid-area: finish;
+    max-height: 4em;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+    "finishTitle"
+    "finishSubTitle"
+    "finishInput"
+    ;
+}
+
+.guitarFinishTitle {
+    grid-area: finishTitle;
+    border-bottom: .2em solid rgba(216, 216, 216, 0.959);
+    justify-self: center;
+}
+
+.guitarFinishSubTitle {
+    grid-area: finishSubTitle;
+    justify-self: center;
+    font-size: .9em;
+    margin-top: -1em;
+}
+
+.guitarFinishInput {
+    grid-area: finishInput;
+    justify-self: center;
+    margin-top: -1em;
 }
 
 .guitarCountryWrapper {
     display: grid;
     grid-area: country;
+    max-height: 4em;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+    "countryTitle"
+    "countrySubTitle"
+    "countryInput"
+    ;
+}
+
+.guitarCountryTitle {
+    grid-area: countryTitle;
+    border-bottom: .2em solid rgba(216, 216, 216, 0.959);
+    justify-self: center;
+}
+
+.guitarCountrySubTitle {
+    grid-area: countrySubTitle;
+    justify-self: center;
+    font-size: .9em;
+    margin-top: -1em;
+}
+
+.guitarCountryInput {
+    grid-area: countryInput;
+    justify-self: center;
+    margin-top: -1em;
 }
 
 .vintageWrapper {
     display: grid;
     grid-area: vintage;
+    max-height: 4em;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+    "vintageTitle"
+    "vintageSubTitle"
+    "vintageInput"
+    ;
 }
+
+.vintageTitle {
+    grid-area: vintageTitle;
+    justify-self: center;
+    border-bottom: .2em solid rgba(216, 216, 216, 0.959);
+    text-align: center;
+}
+
+.vintageSubTitle {
+    grid-area: vintageSubTitle;
+    font-size: .8em;
+    justify-self: center;
+    margin-top: -1em;
+}
+
+.vintageInput {
+    grid-area: vintageInput;
+    justify-self: center;
+    margin-top: -.5em;
+}
+
+

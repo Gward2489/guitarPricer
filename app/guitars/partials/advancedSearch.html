@@ -6,11 +6,8 @@
     
     <div class="advancedSearchDivWrapper">
         
-            <div class="basicSearchLinkWrapper">
-                <button ng-click="toBasicSearch()">Basic Search</button>
-            </div>
 
-            <h3 class="advSearchTitleClass">Advanced Search:</h3>
+            <h3 class="advSearchTitleClass">Advanced Search</h3>
 
             <div class="advancedSearchDivWrapperTwo">
 
@@ -39,7 +36,7 @@
                 <div class="advSearchRowTwo">
 
                     <div class="guitarConditionWrapper">
-                        <p class="guitarConditionTitle">Select Instrument Condition</p>
+                        <p class="guitarConditionTitle">Instrument Condition</p>
                         <p class="guitarConditionSubTitle">*required</p>
                         <select class="guitarConditionInput" ng-options="value for value in conditionValues" ng-model="selectedCondition">
                             <option value="">select condition</option>
@@ -63,7 +60,7 @@
 
                     <div class="electricAcousticWrapper">
                         <p class="electricAcousticTitle">Electric or Acoustic?</p>
-                        <p class="electricAcousticSubTitle">(if guitar is acoustic with an electric pickup, select acoustic)</p>
+                        <p class="electricAcousticSubTitle">(check acoustic for acoustics w/ pickups)</p>
                         <div class="electricAcousticInput">
                             <label class="electricButton">
                                 Electric
@@ -93,8 +90,8 @@
                         </div>
 
                         <div class="vintageWrapper">
-                            <p class="vintageTitle">Is it vintage?(30 years or older)</p>
-                            <p class="vintageSubTitle">*required</p>
+                            <p class="vintageTitle">Is it vintage?</p>
+                            <p class="vintageSubTitle">(30+ years old)*required</p>
                             <div class="vintageInput">
                                 <label class="vintageYesButton">
                                     Yes
@@ -108,7 +105,19 @@
                         </div>
                 </div>
             </div>
-            <button class="advSearchButtonClass" ng-click="getAdvancedPrice(guitarBrandInput, guitarModelInput, electricAcoustic, vintageCheck, selectedCondition, finishInput, yearInput, guitarBass, guitarCountryInput)">Search</button>
+
+            <div class="advSearchFooterWrapper">
+                <div class="basicSearchLinkWrapper">
+                    <button class="basicSearchLinkButton" ng-click="toBasicSearch()">Basic Search</button>
+                </div>
+
+                <p class="basicSearchLinkTitle">Return to basic search</p>
+
+                <div class="advSearchButtonWrapper">
+                    <button class="advSearchButtonClass" ng-click="getAdvancedPrice(guitarBrandInput, guitarModelInput, electricAcoustic, vintageCheck, selectedCondition, finishInput, yearInput, guitarBass, guitarCountryInput)">Search</button>
+                </div>
+            </div>
+
         <div>
             <img ng-show="loading" src="../images/ajax-loader.gif">
         </div>

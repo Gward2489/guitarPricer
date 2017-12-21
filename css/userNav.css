@@ -16,6 +16,7 @@
     display: grid;
     border-bottom: .3em solid rgba(216, 216, 216, 0.959);
     max-height: 4em;
+    grid-column-gap: 1em;
     background-color: #FFF;
     grid-area: userNavBar;
     grid-template-columns: 1fr 2fr 1fr 2fr 1fr 2fr 1fr;
