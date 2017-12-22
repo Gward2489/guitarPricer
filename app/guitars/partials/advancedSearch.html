@@ -3,8 +3,14 @@
 <div class="advancedSearchContentWrapper">
    
     <div class="advancedSearchDivWrapper">
-        
-            <h3 class="advSearchTitleClass">Advanced Search</h3>
+
+            <div class="searchHeaderWrapper">
+                <h3 class="advSearchTitleClass">Advanced Search</h3>
+                <div class="basicSearchLinkWrapper">
+                    <p class="basicSearchLinkTitle">Return to basic search</p>
+                    <button class="basicSearchLinkButton" ng-click="toBasicSearch()">Basic Search</button>
+                </div>
+            </div>
 
             <div class="advancedSearchDivWrapperTwo">
 
@@ -140,12 +146,6 @@
             </div>
 
             <div class="advSearchFooterWrapper">
-                <div class="basicSearchLinkWrapper">
-                    <button class="basicSearchLinkButton" ng-click="toBasicSearch()">Basic Search</button>
-                </div>
-
-                <p class="basicSearchLinkTitle">Return to basic search</p>
-
                 <div class="advSearchButtonWrapper">
                     <button class="advSearchButtonClass" ng-click="getAdvancedPrice(guitarBrandInput, guitarModelInput, electricAcoustic, vintageCheck, selectedCondition, finishInput, yearInput, guitarBass, guitarCountryInput)">Search</button>
                 </div>

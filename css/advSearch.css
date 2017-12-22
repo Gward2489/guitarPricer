@@ -15,21 +15,25 @@
     display: grid;
     grid-area: advSearchArea;
     grid-template-rows: .1fr 4fr 1fr;
-    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-columns: 5fr 4fr 5fr;
     grid-template-areas: 
-    ". advSearchTitle basicSearchLink"
+    ". advSearchTitle ."
     ". advSearchForm ."
     ". advSearchFooter ."
     ;
 }
 
-/* place title and basic search link */
-.basicSearchLinkWrapper {
-    grid-area: basicSearchLink;
+.searchHeaderWrapper {
+    grid-area: advSearchTitle;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas: 
+    ". advSearchAreaTitle basicSearchLink"
 }
+/* place title and basic search link */
 
 .advSearchTitleClass {
-    grid-area: advSearchTitle;
+    grid-area: advSearchAreaTitle;
     justify-self: center
 }
 
@@ -37,37 +41,47 @@
 .advSearchFooterWrapper {
     display: grid;
     grid-area: advSearchFooter;
-    margin: 0 9em 0 9em;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
     grid-template-areas: 
-    "advSearchButton basicLinkTitle basicLink"
+    ". searchNow ."
     ;
 }
 
 /* place footer contents */
 .advSearchButtonWrapper {
-    grid-area: advSearchButton;
+    grid-area: searchNow;
     align-self: center;
     justify-self: center;
     text-align: center;
 }
 
 .basicSearchLinkTitle {
-    grid-area: basicLinkTitle;
+    grid-area: theTitle;
+    font-size: .7em;
     align-self: center;
     justify-self: end;
-    text-align: left;
+    text-align: center;
+    white-space: nowrap;
+    border-bottom: .1em solid rgba(216, 216, 216, 0.959);
 }
 
 .basicSearchLinkWrapper {
-    grid-area: basicLink;
+    display: grid;
+    margin-top: -2em;
+    max-height: 2em;
+    grid-area: basicSearchLink;
+    grid-template-rows: 1fr 1fr;
     align-self: center;
     justify-self: center;
     text-align: center;
+    grid-template-areas: 
+    "theTitle"
+    "theLink"
+    ;
 }
 
 .basicSearchLinkButton {
-    grid-area: advButton;
+    grid-area: theLink;
     align-self: center;
     justify-self: center;
     background-color: #FFF;
@@ -83,7 +97,7 @@
     color: rgb(111, 225, 253);
     border: solid .3em rgb(111, 225, 253);
     border-radius: 4px;
-    font-size: .9em;
+    font-size: .6em;
     font-weight: 900;
     line-height: .8em;
     width: 9em;
@@ -116,8 +130,7 @@
 .advancedSearchDivWrapperTwo {
     display: grid;
     max-height: 19em;
-    margin: 0 10em 0 10em;
-    padding: 0 1em 0 1em;
+    padding: 1em;
     grid-area: advSearchForm; 
     border: .3em solid rgba(216, 216, 216, 0.959);
     border-radius: 2em;
@@ -138,7 +151,7 @@ place elemets in form sections, place form sections in rows */
     padding-bottom: 1.8em;
     border-bottom: .2em solid rgba(111, 225, 253, 0.67);
     grid-area: searchFormOne;
-    grid-column-gap: 1em;
+    grid-column-gap: 3em;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
     "brand model year"
@@ -258,7 +271,7 @@ place elemets in form sections, place form sections in rows */
     grid-area: searchFormTwo;
     padding-bottom: 3em;
     border-bottom: .2em solid rgba(111, 225, 253, 0.67);
-    grid-column-gap: 1em;
+    grid-column-gap: 3em;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: 
     "condition guitarOrBass electricOrAcoustic"
@@ -367,7 +380,7 @@ place elemets in form sections, place form sections in rows */
 /* row three */
 .advSearchRowThree {
     display: grid;
-    grid-column-gap: 1em;
+    grid-column-gap: 3em;
     grid-area: searchFormThree;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: 
