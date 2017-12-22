@@ -14,7 +14,7 @@
 .advancedSearchDivWrapper {
     display: grid;
     grid-area: advSearchArea;
-    grid-template-rows: .1fr 4fr 1fr;
+    grid-template-rows: 1fr 4fr 1fr;
     grid-template-columns: 5fr 4fr 5fr;
     grid-template-areas: 
     ". advSearchTitle ."
@@ -25,16 +25,37 @@
 
 .searchHeaderWrapper {
     grid-area: advSearchTitle;
+    padding: 1.4em 1em 1em 1em;
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    margin: 0 -3em 0 -3em;
+    border-bottom: .3em solid rgba(216, 216, 216, 0.959);
+    grid-template-columns: 1fr 6fr 1.3fr;
     grid-template-areas: 
     ". advSearchAreaTitle basicSearchLink"
 }
 /* place title and basic search link */
 
-.advSearchTitleClass {
+.advSearchTitleWrapper {
     grid-area: advSearchAreaTitle;
-    justify-self: center
+    margin: .6em 0 .4em 0;
+    padding-right: 3em;
+    justify-self: center; 
+    border-right: .3em solid rgba(216, 216, 216, 0.959);
+ 
+}
+
+.advSearchTitleClass {
+    color: rgba(155, 155, 155, 0.952);
+    font-size: 1.8em;
+    justify-self: center;
+    text-align: center;
+}
+
+.advSearchInstructions {
+    margin-top: -1.7em;
+    text-align: center;
+    font-size: 1em;
+    color: rgba(90, 90, 90, 0.952);
 }
 
 /* grid for searching area footer */
@@ -57,18 +78,19 @@
 
 .basicSearchLinkTitle {
     grid-area: theTitle;
-    font-size: .7em;
-    align-self: center;
-    justify-self: end;
-    text-align: center;
-    white-space: nowrap;
-    border-bottom: .1em solid rgba(216, 216, 216, 0.959);
+    margin-top: -2em;
+    padding-bottom: 1.5em;
+    font-size: .9em;
+    max-height: 2em;
+    margin-bottom: 2.4em;
+    color: rgba(155, 155, 155, 0.945);
 }
 
 .basicSearchLinkWrapper {
     display: grid;
-    margin-top: -2em;
+    padding-left: 2em;
     max-height: 2em;
+    width: 10em;
     grid-area: basicSearchLink;
     grid-template-rows: 1fr 1fr;
     align-self: center;
@@ -83,6 +105,7 @@
 .basicSearchLinkButton {
     grid-area: theLink;
     align-self: center;
+    margin-top: .2em;
     justify-self: center;
     background-color: #FFF;
     outline: none;
@@ -97,7 +120,7 @@
     color: rgb(111, 225, 253);
     border: solid .3em rgb(111, 225, 253);
     border-radius: 4px;
-    font-size: .6em;
+    font-size: .9em;
     font-weight: 900;
     line-height: .8em;
     width: 9em;
@@ -129,11 +152,8 @@
 /* grid for rows of the search form */
 .advancedSearchDivWrapperTwo {
     display: grid;
-    max-height: 19em;
-    padding: 1em;
+    max-height: 20em;
     grid-area: advSearchForm; 
-    border: .3em solid rgba(216, 216, 216, 0.959);
-    border-radius: 2em;
     grid-template-columns: 1fr 5fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas: 
@@ -149,9 +169,8 @@ place elemets in form sections, place form sections in rows */
 .advSearchRowOne {
     display: grid;
     padding-bottom: 1.8em;
-    border-bottom: .2em solid rgba(111, 225, 253, 0.67);
     grid-area: searchFormOne;
-    grid-column-gap: 3em;
+    grid-column-gap: 4em;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
     "brand model year"
@@ -270,8 +289,7 @@ place elemets in form sections, place form sections in rows */
     display: grid;
     grid-area: searchFormTwo;
     padding-bottom: 3em;
-    border-bottom: .2em solid rgba(111, 225, 253, 0.67);
-    grid-column-gap: 3em;
+    grid-column-gap: 4em;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: 
     "condition guitarOrBass electricOrAcoustic"
@@ -380,7 +398,7 @@ place elemets in form sections, place form sections in rows */
 /* row three */
 .advSearchRowThree {
     display: grid;
-    grid-column-gap: 3em;
+    grid-column-gap: 4em;
     grid-area: searchFormThree;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: 
@@ -498,7 +516,6 @@ place elemets in form sections, place form sections in rows */
     margin-top: -.5em;
     white-space: nowrap;
 }
-
 
 /*radio buttons and select bar stylings*/
 
