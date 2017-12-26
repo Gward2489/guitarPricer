@@ -489,14 +489,13 @@ place elemets in form sections, place form sections in rows */
     grid-area: countrySubTitle;
     justify-self: center;
     font-size: .9em;
-    margin-top: -1em;
+    margin-top: -.8em;
     white-space: nowrap;
 }
 
 .guitarCountryInput {
     grid-area: countryInput;
     justify-self: center;
-    margin-top: .3em;
     text-align: center;
     outline: none;
     border-radius: 7px;
