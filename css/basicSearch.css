@@ -1,6 +1,6 @@
 .basicSearchContentWrapper {
     display: grid;
-    margin: 3em 5em 3em 5em;    
+    margin: 1.5em 5em 3em 5em;    
     grid-area: body;
     grid-template-columns:1fr 5fr 2fr 5fr 5fr;
     grid-template-rows: 1fr 2fr;
@@ -82,6 +82,7 @@
 
 .basicSearchResultsWrapper {
     display: grid;
+    margin-top: .3em;
     grid-area: resultsSection;
     border-top: .3em solid rgba(216, 216, 216, 0.959);    
     grid-template-columns: 1fr 1fr;

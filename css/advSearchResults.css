@@ -1,0 +1,57 @@
+.advancedSearchResultsDisplayWrapper {
+    display: grid;
+    grid-area: advSearchResults;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "resultsDisplay"
+    ;
+}
+
+.advancedSearchResultsDisplay {
+    display: grid;
+    grid-area: resultsDisplay;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "generalTitle"    
+    "resultsWrapper"
+    ;
+}
+
+.resultsWrapper {
+    display: grid;
+    grid-area: resultsWrapper;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "main condition finish year country"
+    ;
+}
+
+.generalPriceHeader {
+    display: grid;
+    grid-area: generalTitle;
+}
+
+.mainPrices {
+    display: grid;
+    grid-area: main;
+}
+
+
+.conditionPrices {
+    display: grid;
+    grid-area: condition;
+}
+
+.finishPrices {
+    display: grid;
+    grid-area: finish;
+}
+
+.yearPrices {
+    display: grid;
+    grid-area: year;
+}
+.countryPrices {
+    display: grid;
+    grid-area: country;
+}

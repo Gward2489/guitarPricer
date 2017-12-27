@@ -2,7 +2,7 @@
 .advancedSearchContentWrapper {
     display: grid;
     grid-area: body;
-    margin: 1em 5em 3em 5em;
+    margin: 0 5em 3em 5em;
     grid-template-rows: 1fr 1fr;
     grid-template-areas: 
     "advSearchArea"
@@ -26,7 +26,7 @@
 
 .searchHeaderWrapper {
     grid-area: advSearchTitle;
-    padding: 1.4em 1em 1em 1em;
+    padding: 1.4em 1em .4em 1em;
     display: grid;
     margin: 0 -3em 0 -3em;
     border-bottom: .3em solid rgba(216, 216, 216, 0.959);
@@ -95,6 +95,7 @@
     display: grid;
     padding-left: 2em;
     max-height: 2em;
+    margin-top: -1.3em;
     width: 10em;
     grid-area: basicSearchLink;
     grid-template-rows: 1fr 1fr;
