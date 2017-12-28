@@ -160,6 +160,19 @@
     margin-top: -1.3em; 
 }
 
+.singleSaleTitleTwo {
+    grid-area:  averageTitle;
+    border-bottom: .3em solid rgba(216, 216, 216, 0.959);    
+    align-self: center;
+    justify-self: center;
+}
+
+.singleSaleNumbersTwo {
+    grid-area: averageNumbers;
+    justify-self: center;
+    margin-top: -1.3em; 
+}
+
 .basicSearchBar {
     outline: none;
     margin-top: .4em;

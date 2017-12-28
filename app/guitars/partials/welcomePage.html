@@ -33,22 +33,25 @@
 
             <div class="basicSearchResultsTitles">
                 <h4>Current values for a {{userSearchTitle}}:</h4>
-                <p ng-if="isItTrue(prices.lowPrice)">(based off of {{prices.searchCount}} recent sales)</p>
-                <p ng-if="isItFalse(prices.lowPrice)">(There was only one recent sale for a {{userSearchTitle}})</p>
+                <p ng-if="isItTrue(prices.lowPrice) && prices.lowPrice !== prices.highPrice">(based off of {{prices.searchCount}} recent sales)</p>
+                <p ng-if="isItFalse(prices.lowPrice) && prices.lowPrice === prices.highPrice">(There was only one recent sale for a {{userSearchTitle}})</p>
             </div>
 
             <div class="basicSearchResultsNumbers">
-                <p class="averagePriceTitle" ng-if="isItTrue(prices.avgPrice) && isItTrue(prices.lowPrice)">Average Price</p>
-                <p class="averagePriceNumbers" ng-if="isItTrue(prices.avgPrice) && isItTrue(prices.lowPrice)"><span class="averagePrice">${{prices.avgPrice}}</span></p>
+                <p class="averagePriceTitle" ng-if="isItTrue(prices.avgPrice) && isItTrue(prices.lowPrice && prices.lowPrice !== prices.highPrice)">Average Price</p>
+                <p class="averagePriceNumbers" ng-if="isItTrue(prices.avgPrice) && isItTrue(prices.lowPrice && prices.lowPrice !== prices.highPrice)"><span class="averagePrice">${{prices.avgPrice}}</span></p>
                 
-                <p class="highPriceTitle" ng-if="isItTrue(prices.lowPrice)">High Price</p>
-                <p class="highPriceNumbers" ng-if="isItTrue(prices.lowPrice)"><span class="highPrice">${{prices.highPrice}}</span></p>
+                <p class="highPriceTitle" ng-if="isItTrue(prices.lowPrice) && prices.lowPrice !== prices.highPrice">High Price</p>
+                <p class="highPriceNumbers" ng-if="isItTrue(prices.lowPrice) && prices.lowPrice !== prices.highPrice"><span class="highPrice">${{prices.highPrice}}</span></p>
 
-                <p class="lowPriceTitle" ng-if="isItTrue(prices.lowPrice)">Low Price</p>
-                <p class="lowPriceNumbers" ng-if="isItTrue(prices.lowPrice)"><span class="lowPrice">${{prices.lowPrice}}</span></p>
+                <p class="lowPriceTitle" ng-if="isItTrue(prices.lowPrice) && prices.lowPrice !== prices.highPrice">Low Price</p>
+                <p class="lowPriceNumbers" ng-if="isItTrue(prices.lowPrice) && prices.lowPrice !== prices.highPrice"><span class="lowPrice">${{prices.lowPrice}}</span></p>
 
                 <p class="singleSaleTitle" ng-if="isItTrue(prices.avgPrice) && isItFalse(prices.lowPrice)">Price</p>
                 <p class="singleSaleNumbers" ng-if="isItTrue(prices.avgPrice) && isItFalse(prices.lowPrice)"><span class="averagePrice">${{prices.avgPrice}}</span></p>
+
+                <p class="singleSaleTitleTwo" ng-if="isItTrue(prices.avgPrice) && prices.lowPrice === prices.highPrice">Price</p>
+                <p class="singleSaleNumbersTwo" ng-if="isItTrue(prices.avgPrice) && prices.lowPrice === prices.highPrice"><span class="averagePrice">${{prices.avgPrice}}</span></p>
             </div>
         </div>
     </div>

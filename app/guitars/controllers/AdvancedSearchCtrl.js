@@ -2,6 +2,7 @@ angular
     .module("GuitarPricerApp")
     .controller("AdvancedSearchCtrl", function($scope, $location, GuitarFactory) {
 
+        $scope.showResultsTitle = false
         $scope.loading = false
         $scope.conditionValues = ["Excellent", "Good", "Usable"]
         $scope.mainPrices = {}
@@ -119,6 +120,7 @@ angular
                     acousticOrElectric, vintageCheck, condition, $scope.searchedGuitarFinish, $scope.searchedGuitarYear, guitarOrBass, $scope.searchedGuitarCountry).then(data => {
                     $scope.searchResults = data
                     $scope.loading = false
+                    $scope.showResultsTitle = true
                     $scope.makeScopes(data)
                 })
             } else {
