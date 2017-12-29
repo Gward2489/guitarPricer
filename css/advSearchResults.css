@@ -19,6 +19,7 @@
 
 .resultsWrapper {
     display: grid;
+    margin-top: -3em;
     grid-column-gap: 1em;
     grid-area: resultsWrapper;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -198,4 +199,97 @@
 
 .countryPricesWrapper {
     grid-area: countryInfoPrices;
+}
+
+/* search results  stylings */
+
+.contentWrapperBorder {
+    border: 1px solid black;
+    border-radius: 4%;
+    max-height: 11em;
+    max-width: 11em;
+    min-width: 9em;
+    padding: .5em;
+}
+
+.generalTitleClass {
+    border-bottom: 1px solid black;
+    align-self: center;
+    margin: .4em .4em 0 .4em;
+    text-align: center;
+    justify-self: center;
+    font-size: 1.15em;
+    font-weight: 500;
+}
+
+.multiPriceTitleClass {
+    border-bottom: 1px solid black;
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+    margin: .3em .4em .4em .4em;
+    font-weight: 500;
+}
+
+.averagePriceTitleClass {
+    border-bottom: 1px solid black;
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+    margin: .5em .4em .4em .4em;
+    font-weight: 500;
+}
+
+.noPricesTitleClassSimple {
+    border-bottom: 1px solid black;
+    align-self: center;
+    justify-self: center;
+    text-align: center;
+    font-size: .9em;
+    font-weight: 500;
+}
+
+.noPricesTitleClass {
+    border-bottom: 1px solid black;
+    margin: .6em .4em 0 .4em;
+    justify-self: center;
+    align-self: center;
+    font-size: .9em;
+    text-align: center;
+    font-weight: 500;
+}
+
+.generalSubTitleClass {
+    justify-self: center;
+    margin: 0 1em 0 1em;
+    align-self: center;
+        white-space: nowrap;
+
+    text-align: center;
+    font-size: .85em;
+    border-bottom: 1px solid black;
+}
+
+.singleSubTitleClass {
+    font-size: .85em;
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+    margin: 0 1em 0 1em;
+    border-bottom: 1px solid black;
+}
+
+.adviceSubTitleClass {
+    font-size: .9em;
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+    margin: .8em .4em 0 .4em;
+}
+
+.advPricesDisplay {
+    margin-top: -1.3em;
+    align-self: center;
+    justify-self: center;
+    font-size: .9em;
 }

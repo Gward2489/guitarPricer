@@ -42,16 +42,16 @@
                 <p class="averagePriceNumbers" ng-if="isItTrue(prices.avgPrice) && isItTrue(prices.lowPrice && prices.lowPrice !== prices.highPrice)"><span class="averagePrice">${{prices.avgPrice}}</span></p>
                 
                 <p class="highPriceTitle" ng-if="isItTrue(prices.lowPrice) && prices.lowPrice !== prices.highPrice">High Price</p>
-                <p class="highPriceNumbers" ng-if="isItTrue(prices.lowPrice) && prices.lowPrice !== prices.highPrice"><span class="highPrice">${{prices.highPrice}}</span></p>
+                <p class="highPriceNumbers" ng-if="isItTrue(prices.lowPrice) && prices.lowPrice !== prices.highPrice"><span class="highPrice"><i class="fas fa-dollar-sign"></i>{{prices.highPrice}}</span></p>
 
                 <p class="lowPriceTitle" ng-if="isItTrue(prices.lowPrice) && prices.lowPrice !== prices.highPrice">Low Price</p>
-                <p class="lowPriceNumbers" ng-if="isItTrue(prices.lowPrice) && prices.lowPrice !== prices.highPrice"><span class="lowPrice">${{prices.lowPrice}}</span></p>
+                <p class="lowPriceNumbers" ng-if="isItTrue(prices.lowPrice) && prices.lowPrice !== prices.highPrice"><span class="lowPrice"><i class="fas fa-dollar-sign"></i>{{prices.lowPrice}}</span></p>
 
                 <p class="singleSaleTitle" ng-if="isItTrue(prices.avgPrice) && isItFalse(prices.lowPrice)">Price</p>
-                <p class="singleSaleNumbers" ng-if="isItTrue(prices.avgPrice) && isItFalse(prices.lowPrice)"><span class="averagePrice">${{prices.avgPrice}}</span></p>
+                <p class="singleSaleNumbers" ng-if="isItTrue(prices.avgPrice) && isItFalse(prices.lowPrice)"><span class="averagePrice"><i class="fas fa-dollar-sign"></i>{{prices.avgPrice}}</span></p>
 
                 <p class="singleSaleTitleTwo" ng-if="isItTrue(prices.avgPrice) && prices.lowPrice === prices.highPrice">Price</p>
-                <p class="singleSaleNumbersTwo" ng-if="isItTrue(prices.avgPrice) && prices.lowPrice === prices.highPrice"><span class="averagePrice">${{prices.avgPrice}}</span></p>
+                <p class="singleSaleNumbersTwo" ng-if="isItTrue(prices.avgPrice) && prices.lowPrice === prices.highPrice"><span class="averagePrice"><i class="fas fa-dollar-sign"></i>{{prices.avgPrice}}</span></p>
             </div>
         </div>
     </div>
