@@ -3,7 +3,7 @@
     display: grid;
     grid-area: body;
     margin: 0 5em 3em 5em;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 50% 50%;
     grid-template-areas: 
     "advSearchArea"
     "advSearchResults"

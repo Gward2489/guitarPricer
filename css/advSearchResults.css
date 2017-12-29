@@ -19,6 +19,7 @@
 
 .resultsWrapper {
     display: grid;
+    grid-column-gap: 1em;
     grid-area: resultsWrapper;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas: 
@@ -27,8 +28,8 @@
 }
 
 .generalPriceHeader {
-    display: grid;
     grid-area: generalTitle;
+    text-align: center;
 }
 
 .mainPrices {
