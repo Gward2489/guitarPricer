@@ -34,24 +34,167 @@
 .mainPrices {
     display: grid;
     grid-area: main;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "mainContent"
+    ;
+}
+
+.mainPricesContentWrapper {
+    display: grid;
+    grid-area: mainContent;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "mainInfoTitle"
+    "mainInfoSubTitle"
+    "mainInfoPrices"
+    ;
+}
+
+.mainPricesTitleWrapper {
+    grid-area: mainInfoTitle;
+}
+
+.mainSubTitleWrapper {
+    grid-area: mainInfoSubTitle;
+}
+
+.mainPricesWrapper {
+    grid-area: mainInfoPrices;
 }
 
 
 .conditionPrices {
     display: grid;
     grid-area: condition;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "conditionContent"
+    ;
 }
+
+.conditionPricesContentWrapper {
+    display: grid;
+    grid-area: conditionContent;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "conditionInfoTitle"
+    "conditionInfoSubTitle"
+    "conditionInfoPrices"
+    ;
+}
+
+.conditionPricesTitleWrapper {
+    grid-area: conditionInfoTitle;
+}
+
+.conditionSubTitleWrapper {
+    grid-area: conditionInfoSubTitle;
+}
+
+.conditionPricesWrapper {
+    grid-area: conditionInfoPrices;
+}
+
 
 .finishPrices {
     display: grid;
     grid-area: finish;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "finishContent"
+    ;
+}
+
+.finishPricesContentWrapper {
+    display: grid;
+    grid-area: finishContent;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "finishInfoTitle"
+    "finishInfoSubTitle"
+    "finishInfoPrices"
+    ;
+}
+
+.finishPricesTitleWrapper {
+    grid-area: finishInfoTitle;
+}
+
+.finishSubTitleWrapper {
+    grid-area: finishInfoSubTitle;
+}
+
+.finishPricesWrapper {
+    grid-area: finishInfoPrices;
 }
 
 .yearPrices {
     display: grid;
     grid-area: year;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "yearContent"
+    ;
 }
+
+.yearPricesContentWrapper {
+    display: grid;
+    grid-area: yearContent;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "yearInfoTitle"
+    "yearInfoSubTitle"
+    "yearInfoPrices"
+    ;
+}
+
+.yearPricesTitleWrapper {
+    grid-area: yearInfoTitle;
+}
+
+.yearSubTitleWrapper {
+    grid-area: yearInfoSubTitle;
+}
+
+.yearPricesWrapper {
+    grid-area: yearInfoPrices;
+}
+
+
 .countryPrices {
     display: grid;
     grid-area: country;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "countryContent"
+    ;
+}
+
+.countryPricesContentWrapper {
+    display: grid;
+    grid-area: countryContent;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "countryInfoTitle"
+    "countryInfoSubTitle"
+    "countryInfoPrices"
+    ;
+}
+
+.countryPricesTitleWrapper {
+    grid-area: countryInfoTitle;
+}
+
+.countrySubTitleWrapper {
+    grid-area: countryInfoSubTitle;
+}
+
+.countryPricesWrapper {
+    grid-area: countryInfoPrices;
 }
