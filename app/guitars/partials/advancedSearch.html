@@ -183,7 +183,7 @@
                                 Average Price
                             </div>
 
-                            <div ng-if="prices.lowPrice === prices.highPrice">
+                            <div ng-if="prices.lowPrice === prices.highPrice && isItTrue(prices.avgPrice)">
                                 Average Price
                             </div>
 
@@ -255,7 +255,7 @@
                                 Average Price for a {{searchedGuitarYear}} {{guitarUserSearchedFor}}
                             </div>
 
-                            <div ng-if="prices.lowPrice === prices.highPrice">
+                            <div ng-if="prices.lowPrice === prices.highPrice && isItTrue(prices.avgPrice)">
                                 Average Price for a {{searchedGuitarYear}} {{guitarUserSearchedFor}}
                             </div>
 
@@ -326,7 +326,7 @@
                                 Average Price for a {{searchedGuitarCondition}} Condition {{guitarUserSearchedFor}}
                             </div>
 
-                            <div ng-if="prices.lowPrice === prices.highPrice">
+                            <div ng-if="prices.lowPrice === prices.highPrice && isItTrue(prices.avgPrice)">
                                 Average Price for a {{searchedGuitarCondition}} Condition {{guitarUserSearchedFor}}
                             </div>
 
@@ -397,7 +397,7 @@
                                 Average Price for a {{guitarUserSearchedFor}} in {{searchedGuitarFinish}}
                             </div>
 
-                            <div ng-if="prices.lowPrice === prices.highPrice">
+                            <div ng-if="prices.lowPrice === prices.highPrice && isItTrue(prices.avgPrice)">
                                 Average Price for a {{guitarUserSearchedFor}} in {{searchedGuitarFinish}}
                             </div>
 
@@ -468,7 +468,7 @@
                                 Average Price for a made in {{searchedGuitarCountry}} {{guitarUserSearchedFor}}
                             </div>
 
-                            <div ng-if="prices.lowPrice === prices.highPrice">
+                            <div ng-if="prices.lowPrice === prices.highPrice && isItTrue(prices.avgPrice)">
                                 Average Price for a made in {{searchedGuitarCountry}} {{guitarUserSearchedFor}}
                             </div>
 
