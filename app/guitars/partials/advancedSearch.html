@@ -1,5 +1,6 @@
 <div ng-include="'app/userGear/partials/userNav.html'"></div>
 
+
 <div class="advancedSearchContentWrapper">
    
     <div class="advancedSearchDivWrapper">
@@ -107,44 +108,42 @@
 
                 <div class="advSearchRowThree">
 
-                        <div class="guitarFinishWrapper">
-                            <p class="guitarFinishTitle">Color and/or Finish</p>
-                            <p class="guitarFinishSubTitle">(leave blank if unkown)</p>
-                            <input class="guitarFinishInput" type="text" ng-model="finishInput">
+                    <div class="guitarFinishWrapper">
+                        <p class="guitarFinishTitle">Color and/or Finish</p>
+                        <p class="guitarFinishSubTitle">(leave blank if unkown)</p>
+                        <input class="guitarFinishInput" type="text" ng-model="finishInput">
+                    </div>
+                    <div class="guitarCountryWrapper">
+                        <p class="guitarCountryTitle">Country of Origin</p>
+                        <p class="guitarCountrySubTitle">(leave blank if unknown)</p>
+                        <input class="guitarCountryInput" type="text" ng-model="guitarCountryInput">
+                    </div>
+                    <div class="vintageWrapper">
+                        <p class="vintageTitle">Is it vintage?</p>
+                        <p class="vintageSubTitle">(30+ years old)*required</p>
+                        <div class="vintageInput">
+                            <label class="vintageYesButton">
+                                Yes
+                                <span ng-show="vintageCheck === 'yes'">
+                                    <i class="far fa-circle fa-sm honk"></i>
+                                </span>
+                                <span ng-show="vintageCheck !== 'yes'">
+                                    <i class="far fa-circle fa-sm"></i>
+                                </span>
+                                <input ng-model="vintageCheck" value="yes" type="radio" name="vintageSelect">
+                            </label>
+                            <label class="vintageNoButton">
+                                No
+                                <span ng-show="vintageCheck === 'no'">
+                                    <i class="far fa-circle fa-sm honk"></i>
+                                </span>
+                                <span ng-show="vintageCheck !== 'no'">
+                                    <i class="far fa-circle fa-sm"></i>
+                                </span>
+                                <input ng-model="vintageCheck" value="no" type="radio" name="vintageSelect">
+                            </label>
                         </div>
-
-                        <div class="guitarCountryWrapper">
-                            <p class="guitarCountryTitle">Country of Origin</p>
-                            <p class="guitarCountrySubTitle">(leave blank if unknown)</p>
-                            <input class="guitarCountryInput" type="text" ng-model="guitarCountryInput">
-                        </div>
-
-                        <div class="vintageWrapper">
-                            <p class="vintageTitle">Is it vintage?</p>
-                            <p class="vintageSubTitle">(30+ years old)*required</p>
-                            <div class="vintageInput">
-                                <label class="vintageYesButton">
-                                    Yes
-                                    <span ng-show="vintageCheck === 'yes'">
-                                        <i class="far fa-circle fa-sm honk"></i>
-                                    </span>
-                                    <span ng-show="vintageCheck !== 'yes'">
-                                        <i class="far fa-circle fa-sm"></i>
-                                    </span>
-                                    <input ng-model="vintageCheck" value="yes" type="radio" name="vintageSelect">
-                                </label>
-                                <label class="vintageNoButton">
-                                    No
-                                    <span ng-show="vintageCheck === 'no'">
-                                        <i class="far fa-circle fa-sm honk"></i>
-                                    </span>
-                                    <span ng-show="vintageCheck !== 'no'">
-                                        <i class="far fa-circle fa-sm"></i>
-                                    </span>
-                                    <input ng-model="vintageCheck" value="no" type="radio" name="vintageSelect">
-                                </label>
-                            </div>
-                        </div>
+                    </div>
                 </div>
             </div>
 

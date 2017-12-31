@@ -1,0 +1,44 @@
+.userDisplayWrapper {
+    display: grid;
+    grid-area: body;
+    grid-template-rows: 10% 90%;
+    grid-template-areas: 
+    "userDisplayTitle"
+    "userGuitarDisplaySection"
+    ;
+}
+
+.userDisplayTitleWrapper {
+    grid-area: userDisplayTitle;
+}
+
+.displayLoadingWrapper {
+    grid-area: userGuitarDisplaySection;
+}
+
+.userGuitarDisplayWrapper {
+    grid-area: userGuitarDisplaySection;
+}
+
+.rowOfGuitars {
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    grid-template-areas: 
+    "guitarOne guitarTwo guitarThree"
+    ;
+}
+
+.rowOfGuitars:nth-child(1) {
+    display: grid;
+    grid-area: guitarOne;
+}
+
+.rowOfGuitars:nth-child(2) {
+    display: grid;
+    grid-area: guitarTwo;
+}
+
+.rowOfGuitars:nth-child(3) {
+    display: grid;
+    grid-area: guitarThree;
+}

@@ -1,140 +1,74 @@
-/* main grid for adv search */
-.advancedSearchContentWrapper {
+.guitarIntakeWrapper {
     display: grid;
     grid-area: body;
     margin: 0 5em 3em 5em;
-    grid-template-rows: 50% 50%;
+    grid-template-rows: 10% 90%;
     grid-template-areas: 
-    "advSearchArea"
-    "advSearchResults"
+    "intakeTitle"
+    "intakeForm"
     ;
 }
 
-
-/* grid for searching area */
-.advancedSearchDivWrapper {
+.guitarIntakeTitleWrapper {
     display: grid;
-    max-height: 39em;
-    grid-area: advSearchArea;
-    grid-template-rows: 1fr 4fr 1fr;
-    grid-template-columns: 5fr 4fr 5fr 1fr;
-    grid-template-areas: 
-    ". advSearchTitle . ."
-    ". advSearchForm advSearch ."
-    ". advSearchFooter . ."
-    ;
-}
-
-.searchHeaderWrapper {
-    grid-area: advSearchTitle;
-    padding: 1.4em 1em .4em 1em;
-    display: grid;
-    margin: 0 -3em 0 -3em;
-    border-bottom: .3em solid rgba(216, 216, 216, 0.959);
-    grid-template-columns: 1fr 6fr 1.3fr;
-    grid-template-areas: 
-    ". advSearchAreaTitle basicSearchLink"
-}
-/* place title and basic search link */
-
-.advSearchTitleWrapper {
-    grid-area: advSearchAreaTitle;
-    margin: .6em 0 .4em 0;
-    padding-right: 3em;
-    justify-self: center; 
-    border-right: .3em solid rgba(216, 216, 216, 0.959);
- 
-}
-
-.advSearchTitleClass {
-    color: rgba(155, 155, 155, 0.952);
-    font-size: 1.8em;
+    margin-bottom: .4em;
+    grid-area: intakeTitle;
     justify-self: center;
-    text-align: center;
-}
-
-.advSearchInstructions {
-    margin-top: -1.7em;
-    text-align: center;
-    font-size: 1em;
-    color: rgba(90, 90, 90, 0.952);
-}
-
-/* grid for searching area footer */
-.advSearchFooterWrapper {
-    display: grid;
     align-self: center;
-    justify-self: center;
-    padding-bottom: .5em;
-    grid-area: advSearchFooter;
-    border-bottom: .26em solid rgba(216, 216, 216, 0.959);
-    grid-template-columns: 1fr 5fr 1fr;
+    text-align: center;
+    grid-template-rows:  1fr;
     grid-template-areas: 
-    ". searchNow ."
+    "intakeTitleWrapper"
     ;
 }
 
-/* place footer contents */
-.advSearchButtonWrapper {
-    grid-area: searchNow;
-    align-self: center;
-    justify-self: center;
-    text-align: center;
-}
-
-.basicSearchLinkTitle {
-    grid-area: theTitle;
-    margin-top: -2em;
-    padding-bottom: 1.5em;
-    font-size: .9em;
-    max-height: 2em;
-    margin-bottom: 2.4em;
-    color: rgba(155, 155, 155, 0.945);
-}
-
-.basicSearchLinkWrapper {
+.guitarIntakeTitleDiv {
+    grid-area: intakeTitleWrapper;
     display: grid;
-    padding-left: 2em;
-    max-height: 2em;
-    margin-top: -1.3em;
-    width: 10em;
-    grid-area: basicSearchLink;
+    max-height: 6em;
+    justify-self: center;
+    align-self: center;
     grid-template-rows: 1fr 1fr;
-    align-self: center;
-    justify-self: center;
-    text-align: center;
     grid-template-areas: 
-    "theTitle"
-    "theLink"
+    "intakeTitleText"
+    "intakeSubTitleText"
+    ;
+}
+.guitarIntakeTitle {
+    grid-area: intakeTitleText;
+    font-size: 2em;
+    color: rgba(155, 155, 155, 0.952);
+}
+
+.guitarIntakeSubTitle {
+    margin-top: -1em;
+    padding-bottom: .2em;
+    grid-area: intakeSubTitleText;
+    border-bottom: .2em solid rgba(216, 216, 216, 0.959);
+}
+
+
+.guitarIntakeFormWrapper {
+    display: grid;
+    grid-area: intakeForm;
+    grid-template-rows: 90% 10%;
+    grid-template-areas: 
+    "intakeFormFields"
+    "intakeFormButton"
     ;
 }
 
-.basicSearchLinkButton {
-    grid-area: theLink;
+.intakeButtonWrapper {
+    grid-area: intakeFormButton;
+    margin-top: 1.5em;
     align-self: center;
-    margin-top: .2em;
     justify-self: center;
-    background-color: #FFF;
-    outline: none;
-    overflow: hidden;
-    padding: .5em;
-    cursor: pointer;
-    user-select: none;
     text-align: center;
-    white-space: nowrap;
-    text-decoration: none;
-    text-transform: none;
-    color: rgb(111, 225, 253);
-    border: solid .3em rgb(111, 225, 253);
-    border-radius: 4px;
-    font-size: .9em;
-    font-weight: 900;
-    line-height: .8em;
-    width: 9em;
+    border-bottom: .2em solid rgba(216, 216, 216, 0.959);
+    padding-bottom: .5em;    
 }
 
-.advSearchButtonClass {
-    grid-area: advButton;
+.submitNewGuitarButton {
     align-self: center;
     justify-self: center;
     background-color: #FFF;
@@ -156,34 +90,30 @@
     width: 7em;
 }
 
-/* grid for rows of the search form */
-.advancedSearchDivWrapperTwo {
+.guitarIntakeFormWrapperTwo {
     display: grid;
+    grid-area: intakeFormFields;
     max-height: 20em;
-    grid-area: advSearchForm; 
     grid-template-columns: 1fr 5fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas: 
-    ". searchFormOne . "
-    ". searchFormTwo . "
-    ". searchFormThree . "
+    ". fieldRowOne . "
+    ". fieldRowTwo . "
+    ". fieldRowThree . "
     ;
 }
 
-/* establish row one grid, establish grid for each form section, 
-place elemets in form sections, place form sections in rows */
-
-.advSearchRowOne {
+.guitarIntakeFormRowOne {
     display: grid;
+    grid-area: fieldRowOne;
     padding-bottom: 1.8em;
-    grid-area: searchFormOne;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
     "brand model year"
     ;
 }
 
-.guitarBrandWrapper {
+.intakeBrandWrapper {
     display: grid;
     grid-area: brand;
     max-height: 2em;
@@ -195,21 +125,21 @@ place elemets in form sections, place form sections in rows */
     ;
 }
 
-.guitarBrandTitle {
+.intakeBrandTitle {
     grid-area: brandTitle;
     justify-self: center;
     font-size: 1.2em;
     border-bottom: .2em solid rgba(216, 216, 216, 0.959);
 }
 
-.guitarBrandSubTitle {
+.intakeBrandSubTitle {
     grid-area: brandSubTitle;
     font-size: .9em;
     justify-self: center;
     margin-top: -1em;
 }
 
-.guitarBrandInput {
+.intakeBrandInput {
     grid-area: brandInput;
     font-size: 1.1em;
     justify-self: center;
@@ -221,7 +151,7 @@ place elemets in form sections, place form sections in rows */
     border: .1em solid rgba(216, 216, 216, 0.959);
 }
 
-.guitarModelWrapper {
+.intakeModelWrapper {
     display: grid;
     grid-area: model;
     max-height: 4em;
@@ -233,21 +163,21 @@ place elemets in form sections, place form sections in rows */
     ;
 }
 
-.guitarModelTitle {
+.intakeModelTitle {
     grid-area: modelTitle;
     font-size: 1.2em;
     border-bottom: .2em solid rgba(216, 216, 216, 0.959);
     justify-self: center;
 }
 
-.guitarModelSubTitle {
+.intakeModelSubTitle {
     grid-area: modelSubTitle;
     justify-self: center;
     font-size: .9em;
     margin-top: -1em;
 }
 
-.guitarModelInput {
+.intakeModelInput {
     grid-area: modelInput;
     justify-self: center;
     margin-top: -.5em;
@@ -259,7 +189,7 @@ place elemets in form sections, place form sections in rows */
     border: .1em solid rgba(216, 216, 216, 0.959);
 }
 
-.guitarYearWrapper {
+.intakeYearWrapper {
     display: grid;
     grid-area: year;
     max-height: 4em;
@@ -271,7 +201,7 @@ place elemets in form sections, place form sections in rows */
     ;
 }
 
-.guitarYearTitle {
+.intakeYearTitle {
     grid-area: yearTitle;
     font-size: 1.2em;
     white-space: nowrap;
@@ -279,7 +209,7 @@ place elemets in form sections, place form sections in rows */
     justify-self: center;
 }
 
-.guitarYearSubTitle {
+.intakeYearSubTitle {
     grid-area: yearSubTitle;
     white-space: nowrap;
     font-size: .9em;
@@ -287,7 +217,7 @@ place elemets in form sections, place form sections in rows */
     margin-top: -1em;
 }
 
-.guitarYearInput {
+.intakeYearInput {
     grid-area: yearInput;
     justify-self: center;
     margin-top: -.5em;
@@ -299,11 +229,10 @@ place elemets in form sections, place form sections in rows */
     border: .1em solid rgba(216, 216, 216, 0.959);
 }
 
-/* row two */
-.advSearchRowTwo {
+.guitarIntakeFormRowTwo {
     display: grid;
     grid-column-gap: 5em;
-    grid-area: searchFormTwo;
+    grid-area: fieldRowTwo;
     padding-bottom: 3em;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: 
@@ -311,7 +240,7 @@ place elemets in form sections, place form sections in rows */
     ;
 }
 
-.guitarConditionWrapper {
+.intakeConditionWrapper {
     display: grid;
     grid-area: condition;
     margin-left: 1em;
@@ -324,7 +253,7 @@ place elemets in form sections, place form sections in rows */
     ;
 }
 
-.guitarConditionTitle {
+.intakeConditionTitle {
     grid-area: conditionTitle;
     white-space: nowrap;
     font-size: 1.2em;
@@ -332,14 +261,14 @@ place elemets in form sections, place form sections in rows */
     text-align: center;
 }
 
-.guitarConditionSubTitle {
+.intakeConditionSubTitle {
     grid-area: conditionSubTitle;
     justify-self: center;
     font-size: .9em;
     margin-top: -1em;
 }
 
-.guitarConditionInput {
+.intakeConditionInput {
     grid-area: conditionInput;
     justify-self: center;
     margin-top: -.4em;
@@ -418,10 +347,9 @@ place elemets in form sections, place form sections in rows */
     justify-self: center;
 }
 
-/* row three */
-.advSearchRowThree {
+.guitarIntakeFormRowThree {
     display: grid;
-    grid-area: searchFormThree;
+    grid-area: fieldRowThree;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: 
     "finish country vintage"
@@ -541,50 +469,3 @@ place elemets in form sections, place form sections in rows */
     margin-top: .4em;
     white-space: nowrap;
 }
-
-/*radio buttons and select bar stylings*/
-
-input[type="radio"] {
-    display: none;
-}
-
-.honk {
-    background-color: #75e5ff99;
-    border-radius: 100%;
-}
-
-select {
-    background-color: #ffffff00;    
-    outline: none;
-}
-
-.guitarRadio {
-    font-size: 1.2em;
-    cursor: pointer;
-}
-
-.bassRadio {
-    font-size: 1.2em;
-    cursor: pointer;
-}
-
-.vintageYesButton {
-    font-size: 1.1em;
-    cursor: pointer;
-}
-
-.vintageNoButton {
-    font-size: 1.1em;
-    cursor: pointer;
-}
-
-.electricButton {
-    font-size: 1.2em;
-    cursor: pointer;
-}
-
-.acousticButton {
-    font-size: 1.2em;
-    cursor: pointer;
-}
-
