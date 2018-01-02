@@ -37,7 +37,7 @@
 
             <div class="basicSearchResultsNumbers">
                 <p class="averagePriceTitle" ng-if="isItTrue(prices.avgPrice) && isItTrue(prices.lowPrice && prices.lowPrice !== prices.highPrice)">Average Price</p>
-                <p class="averagePriceNumbers" ng-if="isItTrue(prices.avgPrice) && isItTrue(prices.lowPrice && prices.lowPrice !== prices.highPrice)"><span class="averagePrice">${{prices.avgPrice}}</span></p>
+                <p class="averagePriceNumbers" ng-if="isItTrue(prices.avgPrice) && isItTrue(prices.lowPrice && prices.lowPrice !== prices.highPrice)"><span class="averagePrice"><i class="fas fa-dollar-sign"></i>{{prices.avgPrice}}</span></p>
                 
                 <p class="highPriceTitle" ng-if="isItTrue(prices.lowPrice) && prices.lowPrice !== prices.highPrice">High Price</p>
                 <p class="highPriceNumbers" ng-if="isItTrue(prices.lowPrice) && prices.lowPrice !== prices.highPrice"><span class="highPrice"><i class="fas fa-dollar-sign"></i>{{prices.highPrice}}</span></p>

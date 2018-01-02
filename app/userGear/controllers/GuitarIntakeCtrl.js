@@ -1,6 +1,6 @@
 angular
     .module("GuitarPricerApp")
-    .controller("GuitarIntakeCtrl", function($scope, $location, UserGearFactory) {
+    .controller("GuitarIntakeCtrl", function($scope, $route, $location, UserGearFactory) {
 
 
         $scope.conditionValues = ["Excellent", "Good", "Usable"]
@@ -30,9 +30,9 @@ angular
                     acousticOrElectric, vintageCheck, condition, $scope.searchedGuitarFinish, $scope.searchedGuitarYear, guitarOrBass, $scope.searchedGuitarCountry)
 
                 UserGearFactory.storeGuitar(guitarObject)
+                
             } else {
                 alert("please fill out all required fields")
             }
         }
-
     })

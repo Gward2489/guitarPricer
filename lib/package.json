@@ -13,5 +13,8 @@
     "firebase": "^4.8.0",
     "route": "^0.2.5"
   },
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "angular-animate": "^1.6.8"
+  }
 }

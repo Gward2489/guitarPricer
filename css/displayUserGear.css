@@ -72,7 +72,7 @@
     justify-content: center;
     grid-column-gap: 1em;
     max-height: 25em;
-    margin-bottom: -4em;
+    margin-bottom: 2em;
     grid-template-columns: 33.3% 33.3% 33.3%;
     grid-template-areas: 
     "guitarOne guitarTwo guitarThree"

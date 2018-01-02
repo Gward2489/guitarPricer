@@ -1,6 +1,6 @@
 angular
     .module("GuitarPricerApp")
-    .factory("UserGearFactory", function ($http, AuthFactory) {
+    .factory("UserGearFactory", function ($http, $location, AuthFactory) {
 
         return Object.create(null, {
             "cache": {
@@ -77,6 +77,8 @@ angular
                                 "method": "POST",
                                 "url": `https://guitar-pricer.firebaseio.com/guitars/.json?auth=${idToken}`,
                                 "data": JSON.stringify(guitarObj)
+                            }).then(function () {
+                                window.location = "#!/userGear/displayUserGuitars"
                             })
                         })        
                 }

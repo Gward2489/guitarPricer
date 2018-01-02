@@ -16,17 +16,20 @@
         <link href="./css/advSearchResults.css" rel="stylesheet">
         <link href="./css/userIntake.css" rel="stylesheet">
         <link href="./css/displayUserGear.css" rel="stylesheet">
+        <link href="./css/angularAnimations.css" rel="stylesheet">
+        
     </head>
 
-    <body class="mainGrid" ng-app="GuitarPricerApp">
+    <body ng-cloak class="mainGrid" ng-app="GuitarPricerApp">
 
-        <nav ng-include="'app/nav/partials/navigation.html'"></nav>
+        <nav ng-cloak ng-include="'app/nav/partials/navigation.html'"></nav>
         
-        <div ng-view></div>
+        <div ng-cloak ng-view></div>
 
         <script src="./lib/node_modules/angular/angular.min.js"></script>
         <script src="./lib/node_modules/firebase/firebase.js"></script>
         <script src="./lib/node_modules/angular-route/angular-route.min.js"></script>
+        <script src="./lib/node_modules/angular-animate/angular-animate.js"></script>
         <script src="./app/app.js"></script>
         <script src="./app/app.config.js"></script>
         <script src="./app/nav/controllers/NavCtrl.js"></script>
