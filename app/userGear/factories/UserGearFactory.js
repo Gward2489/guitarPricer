@@ -104,6 +104,15 @@ angular
                         return this.cache                            
                     })
                 }
+            },
+            "deleteGuitar": {
+                value: function (key) {
+                    return $http({
+                        method: "DELETE",
+                        url: `https://guitar-pricer.firebaseio.com/guitars/${key}/.json`
+                    })
+                }
             }
+            
         })
     })

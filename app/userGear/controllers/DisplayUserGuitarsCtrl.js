@@ -1,12 +1,33 @@
 angular
     .module("GuitarPricerApp")
     .controller("DisplayUserGuitarsCtrl", 
-        function($scope, $location, UserGearFactory, GuitarFactory) {
+        function($scope, $route, $location, UserGearFactory, GuitarFactory) {
             
+            $scope.showAverages = true
+            $scope.showHighs = false
+            $scope.showLows = false
             $scope.loading = true
             $scope.guitars = []
             $scope.guitarRows = []
             $scope.guitarsWithPriceArray = []
+
+            $scope.showAveragesFunction = function () {
+                $scope.showAverages = true
+                $scope.showHighs = false
+                $scope.showLows = false
+            }
+
+            $scope.showHighsFunction = function () {
+                $scope.showAverages = false
+                $scope.showHighs = true
+                $scope.showLows = false
+            }
+
+            $scope.showLowsFunction = function () {
+                $scope.showAverages = false
+                $scope.showHighs = false
+                $scope.showLows = true
+            }
     
             $scope.isItTrue = function (objProp) {
                 if (objProp !== false) {
@@ -106,4 +127,10 @@ angular
                     })
                 })
             })
+
+            $scope.removeGuitar = function (key) {
+                UserGearFactory.deleteGuitar(key).then(function () {
+                    $route.reload()
+                })
+            }
         })

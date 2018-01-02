@@ -1,12 +1,44 @@
-\.userDisplayWrapper {
+.userDisplayWrapper {
     display: grid;
     grid-area: body;
-    grid-template-rows: 10% 90%;
+    grid-template-rows: 10% 10% 80%;
     margin-bottom: 2em;
     grid-template-areas: 
     "userDisplayTitle"
+    "showPriceButtons"
     "userGuitarDisplaySection"
     ;
+}
+
+.showPriceButtonRow {
+    display: grid;
+    margin-bottom: 1em;
+    justify-self: center;
+    align-self: center;
+    grid-column-gap: 1em;
+    grid-area: showPriceButtons;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "buttonOne buttonTwo buttonThree"
+    ;
+}
+
+.showAveragesButtonWrapper {
+    grid-area: buttonOne;
+    justify-self: center;
+    align-self: center;
+}
+
+.showLowsButtonWrapper {
+    grid-area: buttonThree;
+    justify-self: center;
+    align-self: center;
+}
+
+.showHighsButtonWrapper {
+    grid-area: buttonTwo;
+    justify-self: center;
+    align-self: center;
 }
 
 .userDisplayTitleWrapper {
@@ -16,10 +48,12 @@
 }
 
 .userDisplayTitle {
+    grid-area: titleArea;
     border-bottom: .2em solid rgba(216, 216, 216, 0.959);    
     padding: 0 .9em .1em;
     font-size: 1.7em;
 }
+
 
 .displayLoadingWrapper {
     grid-area: userGuitarDisplaySection;
@@ -38,6 +72,7 @@
     justify-content: center;
     grid-column-gap: 1em;
     max-height: 25em;
+    margin-bottom: -4em;
     grid-template-columns: 33.3% 33.3% 33.3%;
     grid-template-areas: 
     "guitarOne guitarTwo guitarThree"
@@ -79,10 +114,30 @@
 
 
 .userGuitarTitleClass {
+    display: grid;
     grid-area: userGuitarTitle;
+    grid-template-columns: 1fr 20fr 1fr;
+    grid-template-areas: 
+    ". titleArea deleteIcon"
+    ;
+}
+
+.trashIcon {
+    grid-area: deleteIcon;
+    justify-self: center;
+    align-self:center;
+    margin-left: -2em;
+    margin-bottom: -2em;
+    margin-top: -1.6em;
+    font-size: 1.4em;
+    border: .1em solid rgba(216, 216, 216, 0.959);
+    border-radius: 100%;
+    padding: .4em;
+    cursor: pointer;
 }
 
 .guitarTitleFormat {
+    grid-area: titleArea;
     text-align: center;
     justify-self: center;
     margin: .4em 2em 0 2em;
@@ -311,7 +366,7 @@
 }
 
 .userDisplayPriceAdjust {
-    font-size: 1.06em;
+    font-size: 1.4em;
     white-space: nowrap;
     font-weight: 800;
 }
@@ -322,4 +377,73 @@
     padding: 0 .3em .2em .3em;
     margin-left: 1em;
     margin-right: 1em;
+}
+
+.showAveragesButton {
+    grid-area: advButton;
+    align-self: center;
+    justify-self: center;
+    background-color: #fff0;
+    outline: none;
+    overflow: hidden;
+    padding: .3em;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+    text-transform: none;
+    color: rgb(111, 137, 255);
+    border: solid .3em rgb(111, 137, 255);
+    border-radius: .4em;
+    font-size: 1.2em;
+    font-weight: 900;
+    line-height: .8em;
+    width: 9em;
+}
+
+.showHighsButton {
+    grid-area: advButton;
+    align-self: center;
+    justify-self: center;
+    background-color: #fff0;
+    outline: none;
+    overflow: hidden;
+    padding: .3em;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+    text-transform: none;
+    color: rgba(79, 191, 34, 0.85);
+    border: solid .3em  rgba(79, 191, 34, 0.85);
+    border-radius: .4em;
+    font-size: 1.2em;
+    font-weight: 900;
+    line-height: .8em;
+    width: 7em;
+}
+
+.showLowsButton {
+    grid-area: advButton;
+    align-self: center;
+    justify-self: center;
+    background-color: #fff0;
+    outline: none;
+    overflow: hidden;
+    padding: .3em;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    white-space: nowap;
+    text-decoration: none;
+    text-transform: none;
+    color:  rgba(255, 53, 103, 0.918);
+    border: solid .3em  rgba(255, 53, 103, 0.918);
+    border-radius: .4em;
+    font-size: 1.2em;
+    font-weight: 900;
+    line-height: .8em;
+    width: 7em;
 }
