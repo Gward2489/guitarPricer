@@ -14,11 +14,105 @@
     <div class="userGuitarDisplayWrapper">
         <div ng-repeat="row in guitarRows" class="rowOfGuitars">
             <div ng-repeat="guitar in row" class="userGuitar">
-                <div>
-                    <h2 ng-if="guitar.year !== 'n/a'">{{guitar.year}} {{guitar.guitarBrand}} {{guitar.guitarModel}}</h2>
-                    <h2 ng-if="guitar.year === 'n/a'">{{guitar.guitarBrand}} {{guitar.guitarModel}}</h2>
+
+                <div class="userGuitarTitleClass">
+                    <h2 class="guitarTitleFormat" ng-if="guitar.year !== 'n/a'">{{guitar.year}} {{guitar.guitarBrand}} {{guitar.guitarModel}}</h2>
+                    <h2 class="guitarTitleFormat" ng-if="guitar.year === 'n/a'">{{guitar.guitarBrand}} {{guitar.guitarModel}}</h2>
                 </div>
-                <ul>
+
+                <div class="averagePriceInformationClass">
+                    <div>
+                        <p class="averagePriceFormat" ng-if="isItTrue(guitar.mainAvgPrice) && isItTrue(guitar.mainLowPrice) && guitar.mainHighPrice != guitar.mainLowPrice">Current average value for a {{guitar.guitarBrand}} {{guitar.guitarModel}}</p>
+                        <p class="averagePriceClass" ng-if="isItTrue(guitar.mainAvgPrice) && isItTrue(guitar.mainLowPrice) && guitar.mainHighPrice != guitar.mainLowPrice">Average: {{guitar.mainAvgPrice}} High: {{guitar.mainHighPrice}} Low: {{guitar.mainLowPrice}}</p>
+                    </div>
+                    <p class="averagePriceFormat" ng-if="isItFalse(guitar.mainAvgPrice)">No recent sales for {{guitar.guitarBrand}} {{guitar.guitarModel}}s</p>
+                    <div>
+                        <p class="averagePriceFormat" ng-if="isItFalse(guitar.mainLowPrice) && isItTrue(guitar.mainAvgPrice && guitar.mainHighPrice != guitar.mainLowPrice)">There was only one recent sale for a {{guitar.guitarBrand}} {{guitar.guitarModel}}, it sold for</p>
+                        <p class="averagePriceClass" ng-if="isItFalse(guitar.mainLowPrice) && isItTrue(guitar.mainAvgPrice) && guitar.mainHighPrice != guitar.mainLowPrice">{{guitar.mainAvgPrice}}</p>
+                        <p class="averagePriceFormat" ng-if="isItTrue(guitar.mainAvgPrice) && guitar.mainHighPrice === guitar.mainLowPrice">There was only one recent sale for a {{guitar.guitarBrand}} {{guitar.guitarModel}}, it sold for</p>
+                        <p class="averagePriceClass" ng-if="isItTrue(guitar.mainAvgPrice) && guitar.mainHighPrice === guitar.mainLowPrice">{{guitar.mainAvgPrice}}</p>
+                    <div>
+                </div>
+
+                <div class="detailedPriceInformationClass">
+                    <div ng-if="guitar.year != 'n/a' && isItTrue(guitar.mainAvgPrice) && isItTrue(guitar.mainLowPrice)" class="yearPricesClass">
+
+                        <div class="yearPriceTitle">
+                            <p ng-if="isItTrue(guitar.yearAvgPrice) && isItTrue(guitar.yearLowPrice) && guitar.yearHighPrice != guitar.yearLowPrice && guitar.year !== 'n/a'">{{guitar.guitarBrand}} {{guitar.guitarModel}}s from {{guitar.year}}</p>
+                            <p ng-if="isItFalse(guitar.yearAvgPrice) && guitar.year !== 'n/a'">No recent sales for {{guitar.guitarBrand}} {{guitar.guitarModel}}s from {{guitar.year}}</p>
+                            <p ng-if="isItFalse(guitar.yearLowPrice) && isItTrue(guitar.yearAvgPrice) && guitar.year !== 'n/a' && guitar.yearHighPrice != guitar.yearLowPrice">There was only one recent sale for a {{guitar.year}} {{guitar.guitarBrand}} {{guitar.guitarModel}}, it sold for {{guitar.yearAvgPrice}}</p>
+                            <p ng-if="guitar.yearHighPrice === guitar.yearLowPrice && isItTrue(guitar.yearAvgPrice) && guitar.year !== 'n/a'">There was only one recent sale for a {{guitar.year}} {{guitar.guitarBrand}} {{guitar.guitarModel}}, it sold for {{guitar.yearAvgPrice}}</p>
+                            
+                        </div>
+
+                        <div ng-if="isItTrue(guitar.yearAvgPrice) && isItTrue(guitar.yearLowPrice) && guitar.yearHighPrice != guitar.yearLowPrice && guitar.year !== 'n/a'" class="yearPricesAverage">
+                            <p>Average: {{guitar.yearAvgPrice}}</p>
+                        </div>
+
+                        <div ng-if="isItTrue(guitar.yearAvgPrice) && isItTrue(guitar.yearLowPrice) && guitar.yearHighPrice != guitar.yearLowPrice && guitar.year !== 'n/a'" class="yearPricesHigh">
+                            <p>High Price: {{guitar.yearHighPrice}}</p>
+                        </div>
+
+                        <div ng-if="isItTrue(guitar.yearAvgPrice) && isItTrue(guitar.yearLowPrice) && guitar.yearHighPrice != guitar.yearLowPrice && guitar.year !== 'n/a'" class="yearPricesLow">
+                            <p>Low Price: {{guitar.yearLowPrice}}</p>
+                        </div>
+                    </div>
+                    <div ng-if="guitar.finish != 'n/a' && isItTrue(guitar.mainAvgPrice) && isItTrue(guitar.mainLowPrice)" class="finishPricesClass">
+
+                        <div class="finishPriceTitle">
+                            <p ng-if="isItTrue(guitar.finishAvgPrice) && isItTrue(guitar.finishLowPrice) && guitar.finishHighPrice != guitar.finishLowPrice && guitar.finish !== 'n/a'">{{guitar.finish}} {{guitar.guitarBrand}} {{guitar.guitarModel}}s</p>
+                            <p ng-if="isItFalse(guitar.finishAvgPrice) && guitar.finish !== 'n/a'">No recent sales for {{guitar.finish}} {{guitar.guitarBrand}} {{guitar.guitarModel}}s</p>
+                            <p ng-if="isItFalse(guitar.finishLowPrice) && isItTrue(guitar.finishAvgPrice) && guitar.finish !== 'n/a' && guitar.finishHighPrice != guitar.finishLowPrice">There was only one recent sale for a {{guitar.finish}} {{guitar.guitarBrand}} {{guitar.guitarModel}}, it sold for {{guitar.finishAvgPrice}}</p>
+                            <p ng-if="guitar.finishHighPrice === guitar.finishLowPrice && isItTrue(guitar.finishAvgPrice) && guitar.finish !== 'n/a'">There was only one recent sale for a {{guitar.finish}} {{guitar.guitarBrand}} {{guitar.guitarModel}}, it sold for {{guitar.finishAvgPrice}}</p>                            
+                        </div>
+
+                        <div ng-if="isItTrue(guitar.finishAvgPrice) && isItTrue(guitar.finishLowPrice) && guitar.finishHighPrice != guitar.finishLowPrice && guitar.finish !== 'n/a'" class="finishPricesAverage">
+                            <p>Average: {{guitar.finishAvgPrice}}</p>
+                        </div>
+                        <div ng-if="isItTrue(guitar.finishAvgPrice) && isItTrue(guitar.finishLowPrice) && guitar.finishHighPrice != guitar.finishLowPrice &&  guitar.finish !== 'n/a'" class="finishPricesHigh">
+                            <p>High Price: {{guitar.finishHighPrice}}</p>                            
+                        </div>
+                        <div ng-if="isItTrue(guitar.finishAvgPrice) && isItTrue(guitar.finishLowPrice) && guitar.finishHighPrice != guitar.finishLowPrice && guitar.finish !== 'n/a'" class="finishPricesLow">
+                            <p>Low Price: {{guitar.finishLowPrice}}</p>                            
+                        </div>
+                    </div>
+                    <div ng-if="guitar.condition != 'n/a' && isItTrue(guitar.mainAvgPrice) && isItTrue(guitar.mainLowPrice)" class="conditionPricesClass">
+                        <div class="conditionPriceTitle">
+                            <p ng-if="isItTrue(guitar.conditionAvgPrice) && isItTrue(guitar.conditionLowPrice) && guitar.conditionHighPrice != guitar.conditionLowPrice && guitar.condition !== 'n/a'">{{guitar.guitarBrand}} {{guitar.guitarModel}} in {{guitar.condition}} condition</p>
+                            <p ng-if="isItFalse(guitar.conditionAvgPrice) && guitar.year !== 'n/a'">No recent sales for a {{guitar.guitarBrand}} {{guitar.guitarModel}} in {{guitar.condition}} condition</p>
+                            <p ng-if="isItFalse(guitar.conditionLowPrice) && isItTrue(guitar.conditionAvgPrice) && guitar.condition !== 'n/a' && guitar.conditionHighPrice != guitar.conditionLowPrice ">There was only one recent sale for a {{guitar.guitarBrand}} {{guitar.guitarModel}} in {{guitar.condition}} condition, it sold for {{guitar.conditionAvgPrice}}</p>
+                            <p ng-if="guitar.conditionHighPrice === guitar.conditionLowPrice && isItTrue(guitar.conditionAvgPrice) && guitar.condition !== 'n/a'">There was only one recent sale for a {{guitar.guitarBrand}} {{guitar.guitarModel}} in {{guitar.condition}} condition, it sold for {{guitar.conditionAvgPrice}}</p>                            
+                        </div>
+                        <div ng-if="isItTrue(guitar.conditionAvgPrice) && isItTrue(guitar.conditionLowPrice) && guitar.conditionHighPrice != guitar.conditionLowPrice && guitar.condition !== 'n/a'" class="conditionPricesAverage">
+                            <p>Average: {{guitar.conditionAvgPrice}}</p>                            
+                        </div>
+                        <div ng-if="isItTrue(guitar.conditionAvgPrice) && isItTrue(guitar.conditionLowPrice) && guitar.conditionHighPrice != guitar.conditionLowPrice && guitar.condition !== 'n/a'" class="conditionPricesHigh">
+                            <p>High Price: {{guitar.conditionHighPrice}}</p>                            
+                        </div>
+                        <div ng-if="isItTrue(guitar.conditionAvgPrice) && isItTrue(guitar.conditionLowPrice) && guitar.conditionHighPrice != guitar.conditionLowPrice && guitar.condition !== 'n/a'" class="conditionPricesLow">
+                            <p>Low Price: {{guitar.conditionLowPrice}}</p>                            
+                        </div>
+                    </div>
+                    <div ng-if="guitar.country != 'n/a' && isItTrue(guitar.mainAvgPrice) && isItTrue(guitar.mainLowPrice)" class="countryPricesClass">
+                        <div class="countryPriceTitle">
+                            <p ng-if="isItTrue(guitar.countryAvgPrice) && isItTrue(guitar.countryLowPrice) && guitar.countryHighPrice != guitar.countryLowPrice && guitar.country !== 'n/a'">Made in {{guitar.country}} {{guitar.guitarBrand}} {{guitar.guitarModel}}s</p>
+                            <p ng-if="isItFalse(guitar.countryAvgPrice) && guitar.country !== 'n/a'">No recent sales for a made in {{guitar.country}} {{guitar.guitarBrand}} {{guitar.guitarModel}}s</p>
+                            <p ng-if="isItFalse(guitar.countryLowPrice) && isItTrue(guitar.countryAvgPrice) && guitar.country !== 'n/a' && guitar.countryHighPrice != guitar.countryLowPrice">There was only one recent sale a made in {{guitar.country}} {{guitar.guitarBrand}} {{guitar.guitarModel}}, it sold for {{guitar.countryAvgPrice}}</p>
+                            <p ng-if="guitar.countryHighPrice === guitar.countryLowPrice && isItTrue(guitar.countryAvgPrice) && guitar.country !== 'n/a'">There was only one recent sale a made in {{guitar.country}} {{guitar.guitarBrand}} {{guitar.guitarModel}}, it sold for {{guitar.countryAvgPrice}}</p>                            
+                        </div>
+
+                        <div ng-if="isItTrue(guitar.countryAvgPrice) && isItTrue(guitar.countryLowPrice) && guitar.countryHighPrice != guitar.countryLowPrice && guitar.country !== 'n/a'" class="countryPricesAverage">
+                            <p>Average: {{guitar.countryAvgPrice}}</p>
+                        </div>
+                        <div ng-if="isItTrue(guitar.countryAvgPrice) && isItTrue(guitar.countryLowPrice) && guitar.countryHighPrice != guitar.countryLowPrice && guitar.country !== 'n/a'" class="countryPricesHigh">
+                            <p>High Price: {{guitar.countryHighPrice}}</p>                            
+                        </div>
+                        <div ng-if="isItTrue(guitar.countryAvgPrice) && isItTrue(guitar.countryLowPrice) && guitar.countryHighPrice != guitar.countryLowPrice && guitar.country !== 'n/a'" class="countryPricesLow">
+                            <p>Low Price: {{guitar.countryLowPrice}}</p>                            
+                        </div>
+                    </div>
+                </div>
+                <!-- <ul>
                     <li ng-if="isItTrue(guitar.mainAvgPrice) && isItTrue(guitar.mainLowPrice)">Current average value for a {{guitar.guitarBrand}} {{guitar.guitarModel}}:  {{guitar.mainAvgPrice}}</li>
                     <li ng-if="isItFalse(guitar.mainAvgPrice)">No recent sales for {{guitar.guitarBrand}} {{guitar.guitarModel}}s</li>
                     <li ng-if="isItFalse(guitar.mainLowPrice) && isItTrue(guitar.mainAvgPrice)">There was only one recent sale for a {{guitar.guitarBrand}}{{guitar.guitarModel}}, it sold for {{guitar.mainAvgPrice}}</li>
@@ -34,7 +128,7 @@
                     <li ng-if="isItTrue(guitar.countryAvgPrice) && isItTrue(guitar.countryLowPrice) && guitar.country !== 'n/a'">Made in {{guitar.country}} {{guitar.guitarBrand}} {{guitar.guitarModel}}s have an avergae value of: {{guitar.countryAvgPrice}}</li>
                     <li ng-if="isItFalse(guitar.countryAvgPrice) && guitar.country !== 'n/a'"> There are no recent sales for a made in {{guitar.country}} {{guitar.guitarBrand}} {{guitar.guitarModel}}</li>
                     <li ng-if="isItFalse(guitar.countryLowPrice) && isItTrue(guitar.countryAvgPrice) && guitar.country !== 'n/a'">There was only one recent sale for a made in {{guitar.country}} {{guitar.guitarBrand}} {{guitar.guitarModel}}, it sold for {{guitar.countryAvgPrice}}</li>
-                </ul>
+                </ul> -->
             </div>
         </div>
     </div>

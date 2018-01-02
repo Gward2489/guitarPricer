@@ -5,7 +5,6 @@ angular
 
         $scope.conditionValues = ["Excellent", "Good", "Usable"]
 
-        
 
         $scope.storeGuitarInfo = function (guitarBrand, guitarModel, 
             acousticOrElectric, vintageCheck, condition, finish, year, guitarOrBass, country) {

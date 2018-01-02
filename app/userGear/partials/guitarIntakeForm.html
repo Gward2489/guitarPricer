@@ -1,6 +1,7 @@
 <div ng-include="'app/userGear/partials/userNav.html'"></div>
 
 
+
 <div class="guitarIntakeWrapper">
 
     <div class="guitarIntakeTitleWrapper">
@@ -41,10 +42,10 @@
                         </select>
                     </div>
 
-                    <div class="guitarOrBassWrapper">
-                        <p class="guitarOrBassTitle">Guitar or Bass?</p>
-                        <p class="guitarOrBassSubTitle">*required</p>
-                        <div class="guitarOrBassInput">
+                    <div class="intakeGuitarOrBassWrapper">
+                        <p class="intakeGuitarOrBassTitle">Guitar or Bass?</p>
+                        <p class="intakeGuitarOrBassSubTitle">*required</p>
+                        <div class="intakeGuitarOrBassInput">
                             <label class="guitarRadio">
                                 Guitar
                                 <span ng-show="guitarBass === 'guitar'">
@@ -68,10 +69,10 @@
                         </div>
                     </div>
 
-                    <div class="electricAcousticWrapper">
-                        <p class="electricAcousticTitle">Electric or Acoustic?</p>
-                        <p class="electricAcousticSubTitle">(check acoustic for acoustics w/ pickups)</p>
-                        <div class="electricAcousticInput">
+                    <div class="intakeElectricAcousticWrapper">
+                        <p class="intakeElectricAcousticTitle">Electric or Acoustic?</p>
+                        <p class="intakeElectricAcousticSubTitle">(check acoustic for acoustics w/ pickups)</p>
+                        <div class="intakeElectricAcousticInput">
                             <label class="electricButton">
                                 Electric
                                 <span ng-show="electricAcoustic === 'electric'">
@@ -97,20 +98,20 @@
                 </div>
                 <div class="guitarIntakeFormRowThree">
 
-                    <div class="guitarFinishWrapper">
-                        <p class="guitarFinishTitle">Color and/or Finish</p>
-                        <p class="guitarFinishSubTitle">(leave blank if unkown)</p>
-                        <input class="guitarFinishInput" type="text" ng-model="finishInput">
+                    <div class="intakeGuitarFinishWrapper">
+                        <p class="intakeGuitarFinishTitle">Color and/or Finish</p>
+                        <p class="intakeGuitarFinishSubTitle">(leave blank if unkown)</p>
+                        <input class="intakeGuitarFinishInput" type="text" ng-model="finishInput">
                     </div>
-                    <div class="guitarCountryWrapper">
-                        <p class="guitarCountryTitle">Country of Origin</p>
-                        <p class="guitarCountrySubTitle">(leave blank if unknown)</p>
-                        <input class="guitarCountryInput" type="text" ng-model="guitarCountryInput">
+                    <div class="intakeGuitarCountryWrapper">
+                        <p class="intakeGuitarCountryTitle">Country of Origin</p>
+                        <p class="intakeGuitarCountrySubTitle">(leave blank if unknown)</p>
+                        <input class="intakeGuitarCountryInput" type="text" ng-model="guitarCountryInput">
                     </div>
-                    <div class="vintageWrapper">
-                        <p class="vintageTitle">Is it vintage?</p>
-                        <p class="vintageSubTitle">(30+ years old)*required</p>
-                        <div class="vintageInput">
+                    <div class="intakeVintageWrapper">
+                        <p class="intakeVintageTitle">Is it vintage?</p>
+                        <p class="intakeVintageSubTitle">(30+ years old)*required</p>
+                        <div class="intakeVintageInput">
                             <label class="vintageYesButton">
                                 Yes
                                 <span ng-show="vintageCheck === 'yes'">

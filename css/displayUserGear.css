@@ -10,6 +10,14 @@
 
 .userDisplayTitleWrapper {
     grid-area: userDisplayTitle;
+    justify-self: center;
+    margin-top: 1em;
+}
+
+.userDisplayTitle {
+    border-bottom: .2em solid rgba(216, 216, 216, 0.959);    
+    padding: 0 .9em .1em;
+    font-size: 1.7em;
 }
 
 .displayLoadingWrapper {
@@ -18,10 +26,15 @@
 
 .userGuitarDisplayWrapper {
     grid-area: userGuitarDisplaySection;
+    margin: 0 2em 0 2em;
+    justify-self: center;
 }
 
 .rowOfGuitars {
     display: grid;
+    justify-content: center;
+    grid-column-gap: 1em;
+    max-height: 25em;
     grid-template-columns: 33.3% 33.3% 33.3%;
     grid-template-areas: 
     "guitarOne guitarTwo guitarThree"
@@ -31,14 +44,225 @@
 .rowOfGuitars:nth-child(1) {
     display: grid;
     grid-area: guitarOne;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+    "userGuitarTitle"
+    "averagePriceInformation"
+    "detailedPriceInformation"
+    ;
 }
 
 .rowOfGuitars:nth-child(2) {
     display: grid;
     grid-area: guitarTwo;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+    "userGuitarTitle"
+    "averagePriceInformation"
+    "detailedPriceInformation"
+    ;
 }
 
 .rowOfGuitars:nth-child(3) {
     display: grid;
     grid-area: guitarThree;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+    "userGuitarTitle"
+    "averagePriceInformation"
+    "detailedPriceInformation"
+    ;
+}
+
+
+.userGuitarTitleClass {
+    grid-area: userGuitarTitle;
+}
+
+.guitarTitleFormat {
+    text-align: center;
+    justify-self: center;
+    margin: .4em 2em 0 2em;
+    padding-bottom: .3em;
+    border-bottom: .13em solid rgba(216, 216, 216, 0.959);    
+}
+
+.averagePriceInformationClass {
+    grid-area: averagePriceInformation;
+    text-align: center;
+    justify-self: center;
+}
+
+.averagePriceFormat {
+    color:  rgb(146, 146, 146);
+    justify-self: center;
+    text-align: center;
+    margin: .5em 2em 0 2em;
+    padding-bottom: .2em;
+    margin-bottom: .2em;
+}
+
+.averagePriceClass {
+    margin-top: -.3em;
+}
+
+.detailedPriceInformationClass {
+    display: grid;
+    margin-top: -1.3em;
+    grid-area: detailedPriceInformation;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    grid-template-areas: 
+    "detailOne detailTwo"
+    "detailThree detailFour"
+    ;
+}
+
+.userGuitar {
+    border: solid 1px black;
+    max-width: 26em;
+}
+
+.detailedPriceInformationClass:nth-child(1) {
+    display: grid;
+    grid-area: detailOne;
+    grid-template-rows: 25% 25% 25% 25%;
+    grid-template-areas:
+    "detailTitle"
+    "detailAverage"
+    "detailHigh"
+    "detailLow"
+    ;
+}
+
+.yearPriceTitle {
+    grid-area: detailTitle;
+    justify-self: center;
+    margin-bottom: -.8em;
+}
+
+.yearPricesAverage {
+    grid-area: detailAverage;
+    justify-self: center;
+    margin-bottom: -.8em;
+}
+
+.yearPricesHigh {
+    grid-area: detailHigh;
+    justify-self: center;
+    margin-bottom: -.8em;
+}
+
+.yearPricesLow {
+    grid-area: detailLow;
+    justify-self: center;
+    margin-bottom: -.8em;
+}
+
+.detailedPriceInformationClass:nth-child(2) {
+    display: grid;
+    grid-area: detailTwo;
+    grid-template-rows: 25% 25% 25% 25%;
+    grid-template-areas:
+    "detailTitle"
+    "detailAverage"
+    "detailHigh"
+    "detailLow"
+    ;
+}
+
+.finishPriceTitle {
+    grid-area: detailTitle;
+    justify-self: center;
+    margin-bottom: -.8em;
+}
+
+.finishPricesAverage {
+    grid-area: detailAverage;
+    justify-self: center;
+    margin-bottom: -.8em;
+}
+
+.finishPricesHigh {
+    grid-area: detailHigh;
+    justify-self: center;
+    margin-bottom: -.8em;
+}
+
+.finishPricesLow {
+    grid-area: detailLow;
+    justify-self: center;
+    margin-bottom: -.8em;
+}
+
+.detailedPriceInformationClass:nth-child(3) {
+    display: grid;
+    grid-area: detailThree;
+    grid-template-rows: 25% 25% 25% 25%;
+    grid-template-areas:
+    "detailTitle"
+    "detailAverage"
+    "detailHigh"
+    "detailLow"
+    ;
+}
+
+.conditionPriceTitle {
+    grid-area: detailTitle;
+    justify-self: center;
+    margin-bottom: -.8em;
+}
+
+.conditionPricesAverage {
+    grid-area: detailAverage;
+    justify-self: center;
+    margin-bottom: -.8em;
+}
+
+.conditionPricesHigh {
+    grid-area: detailHigh;
+    justify-self: center;
+    margin-bottom: -.8em;
+}
+
+.conditionPricesLow {
+    grid-area: detailLow;
+    justify-self: center;
+    margin-bottom: -.8em;
+}
+
+.detailedPriceInformationClass:nth-child(4) {
+    display: grid;
+    grid-area: detailFour;
+    grid-template-rows: 25% 25% 25% 25%;
+    grid-template-areas:
+    "detailTitle"
+    "detailAverage"
+    "detailHigh"
+    "detailLow"
+    ;
+}
+
+.countryPriceTitle {
+    grid-area: detailTitle;
+    justify-self: center;
+    margin-bottom: -.8em;
+}
+
+.countryPricesAverage {
+    grid-area: detailAverage;
+    justify-self: center;
+    margin-bottom: -.8em;
+}
+
+.countryPricesHigh {
+    grid-area: detailHigh;
+    justify-self: center;
+    margin-bottom: -.8em;
+}
+
+.countryPricesLow {
+    grid-area: detailLow;
+    justify-self: center;
+    margin-bottom: -.8em;
 }

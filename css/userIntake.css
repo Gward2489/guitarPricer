@@ -1,7 +1,8 @@
 .guitarIntakeWrapper {
     display: grid;
     grid-area: body;
-    margin: 0 5em 3em 5em;
+    align-self: center;
+    justify-self: center;
     grid-template-rows: 10% 90%;
     grid-template-areas: 
     "intakeTitle"
@@ -50,6 +51,8 @@
 
 .guitarIntakeFormWrapper {
     display: grid;
+    justify-self: center;
+    align-self: center;
     grid-area: intakeForm;
     grid-template-rows: 90% 10%;
     grid-template-areas: 
@@ -92,6 +95,8 @@
 
 .guitarIntakeFormWrapperTwo {
     display: grid;
+    justify-self: center;
+    align-self: center;
     grid-area: intakeFormFields;
     max-height: 20em;
     grid-template-columns: 1fr 5fr 1fr;
@@ -231,7 +236,6 @@
 
 .guitarIntakeFormRowTwo {
     display: grid;
-    grid-column-gap: 5em;
     grid-area: fieldRowTwo;
     padding-bottom: 3em;
     grid-template-columns: 1fr 1fr 1fr;
@@ -243,7 +247,6 @@
 .intakeConditionWrapper {
     display: grid;
     grid-area: condition;
-    margin-left: 1em;
     max-height: 4em;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas:
@@ -255,6 +258,7 @@
 
 .intakeConditionTitle {
     grid-area: conditionTitle;
+    justify-self: center;
     white-space: nowrap;
     font-size: 1.2em;
     border-bottom: .2em solid rgba(216, 216, 216, 0.959);
@@ -278,11 +282,13 @@
     border: .1em solid rgba(216, 216, 216, 0.959);
 }
 
-.guitarOrBassWrapper {
+.intakeGuitarOrBassWrapper {
     display: grid;
     grid-area: guitarOrBass;
     max-height: 4em;
-    margin-right: -3.3em;
+    margin-right: -.3em;
+    justify-self: center;
+    align-self: center;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas:
     "guitarOrBassTitle"
@@ -291,7 +297,7 @@
     ;
 }
 
-.guitarOrBassTitle {
+.intakeGuitarOrBassTitle {
     grid-area: guitarOrBassTitle;
     white-space: nowrap;
     font-size: 1.2em;
@@ -299,23 +305,23 @@
     justify-self: center;
 }
 
-.guitarOrBassSubTitle {
+.intakeGuitarOrBassSubTitle {
     grid-area: guitarOrBassSubTitle;
     justify-self: center;
     margin-top: -1em;
     font-size: .9em; 
 }
 
-.guitarOrBassInput {
+.intakeGuitarOrBassInput {
     grid-area: guitarOrBassInput;
     white-space: nowrap;
     justify-self: center;
 }
 
-.electricAcousticWrapper {
+.intakeElectricAcousticWrapper {
     display: grid;
     max-height: 4em;
-    margin-right: -1.2em;
+    margin-right: -1.1em;
     grid-area: electricOrAcoustic;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas:
@@ -325,7 +331,7 @@
     ;
 }
 
-.electricAcousticTitle {
+.intakeElectricAcousticTitle {
     grid-area: electricOrAcousticTitle;
     border-bottom: .2em solid rgba(216, 216, 216, 0.959);
     justify-self: center;
@@ -333,7 +339,7 @@
     white-space: nowrap;
 }
 
-.electricAcousticSubTitle {
+.intakeElectricAcousticSubTitle {
     grid-area: electricOrAcousticSubTitle;
     text-align: center;
     white-space: nowrap;
@@ -341,7 +347,7 @@
     margin-top: -1em;
 }
 
-.electricAcousticInput {
+.intakeElectricAcousticInput {
     grid-area: electricOrAcousticInput;
     white-space: nowrap;
     justify-self: center;
@@ -356,7 +362,7 @@
     ;
 }
 
-.guitarFinishWrapper {
+.intakeGuitarFinishWrapper {
     display: grid;
     grid-area: finish;
     max-height: 4em;
@@ -368,7 +374,7 @@
     ;
 }
 
-.guitarFinishTitle {
+.intakeGuitarFinishTitle {
     grid-area: finishTitle;
     border-bottom: .2em solid rgba(216, 216, 216, 0.959);
     justify-self: center;
@@ -376,7 +382,7 @@
     white-space: nowrap;
 }
 
-.guitarFinishSubTitle {
+.intakeGuitarFinishSubTitle {
     grid-area: finishSubTitle;
     justify-self: center;
     font-size: .9em;
@@ -384,7 +390,7 @@
     white-space: nowrap;
 }
 
-.guitarFinishInput {
+.intakeGuitarFinishInput {
     grid-area: finishInput;
     justify-self: center;
     text-align: center;
@@ -395,7 +401,7 @@
     border: .1em solid rgba(216, 216, 216, 0.959);
 }
 
-.guitarCountryWrapper {
+.intakeGuitarCountryWrapper {
     display: grid;
     grid-area: country;
     max-height: 4em;
@@ -407,7 +413,7 @@
     ;
 }
 
-.guitarCountryTitle {
+.intakeGuitarCountryTitle {
     grid-area: countryTitle;
     font-size: 1.1em;
     border-bottom: .2em solid rgba(216, 216, 216, 0.959);
@@ -415,7 +421,7 @@
     white-space: nowrap;
 }
 
-.guitarCountrySubTitle {
+.intakeGuitarCountrySubTitle {
     grid-area: countrySubTitle;
     justify-self: center;
     font-size: .9em;
@@ -423,7 +429,7 @@
     white-space: nowrap;
 }
 
-.guitarCountryInput {
+.intakeGuitarCountryInput {
     grid-area: countryInput;
     justify-self: center;
     text-align: center;
@@ -434,7 +440,7 @@
     border: .1em solid rgba(216, 216, 216, 0.959);
 }
 
-.vintageWrapper {
+.intakeVintageWrapper {
     display: grid;
     grid-area: vintage;
     font-size: 1.1em;
@@ -447,7 +453,9 @@
     ;
 }
 
-.vintageTitle {
+
+
+.intakeVintageTitle {
     grid-area: vintageTitle;
     justify-self: center;
     border-bottom: .2em solid rgba(216, 216, 216, 0.959);
@@ -455,7 +463,7 @@
     white-space: nowrap;
 }
 
-.vintageSubTitle {
+.intakeVintageSubTitle {
     grid-area: vintageSubTitle;
     font-size: .8em;
     justify-self: center;
@@ -463,7 +471,7 @@
     white-space: nowrap;
 }
 
-.vintageInput {
+.intakeVintageInput {
     grid-area: vintageInput;
     justify-self: center;
     margin-top: .4em;
