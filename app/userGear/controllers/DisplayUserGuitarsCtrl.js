@@ -89,30 +89,35 @@ angular
                                 guitar.mainAvgPrice = priceObj.avgPrice
                                 guitar.mainLowPrice = priceObj.lowPrice
                                 guitar.mainHighPrice = priceObj.highPrice
+                                guitar.numberOfMatches = priceObj.numberOfMatches
                             }
                         
                             if (priceObj.priceCategory === "condition") {
                                 guitar.conditionAvgPrice = priceObj.avgPrice
                                 guitar.conditionLowPrice = priceObj.lowPrice
                                 guitar.conditionHighPrice = priceObj.highPrice
+                                guitar.conditionMatches = priceObj.numberOfMatches
                             }
                         
                             if (priceObj.priceCategory === "year") {
                                 guitar.yearAvgPrice = priceObj.avgPrice
                                 guitar.yearLowPrice = priceObj.lowPrice
                                 guitar.yearHighPrice = priceObj.highPrice
+                                guitar.yearMatches = priceObj.numberOfMatches
                             }
                         
                             if (priceObj.priceCategory === "finish") {
                                 guitar.finishAvgPrice = priceObj.avgPrice
                                 guitar.finishLowPrice = priceObj.lowPrice
                                 guitar.finishHighPrice = priceObj.highPrice
+                                guitar.finishMatches = priceObj.numberOfMatches
                             }
                             
                             if (priceObj.priceCategory === "country") {
                                 guitar.countryAvgPrice = priceObj.avgPrice
                                 guitar.countryLowPrice = priceObj.lowPrice
                                 guitar.countryHighPrice = priceObj.highPrice
+                                guitar.countryMatches = priceObj.numberOfMatches
                             }
                         })
 

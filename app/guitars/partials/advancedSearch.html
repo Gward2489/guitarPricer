@@ -2,6 +2,10 @@
 
 <div class="advancedSearchContentWrapper">
    
+    <div class="advSearchLoadingWrapper">
+        <img ng-show="loading" src="../images/ajax-loader.gif">
+    </div>
+
     <div class="advancedSearchDivWrapper">
 
             <div class="searchHeaderWrapper">
@@ -151,15 +155,11 @@
                     <button class="advSearchButtonClass" ng-click="getAdvancedPrice(guitarBrandInput, guitarModelInput, electricAcoustic, vintageCheck, selectedCondition, finishInput, yearInput, guitarBass, guitarCountryInput)">Search</button>
                 </div>
             </div>
-
-        <div>
-            <img ng-show="loading" src="../images/ajax-loader.gif">
-        </div>
     </div>
 
     <div ng-if="showResultsTitle" class="advancedSearchResultsDisplayWrapper">
 
-        <div class="advancedSearchResultsDisplay">
+        <div ng-show="!loading" class="advancedSearchResultsDisplay">
 
             <h2 ng-show="showResultsTitle" class="generalPriceHeader">
             Price Information for a {{guitarUserSearchedFor}}
@@ -481,6 +481,7 @@
                                 (based on {{prices.numberOfMatches}} results)                    
                             </div>
 
+                        
                             <div class="singleSubTitleClass" ng-if="isItFalse(prices.lowPrice) && isItTrue(prices.avgPrice) && prices.lowPrice != prices.highPrice">
                                 (there was only one matching guitar)
                             </div>

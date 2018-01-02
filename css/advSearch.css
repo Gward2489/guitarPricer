@@ -588,3 +588,11 @@ select {
     cursor: pointer;
 }
 
+.advSearchLoadingWrapper {
+    grid-area: advSearchResults;
+    justify-self: center;
+    align-self: center;
+    justify-content: center;
+    align-content: center;  
+}
+
