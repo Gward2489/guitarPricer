@@ -193,7 +193,7 @@
                         <div class="mainSubTitleWrapper">
 
                             <div class="generalSubTitleClass" ng-if="isItTrue(prices.avgPrice) && isItTrue(prices.lowPrice) && prices.lowPrice != prices.highPrice">
-                                (based on x results)                    
+                                (based on {{prices.numberOfMatches}} results)                    
                             </div>
 
                             <div class="singleSubTitleClass" ng-if="isItFalse(prices.lowPrice) && isItTrue(prices.avgPrice) && prices.lowPrice != prices.highPrice">
@@ -265,7 +265,7 @@
                         <div class="yearSubTitleWrapper">
 
                             <div class="generalSubTitleClass" ng-if="isItTrue(prices.avgPrice) && isItTrue(prices.lowPrice) && prices.lowPrice != prices.highPrice">
-                                (based on x results)                    
+                                (based on {{prices.numberOfMatches}} results)                    
                             </div>
 
                             <div class="singleSubTitleClass" ng-if="isItFalse(prices.lowPrice) && isItTrue(prices.avgPrice) && prices.lowPrice != prices.highPrice">
@@ -336,7 +336,7 @@
                         <div class="conditionSubTitleWrapper">
 
                             <div class="generalSubTitleClass" ng-if="isItTrue(prices.avgPrice) && isItTrue(prices.lowPrice) && prices.lowPrice != prices.highPrice">
-                                (based on x results)                    
+                                (based on {{prices.numberOfMatches}} results)                    
                             </div>
 
                             <div class="singleSubTitleClass" ng-if="isItFalse(prices.lowPrice) && isItTrue(prices.avgPrice) && prices.lowPrice != prices.highPrice">
@@ -407,7 +407,7 @@
                         <div class="finishSubTitleWrapper">
 
                             <div class="generalSubTitleClass" ng-if="isItTrue(prices.avgPrice) && isItTrue(prices.lowPrice) && prices.lowPrice != prices.highPrice">
-                                (based on x results)                    
+                                (based on {{prices.numberOfMatches}} results)                    
                             </div>
 
                             <div class="singleSubTitleClass" ng-if="isItFalse(prices.lowPrice) && isItTrue(prices.avgPrice) && prices.lowPrice != prices.highPrice">
@@ -478,7 +478,7 @@
                         <div class="countrySubTitleWrapper">
 
                             <div class="generalSubTitleClass" ng-if="isItTrue(prices.avgPrice) && isItTrue(prices.lowPrice) && prices.lowPrice != prices.highPrice">
-                                (based on x results)                    
+                                (based on {{prices.numberOfMatches}} results)                    
                             </div>
 
                             <div class="singleSubTitleClass" ng-if="isItFalse(prices.lowPrice) && isItTrue(prices.avgPrice) && prices.lowPrice != prices.highPrice">

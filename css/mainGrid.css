@@ -1,5 +1,6 @@
 .mainGrid {
     display: grid;
+    margin: .7em -.01em 0 -.01em;
     background-color: #FFF;
     font-family: "Rubik", Arial, Helvetica, sans-serif;
     grid-template-rows: 10% 10% 80%;

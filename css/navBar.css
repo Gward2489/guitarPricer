@@ -3,7 +3,7 @@
     max-height: 4em;    
     background-color: rgba(0, 55, 255, 0.6);
     margin-top: -1em;
-    padding-bottom: 2.5em;
+    padding-bottom: 3em;
     border-bottom: .3em solid rgba(216, 216, 216, 0.959);
     grid-area: nav;
     grid-template-columns: 3fr 4fr 2fr;
@@ -63,6 +63,7 @@
     align-self: center;
     justify-self: center;
     margin-top: .6em;
+    margin-left: .4em;
     height: 5.3em;
     width: 6em;
 }

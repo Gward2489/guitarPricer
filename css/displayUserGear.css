@@ -1,4 +1,4 @@
-.userDisplayWrapper {
+\.userDisplayWrapper {
     display: grid;
     grid-area: body;
     grid-template-rows: 10% 90%;
@@ -102,8 +102,10 @@
     justify-self: center;
     text-align: center;
     margin: .5em 2em 0 2em;
-    padding-bottom: .2em;
-    margin-bottom: .2em;
+    padding: .2em;
+    margin-bottom: .6em;
+    border: .13em solid rgba(216, 216, 216, 0.959); 
+    border-radius: .4em;   
 }
 
 .averagePriceClass {
@@ -111,7 +113,6 @@
     color:  rgba(146, 146, 146, 0.9);
     white-space: nowrap;
     padding: 0 .3em .3em .3em;
-    border-bottom: .13em solid rgba(216, 216, 216, 0.959);    
 
 }
 
@@ -180,6 +181,7 @@
 
 .detailedPriceInformationClass:nth-child(2) {
     display: grid;
+    border: .13em solid rgba(146, 146, 146, 0.9)
     grid-area: detailTwo;
     grid-template-rows: 25% 25% 25% 25%;
     grid-template-areas:
@@ -309,12 +311,14 @@
 }
 
 .userDisplayPriceAdjust {
-    font-size: 1.03em;
+    font-size: 1.06em;
     white-space: nowrap;
+    font-weight: 800;
 }
 
 .detailedPriceTitleAdjustment {
-    border-bottom: .13em solid rgba(216, 216, 216, 0.959);  
+    border: .13em solid rgba(216, 216, 216, 0.959); 
+    border-radius: .4em; 
     padding: 0 .3em .2em .3em;
     margin-left: 1em;
     margin-right: 1em;

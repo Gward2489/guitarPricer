@@ -315,9 +315,9 @@ angular
                                         refinedPriceArray = guitarPricesArray
                                     }
 
-                                    let numberOfMatches = refinedPriceArray.length
+                                    let mainNumberOfMatches = refinedPriceArray.length
 
-                                    if (numberOfMatches > 1) {
+                                    if (mainNumberOfMatches > 1) {
 
                                         let mainAvgPrice = this.getAverage(refinedPriceArray)
 
@@ -332,7 +332,8 @@ angular
                                             "priceCategory": "main",
                                             "avgPrice": mainAvgPrice,
                                             "lowPrice": lowPrice,
-                                            "highPrice": highPrice
+                                            "highPrice": highPrice,
+                                            "numberOfMatches": mainNumberOfMatches
                                         }
 
                                         finalPrices.push(mainPrices)
@@ -409,7 +410,8 @@ angular
                                                             "priceCategory": "country",
                                                             "avgPrice": avgCountryPrice,
                                                             "lowPrice": lowPrice,
-                                                            "highPrice": highPrice
+                                                            "highPrice": highPrice,
+                                                            "numberOfMatches": numberOfMatches
                                                         }
     
                                                         finalPrices.push(countryPrices)
@@ -422,7 +424,9 @@ angular
                                                             "priceCategory": "country",
                                                             "avgPrice": avgCountryPrice,
                                                             "lowPrice": false,
-                                                            "highPrice": false
+                                                            "highPrice": false,
+                                                            "numberOfMatches": numberOfMatches
+                                                            
                                                         }
 
                                                         finalPrices.push(countryPrices)
@@ -437,7 +441,9 @@ angular
                                                         "priceCategory": "country",
                                                         "avgPrice": avgCountryPrice,
                                                         "lowPrice": false,
-                                                        "highPrice": false
+                                                        "highPrice": false,
+                                                        "numberOfMatches": false
+                                                        
                                                     }
                                                     finalPrices.push(countryPrices)
                                                 }
@@ -447,7 +453,9 @@ angular
                                                     "priceCategory": "country",
                                                     "avgPrice": false,
                                                     "lowPrice": false,
-                                                    "highPrice": false
+                                                    "highPrice": false,
+                                                    "numberOfMatches": false                                                    
+
                                                 }
                                                 finalPrices.push(countryPrices)
                                             }
@@ -486,7 +494,8 @@ angular
                                                         "priceCategory": "condition",
                                                         "avgPrice": avgConditionPrice,
                                                         "lowPrice": lowPrice,
-                                                        "highPrice": highPrice
+                                                        "highPrice": highPrice,
+                                                        "numberOfMatches": numberOfMatches                                                        
                                                     }
     
                                                     finalPrices.push(conditionPrices)
@@ -499,7 +508,8 @@ angular
                                                         "priceCategory": "condition",
                                                         "avgPrice": avgConditionPrice,
                                                         "lowPrice": false,
-                                                        "highPrice": false
+                                                        "highPrice": false,
+                                                        "numberOfMatches": numberOfMatches                                                        
                                                     }
     
                                                     finalPrices.push(conditionPrices)
@@ -515,19 +525,20 @@ angular
                                                     "priceCategory": "condition",
                                                     "avgPrice": avgConditionPrice,
                                                     "lowPrice": false,
-                                                    "highPrice": false
+                                                    "highPrice": false,
+                                                    "numberOfMatches": false                              
                                                 }
-    
                                                 finalPrices.push(conditionPrices)
                                             }
-    
                                         } else {
     
                                             let conditionPrices = {
                                                 "priceCategory": "condition",
                                                 "avgPrice": false,
                                                 "lowPrice": false,
-                                                "highPrice": false
+                                                "highPrice": false,
+                                                "numberOfMatches": false
+                                                
                                             }
     
                                             finalPrices.push(conditionPrices)
@@ -568,7 +579,8 @@ angular
                                                             "priceCategory": "finish",
                                                             "avgPrice": avgFinishPrice,
                                                             "lowPrice": lowPrice,
-                                                            "highPrice": highPrice
+                                                            "highPrice": highPrice,
+                                                            "numberOfMatches": numberOfMatches
                                                         }
     
                                                         finalPrices.push(finishPrices)
@@ -581,7 +593,9 @@ angular
                                                             "priceCategory": "finish",
                                                             "avgPrice": avgFinishPrice,
                                                             "lowPrice": false,
-                                                            "highPrice": false
+                                                            "highPrice": false,
+                                                            "numberOfMatches": numberOfMatches
+                                                            
                                                         }
     
                                                         finalPrices.push(finishPrices)
@@ -597,7 +611,8 @@ angular
                                                         "priceCategory": "finish",
                                                         "avgPrice": avgFinishPrice,
                                                         "lowPrice": false,
-                                                        "highPrice": false
+                                                        "highPrice": false,
+                                                        "numberOfMatches": false
                                                     }
     
                                                     finalPrices.push(finishPrices)
@@ -609,11 +624,11 @@ angular
                                                     "priceCategory": "finish",
                                                     "avgPrice": false,
                                                     "lowPrice": false,
-                                                    "highPrice": false
+                                                    "highPrice": false,
+                                                    "numberOfMatches": false
+                                                    
                                                 }
-    
                                                 finalPrices.push(finishPrices)
-                                    
                                             }
                                         }
     
@@ -651,7 +666,8 @@ angular
                                                             "priceCategory": "year",
                                                             "avgPrice": avgYearPrice,
                                                             "lowPrice": lowPrice,
-                                                            "highPrice": highPrice
+                                                            "highPrice": highPrice,
+                                                            "numberOfMatches": numberOfMatches                                                            
                                                         }
     
                                                         finalPrices.push(yearPrices)
@@ -664,11 +680,10 @@ angular
                                                             "priceCategory": "year",
                                                             "avgPrice": avgYearPrice,
                                                             "lowPrice": false,
-                                                            "highPrice": false
+                                                            "highPrice": false,
+                                                            "numberOfMatches": numberOfMatches                                                            
                                                         }
-
-                                                        finalPrices.push(yearPrices)
-                                                        
+                                                        finalPrices.push(yearPrices)                     
                                                     }
     
                                                 } else {
@@ -681,7 +696,9 @@ angular
                                                         "priceCategory": "year",
                                                         "avgPrice": avgYearPrice,
                                                         "lowPrice": false,
-                                                        "highPrice": false
+                                                        "highPrice": false,
+                                                        "numberOfMatches": false
+                                                        
                                                     }
     
                                                     finalPrices.push(yearPrices)
@@ -693,7 +710,8 @@ angular
                                                     "priceCategory": "year",
                                                     "avgPrice": false,
                                                     "lowPrice": false,
-                                                    "highPrice": false
+                                                    "highPrice": false,
+                                                    "numberOfMatches": false
                                                 }
     
                                                 finalPrices.push(yearPrices)
@@ -708,8 +726,9 @@ angular
                                             "priceCategory": "main",
                                             "avgPrice": mainAvgPrice,
                                             "lowPrice": false,
-                                            "highPrice": false
-    
+                                            "highPrice": false,
+                                            "numberOfMatches": false
+                                        
                                         }
 
                                         finalPrices.push(mainPrices)
@@ -725,7 +744,9 @@ angular
                                         "priceCategory": "main",
                                         "avgPrice": mainAvgPrice,
                                         "lowPrice": false,
-                                        "highPrice": false
+                                        "highPrice": false,
+                                        "numberOfMatches": false
+                                        
 
                                     }
 
@@ -737,7 +758,8 @@ angular
                                     "priceCategory": "main",
                                     "avgPrice": false,
                                     "lowPrice": false,
-                                    "highPrice": false
+                                    "highPrice": false,
+                                    "numberOfMatches": false
                                 }
                                 finalPrices.push(mainPrices)
                             }
