@@ -74,7 +74,7 @@
 .submitNewGuitarButton {
     align-self: center;
     justify-self: center;
-    background-color: #FFF;
+    background-color: #fff0;
     outline: none;
     overflow: hidden;
     padding: .5em;
@@ -84,10 +84,10 @@
     white-space: nowrap;
     text-decoration: none;
     text-transform: none;
-    color: rgb(111, 225, 253);
-    border: solid .3em rgb(111, 225, 253);
-    border-radius: 4px;
-    font-size: .9em;
+    color: rgb(111, 137, 255);
+    border: solid .3em rgb(111, 137, 255);
+    border-radius: .4em;
+    font-size: 1.2em;
     font-weight: 900;
     line-height: .8em;
     width: 7em;

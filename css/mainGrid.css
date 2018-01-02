@@ -11,17 +11,17 @@
 }
 
 .averagePrice {
-    color: rgb(111, 225, 253);
+    color: rgba(111, 137, 255, 0.83);
     font-size: 1.4em;    
 }
 
 .highPrice {
-    color: rgba(93, 245, 32, 0.938);
+    color: rgba(79, 191, 34, 0.85);
     font-size: 1.4em;
 }
 
 .lowPrice {
-    color: rgba(251, 32, 87, 0.918);
+    color: rgba(255, 53, 103, 0.918);
     font-size: 1.4em;    
 }
 

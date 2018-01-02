@@ -114,20 +114,20 @@
     align-self: center;
     margin-top: .2em;
     justify-self: center;
-    background-color: #FFF;
+    background-color: #fff0;
     outline: none;
     overflow: hidden;
-    padding: .5em;
+    padding: .3em;
     cursor: pointer;
     user-select: none;
     text-align: center;
     white-space: nowrap;
     text-decoration: none;
     text-transform: none;
-    color: rgb(111, 225, 253);
-    border: solid .3em rgb(111, 225, 253);
-    border-radius: 4px;
-    font-size: .9em;
+    color: rgb(111, 137, 255);
+    border: solid .3em rgb(111, 137, 255);
+    border-radius: .4em;
+    font-size: 1.2em;
     font-weight: 900;
     line-height: .8em;
     width: 9em;
@@ -147,10 +147,10 @@
     white-space: nowrap;
     text-decoration: none;
     text-transform: none;
-    color: rgb(111, 225, 253);
-    border: solid .3em rgb(111, 225, 253);
-    border-radius: 4px;
-    font-size: .9em;
+    color: rgb(111, 137, 255);
+    border: solid .3em rgb(111, 137, 255);
+    border-radius: .4em;
+    font-size: 1.2em;
     font-weight: 900;
     line-height: .8em;
     width: 7em;
@@ -549,7 +549,7 @@ input[type="radio"] {
 }
 
 .honk {
-    background-color: #75e5ff99;
+    background-color: #6f89ffb8;
     border-radius: 100%;
 }
 

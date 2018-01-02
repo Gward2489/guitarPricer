@@ -2,6 +2,7 @@
     display: grid;
     grid-area: body;
     grid-template-rows: 10% 90%;
+    margin-bottom: 2em;
     grid-template-areas: 
     "userDisplayTitle"
     "userGuitarDisplaySection"
@@ -22,6 +23,8 @@
 
 .displayLoadingWrapper {
     grid-area: userGuitarDisplaySection;
+    justify-self: center;
+    align-self: center;
 }
 
 .userGuitarDisplayWrapper {
@@ -94,7 +97,8 @@
 }
 
 .averagePriceFormat {
-    color:  rgb(146, 146, 146);
+    font-size: 1.008em;
+    font-weight: bold;
     justify-self: center;
     text-align: center;
     margin: .5em 2em 0 2em;
@@ -103,7 +107,12 @@
 }
 
 .averagePriceClass {
-    margin-top: -.3em;
+    margin: -.3em .5em .6em .5em;
+    color:  rgba(146, 146, 146, 0.9);
+    white-space: nowrap;
+    padding: 0 .3em .3em .3em;
+    border-bottom: .13em solid rgba(216, 216, 216, 0.959);    
+
 }
 
 .detailedPriceInformationClass {
@@ -119,7 +128,9 @@
 }
 
 .userGuitar {
-    border: solid 1px black;
+    border: solid .2em rgba(216, 216, 216, 0.959);
+    border-radius: 1em;
+    background-color: rgba(228, 228, 228, 0.32);
     max-width: 26em;
 }
 
@@ -139,24 +150,32 @@
     grid-area: detailTitle;
     justify-self: center;
     margin-bottom: -.8em;
+    font-weight: bold;
 }
 
 .yearPricesAverage {
     grid-area: detailAverage;
     justify-self: center;
     margin-bottom: -.8em;
+    font-size: .9em;
+    color:  rgba(146, 146, 146, 0.9);
 }
 
 .yearPricesHigh {
     grid-area: detailHigh;
     justify-self: center;
     margin-bottom: -.8em;
+    font-size: .9em;
+    color:  rgba(146, 146, 146, 0.9);
+
 }
 
 .yearPricesLow {
     grid-area: detailLow;
     justify-self: center;
     margin-bottom: -.8em;
+    font-size: .9em;
+    color:  rgba(146, 146, 146, 0.9);
 }
 
 .detailedPriceInformationClass:nth-child(2) {
@@ -175,24 +194,32 @@
     grid-area: detailTitle;
     justify-self: center;
     margin-bottom: -.8em;
+    font-weight: bold;
+
 }
 
 .finishPricesAverage {
     grid-area: detailAverage;
     justify-self: center;
     margin-bottom: -.8em;
+    font-size: .9em;
+    color:  rgba(146, 146, 146, 0.9);
 }
 
 .finishPricesHigh {
     grid-area: detailHigh;
     justify-self: center;
     margin-bottom: -.8em;
+    font-size: .9em;
+    color:  rgba(146, 146, 146, 0.9);
 }
 
 .finishPricesLow {
     grid-area: detailLow;
     justify-self: center;
     margin-bottom: -.8em;
+    font-size: .9em;
+    color:  rgba(146, 146, 146, 0.9);
 }
 
 .detailedPriceInformationClass:nth-child(3) {
@@ -211,24 +238,31 @@
     grid-area: detailTitle;
     justify-self: center;
     margin-bottom: -.8em;
+    font-weight: bold;
 }
 
 .conditionPricesAverage {
     grid-area: detailAverage;
     justify-self: center;
     margin-bottom: -.8em;
+    font-size: .9em;
+    color:  rgba(146, 146, 146, 0.9);
 }
 
 .conditionPricesHigh {
     grid-area: detailHigh;
     justify-self: center;
     margin-bottom: -.8em;
+    font-size: .9em;
+    color:  rgba(146, 146, 146, 0.9);
 }
 
 .conditionPricesLow {
     grid-area: detailLow;
     justify-self: center;
     margin-bottom: -.8em;
+    font-size: .9em;
+    color:  rgba(146, 146, 146, 0.9);
 }
 
 .detailedPriceInformationClass:nth-child(4) {
@@ -247,22 +281,41 @@
     grid-area: detailTitle;
     justify-self: center;
     margin-bottom: -.8em;
+    font-weight: bold;
 }
 
 .countryPricesAverage {
     grid-area: detailAverage;
     justify-self: center;
     margin-bottom: -.8em;
+    font-size: .9em;
+    color:  rgba(146, 146, 146, 0.9);
 }
 
 .countryPricesHigh {
     grid-area: detailHigh;
     justify-self: center;
     margin-bottom: -.8em;
+    font-size: .9em;
+    color:  rgba(146, 146, 146, 0.9);
 }
 
 .countryPricesLow {
     grid-area: detailLow;
     justify-self: center;
     margin-bottom: -.8em;
+    font-size: .9em;
+    color:  rgba(146, 146, 146, 0.9);
+}
+
+.userDisplayPriceAdjust {
+    font-size: 1.03em;
+    white-space: nowrap;
+}
+
+.detailedPriceTitleAdjustment {
+    border-bottom: .13em solid rgba(216, 216, 216, 0.959);  
+    padding: 0 .3em .2em .3em;
+    margin-left: 1em;
+    margin-right: 1em;
 }

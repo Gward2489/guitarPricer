@@ -19,7 +19,7 @@
 
 .resultsWrapper {
     display: grid;
-    margin-top: -3em;
+    margin-top: -4em;
     grid-column-gap: 1em;
     grid-area: resultsWrapper;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -204,7 +204,8 @@
 /* search results  stylings */
 
 .contentWrapperBorder {
-    border: 1px solid black;
+    border: .1em solid #d9d9d9;
+    background-color: #dadada29;
     border-radius: 4%;
     max-height: 11em;
     max-width: 11em;
@@ -213,7 +214,7 @@
 }
 
 .generalTitleClass {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #dadada;
     align-self: center;
     margin: .4em .4em 0 .4em;
     text-align: center;
@@ -223,7 +224,7 @@
 }
 
 .multiPriceTitleClass {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #dadada;
     justify-self: center;
     align-self: center;
     text-align: center;
@@ -232,7 +233,7 @@
 }
 
 .averagePriceTitleClass {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #dadada;
     justify-self: center;
     align-self: center;
     text-align: center;
@@ -241,7 +242,7 @@
 }
 
 .noPricesTitleClassSimple {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #e1e1e1;
     align-self: center;
     justify-self: center;
     text-align: center;
@@ -250,7 +251,7 @@
 }
 
 .noPricesTitleClass {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #dadada;
     margin: .6em .4em 0 .4em;
     justify-self: center;
     align-self: center;
@@ -263,11 +264,10 @@
     justify-self: center;
     margin: 0 1em 0 1em;
     align-self: center;
-        white-space: nowrap;
-
+    white-space: nowrap;
     text-align: center;
     font-size: .85em;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #dadada;
 }
 
 .singleSubTitleClass {
@@ -276,7 +276,7 @@
     justify-self: center;
     align-self: center;
     margin: 0 1em 0 1em;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #dadada;
 }
 
 .adviceSubTitleClass {
