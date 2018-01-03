@@ -1,8 +1,143 @@
 .basicSearchResultsWrapper.ng-enter {
-    transition:0.5s linear all;
+    transition:1s linear all;
     opacity:0;
 }
 
 .basicSearchResultsWrapper.ng-enter.ng-enter-active {
     opacity:1;
   }
+
+
+.rowOfGuitars.ng-enter { 
+    -webkit-animation: enter 825ms cubic-bezier(0.445, 0.050, 0.550, 0.950);
+    animation: enter 825ms cubic-bezier(0.445, 0.050, 0.550, 0.950);
+    position: relative;
+} 
+
+@-webkit-keyframes enter {
+    from {
+        opacity: 0;
+        
+        left: -70px;
+    }
+    75% {
+        left: 15px;
+    }
+    to {
+        opacity: 1;
+        left: 0px;
+    }
+}
+@keyframes enter {
+    from {
+        opacity: 0;
+       
+        left: -70px;
+    }
+    75% {
+        left: 15px;
+    }
+    to {
+        opacity: 1;
+        left: 0px;
+    }
+}
+ 
+.animate-leave { 
+    -webkit-animation: leave 825ms cubic-bezier(0.445, 0.050, 0.550, 0.950);
+    animation: leave 825ms cubic-bezier(0.445, 0.050, 0.550, 0.950);
+    position: relative;
+} 
+@-webkit-keyframes leave {
+    to {
+        opacity: 0;
+        left: -70px;
+    }
+    25% {
+        left: 15px;
+    }
+    from {
+        opacity: 1;
+        left: 0px;
+    }
+}
+@keyframes leave {
+    to {
+        opacity: 0;
+        left: -70px;
+    }
+    25% {
+        left: 15px;
+    }
+    from {
+        opacity: 1;
+        left: 0px;
+    }
+}
+
+.resultsWrapper.ng-enter { 
+    -webkit-animation: enter 825ms cubic-bezier(0.445, 0.050, 0.550, 0.950);
+    animation: enter 825ms cubic-bezier(0.445, 0.050, 0.550, 0.950);
+    position: relative;
+} 
+
+@-webkit-keyframes enter {
+    from {
+        opacity: 0;
+        
+        left: -70px;
+    }
+    75% {
+        left: 15px;
+    }
+    to {
+        opacity: 1;
+        left: 0px;
+    }
+}
+@keyframes enter {
+    from {
+        opacity: 0;
+       
+        left: -70px;
+    }
+    75% {
+        left: 15px;
+    }
+    to {
+        opacity: 1;
+        left: 0px;
+    }
+}
+ 
+.animate-leave { 
+    -webkit-animation: leave 825ms cubic-bezier(0.445, 0.050, 0.550, 0.950);
+    animation: leave 825ms cubic-bezier(0.445, 0.050, 0.550, 0.950);
+    position: relative;
+} 
+@-webkit-keyframes leave {
+    to {
+        opacity: 0;
+        left: -70px;
+    }
+    25% {
+        left: 15px;
+    }
+    from {
+        opacity: 1;
+        left: 0px;
+    }
+}
+@keyframes leave {
+    to {
+        opacity: 0;
+        left: -70px;
+    }
+    25% {
+        left: 15px;
+    }
+    from {
+        opacity: 1;
+        left: 0px;
+    }
+}

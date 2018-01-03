@@ -12,12 +12,12 @@
 }
 
 .averagePrice {
-    color: rgba(111, 137, 255, 0.83);
+    color: rgb(0, 0, 128);
     font-size: 1.4em;    
 }
 
 .highPrice {
-    color: rgba(79, 191, 34, 0.85);
+    color: rgb(70, 160, 82);
     font-size: 1.4em;
 }
 
@@ -26,3 +26,12 @@
     font-size: 1.4em;    
 }
 
+.pacman {
+    height: 3em;
+    width: 3em;
+}
+
+.pacman img {
+    width: 100%;
+    height: auto;
+}

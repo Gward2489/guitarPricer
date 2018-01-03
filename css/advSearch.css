@@ -118,14 +118,39 @@
     outline: none;
     overflow: hidden;
     padding: .3em;
+    padding-bottom: .4em;
     cursor: pointer;
     user-select: none;
     text-align: center;
     white-space: nowrap;
     text-decoration: none;
     text-transform: none;
-    color: rgb(111, 137, 255);
-    border: solid .3em rgb(111, 137, 255);
+    color: rgb(0, 0, 128);
+    border: solid .25em rgb(0, 0, 128);
+    border-radius: .4em;
+    font-size: 1.2em;
+    font-weight: 900;
+    line-height: .8em;
+    width: 9em;
+}
+
+.basicSearchLinkButton:hover {
+    grid-area: theLink;
+    align-self: center;
+    margin-top: .2em;
+    justify-self: center;
+    background-color: #fff0;
+    outline: none;
+    overflow: hidden;
+    padding: .3em;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+    text-transform: none;
+    color: #0000808a;
+    border: solid .25em #0000808a;
     border-radius: .4em;
     font-size: 1.2em;
     font-weight: 900;
@@ -140,6 +165,30 @@
     background-color: #FFF;
     outline: none;
     overflow: hidden;
+    padding: .4em;
+    padding-bottom: .5em;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+    text-transform: none;
+    color: #000080;
+    border: solid .25em #000080;
+    border-radius: .4em;
+    font-size: 1.2em;
+    font-weight: 900;
+    line-height: .8em;
+    width: 7em;
+}
+
+.advSearchButtonClass:hover {
+    grid-area: advButton;
+    align-self: center;
+    justify-self: center;
+    background-color: #FFF;
+    outline: none;
+    overflow: hidden;
     padding: .5em;
     cursor: pointer;
     user-select: none;
@@ -147,8 +196,8 @@
     white-space: nowrap;
     text-decoration: none;
     text-transform: none;
-    color: rgb(111, 137, 255);
-    border: solid .3em rgb(111, 137, 255);
+    color: #0000808a;
+    border: solid .25em #0000808a;
     border-radius: .4em;
     font-size: 1.2em;
     font-weight: 900;
@@ -549,7 +598,7 @@ input[type="radio"] {
 }
 
 .honk {
-    background-color: #6f89ffb8;
+    background-color: #0000808a;
     border-radius: 100%;
 }
 

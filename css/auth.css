@@ -1,0 +1,144 @@
+.authGrid {
+    grid-area: body;
+    justify-content: center;
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    grid-template-areas: 
+    "authTitle"
+    "authFields"
+    ;
+}
+
+.authTitleWrapper {
+    grid-area: authTitle;
+    text-align: center;
+    display: grid;
+    grid-template-rows: 2fr 1fr 1fr;
+    grid-template-areas: 
+    "mainAuthTitle"
+    "authSubTitle1"
+    "authSubTitle2"
+    ;
+}
+
+.authInputsWrapper {
+    grid-area: authFields;
+    display: grid;
+    grid-column-gap: 1em;
+    margin-top: -3em;
+    max-width: 35em;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "email password logIn register"
+    ;
+}
+
+.authTitleMainWrapper {
+    grid-area: mainAuthTitle;
+    font-size: 1.3em;
+}
+
+.authSubTitleWrapper {
+    grid-area: authSubTitle1;
+    color: rgba(90, 90, 90, 0.952);
+    font-size: 1.2em;
+    margin-top: -2em;
+}
+
+.authSubTitleWrapperTwo {
+    grid-area: authSubTitle2;
+    color: rgba(100, 99, 99, 0.952);
+    font-size: .9em;
+    margin-top: -3.2em;
+}
+
+.emailInputWrapper {
+    grid-area: email;
+    margin-top: .45em;
+}
+
+.passwordInputWrapper {
+    grid-area: password;
+    margin-top: .45em;
+}
+
+.authLogInButtonWrapper {
+    grid-area: logIn;
+
+}
+
+.registerButtonWrapper {
+    grid-area: register;
+
+}
+
+.authLogInButton {
+    align-self: center;
+    justify-self: center;
+    background-color: #fff0;
+    outline: none;
+    overflow: hidden;
+    padding-top: .3em;
+    padding-bottom: .4em;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+    text-transform: none;
+    color: rgb(0, 0, 128);
+    border: solid .25em rgb(0, 0, 128);
+    border-radius: .4em;
+    font-size: 1em;
+    font-weight: 900;
+    line-height: .8em;
+    width: 6em;
+}
+
+.registerButton {
+    align-self: center;
+    justify-self: center;
+    background-color: #fff0;
+    outline: none;
+    overflow: hidden;
+    padding-top: .3em;
+    padding-bottom: .4em;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+    text-transform: none;
+    color: rgb(0, 0, 128);
+    border: solid .25em rgb(0, 0, 128);
+    border-radius: .4em;
+    font-size: 1em;
+    font-weight: 900;
+    line-height: .8em;
+    width: 6em;
+}
+
+.emailInput {
+    font-size: 1.1em;
+    justify-self: center;
+    margin-top: -.5em;
+    text-align: center;
+    outline: none;
+    border-radius: 7px;
+    line-height: 1.5em;
+    width: 12em;
+    border: .1em solid rgba(216, 216, 216, 0.959);
+}
+
+.passwordInput {
+    font-size: 1.1em;
+    justify-self: center;
+    margin-top: -.5em;
+    text-align: center;
+    outline: none;
+    border-radius: 7px;
+    width: 12em;
+    line-height: 1.5em;
+    border: .1em solid rgba(216, 216, 216, 0.959);
+}

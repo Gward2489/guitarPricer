@@ -2,6 +2,7 @@ angular
     .module("GuitarPricerApp")
     .controller("AdvancedSearchCtrl", function($scope, $location, GuitarFactory) {
 
+        $scope.glued= true
         $scope.showResultsTitle = false
         $scope.loading = false
         $scope.conditionValues = ["Excellent", "Good", "Usable"]

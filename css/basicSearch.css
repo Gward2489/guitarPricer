@@ -211,6 +211,32 @@
 .basicSearchButton {
     grid-area: advButton;
     align-self: center;
+    margin-top: -.1em;
+    justify-self: center;
+    background-color: #fff0;
+    outline: none;
+    overflow: hidden;
+    padding: .3em;
+    padding-bottom: .4em;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+    text-transform: none;
+    color: #000080;
+    border: solid .25em #000080;
+    border-radius: .4em;
+    font-size: 1.2em;
+    font-weight: 900;
+    line-height: .8em;
+    width: 7em;
+}
+
+.basicSearchButton:hover {
+    grid-area: advButton;
+    align-self: center;
+    margin-top: -.1em;
     justify-self: center;
     background-color: #fff0;
     outline: none;
@@ -222,8 +248,8 @@
     white-space: nowrap;
     text-decoration: none;
     text-transform: none;
-    color: rgb(111, 137, 255);
-    border: solid .3em rgb(111, 137, 255);
+    color: #0000808a;
+    border: solid .2em #0000808a;
     border-radius: .4em;
     font-size: 1.2em;
     font-weight: 900;
@@ -232,7 +258,32 @@
 }
 
 .toAdvancedSearchButton {
-    margin-top: 1.1em;
+    margin-top: 1em;
+    grid-area: advButton;
+    align-self: center;
+    justify-self: center;
+    background-color: #fff0;
+    outline: none;
+    overflow: hidden;
+    padding: .3em;
+    padding-bottom: .4em;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+    text-transform: none;
+    color: #000080;
+    border: solid .25em #000080;
+    border-radius: .4em;
+    font-size: 1.2em;
+    font-weight: 900;
+    line-height: .8em;
+    width: 11em;
+}
+
+.toAdvancedSearchButton:hover {
+    margin-top: 1em;
     grid-area: advButton;
     align-self: center;
     justify-self: center;
@@ -246,8 +297,8 @@
     white-space: nowrap;
     text-decoration: none;
     text-transform: none;
-    color: rgb(111, 137, 255);
-    border: solid .3em rgb(111, 137, 255);
+    color: #0000808a;
+    border: solid .25em #0000808a;
     border-radius: .4em;
     font-size: 1.2em;
     font-weight: 900;

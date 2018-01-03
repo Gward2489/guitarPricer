@@ -84,8 +84,31 @@
     white-space: nowrap;
     text-decoration: none;
     text-transform: none;
-    color: rgb(111, 137, 255);
-    border: solid .3em rgb(111, 137, 255);
+    color: rgb(0, 0, 128);
+    border: solid .3em rgb(0, 0, 128);
+    border-radius: .4em;
+    font-size: 1.2em;
+    font-weight: 900;
+    line-height: .8em;
+    width: 7em;
+}
+
+.submitNewGuitarButton:hover {
+    align-self: center;
+    justify-self: center;
+    background-color: #fff0;
+    outline: none;
+    overflow: hidden;
+    padding: .4em;
+    padding-bottom: .5em;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+    text-transform: none;
+    color: #0000808a;
+    border: solid .25em #0000808a;
     border-radius: .4em;
     font-size: 1.2em;
     font-weight: 900;

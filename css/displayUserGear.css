@@ -69,11 +69,14 @@
 
 .rowOfGuitars {
     display: grid;
-    justify-content: center;
+    justify-self: center;
+    align-self: center;
     grid-column-gap: 1em;
     max-height: 25em;
-    margin-bottom: 2em;
-    grid-template-columns: 33.3% 33.3% 33.3%;
+    margin-right: 3em;
+    margin-left: 3em;
+    margin-bottom: 6em;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: 
     "guitarOne guitarTwo guitarThree"
     ;
@@ -187,7 +190,7 @@
     border: solid .2em rgba(216, 216, 216, 0.959);
     border-radius: 1em;
     background-color: rgba(228, 228, 228, 0.32);
-    max-width: 26em;
+    max-width: 25em;
 }
 
 .detailedPriceInformationClass:nth-child(1) {
@@ -387,14 +390,38 @@
     outline: none;
     overflow: hidden;
     padding: .3em;
+    padding-bottom: .4em;
     cursor: pointer;
     user-select: none;
     text-align: center;
     white-space: nowrap;
     text-decoration: none;
     text-transform: none;
-    color: rgb(111, 137, 255);
-    border: solid .3em rgb(111, 137, 255);
+    color: rgb(0, 0, 128);
+    border: solid .2em rgb(0, 0, 128);
+    border-radius: .4em;
+    font-size: 1.2em;
+    font-weight: 900;
+    line-height: .8em;
+    width: 9em;
+}
+
+.showAveragesButton:hover {
+    grid-area: advButton;
+    align-self: center;
+    justify-self: center;
+    background-color: #fff0;
+    outline: none;
+    overflow: hidden;
+    padding: .3em;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+    text-transform: none;
+    color: #0000808a;
+    border: solid .2em #0000808a;
     border-radius: .4em;
     font-size: 1.2em;
     font-weight: 900;
@@ -410,14 +437,38 @@
     outline: none;
     overflow: hidden;
     padding: .3em;
+    padding-bottom: .4em;
     cursor: pointer;
     user-select: none;
     text-align: center;
     white-space: nowrap;
     text-decoration: none;
     text-transform: none;
-    color: rgba(79, 191, 34, 0.85);
-    border: solid .3em  rgba(79, 191, 34, 0.85);
+    color: rgba(0, 156, 70, 0.96);
+    border: solid .2em  rgb(70, 161, 82);
+    border-radius: .4em;
+    font-size: 1.2em;
+    font-weight: 900;
+    line-height: .8em;
+    width: 7em;
+}
+
+.showHighsButton:hover {
+    grid-area: advButton;
+    align-self: center;
+    justify-self: center;
+    background-color: #fff0;
+    outline: none;
+    overflow: hidden;
+    padding: .3em;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none;
+    text-transform: none;
+    color: rgba(0, 156, 70, 0.58);
+    border: solid .2em  rgba(70, 161, 82, 0.6);
     border-radius: .4em;
     font-size: 1.2em;
     font-weight: 900;
@@ -433,6 +484,7 @@
     outline: none;
     overflow: hidden;
     padding: .3em;
+    padding-bottom: .4em;
     cursor: pointer;
     user-select: none;
     text-align: center;
@@ -440,7 +492,30 @@
     text-decoration: none;
     text-transform: none;
     color:  rgba(255, 53, 103, 0.918);
-    border: solid .3em  rgba(255, 53, 103, 0.918);
+    border: solid .2em  rgba(255, 53, 103, 0.918);
+    border-radius: .4em;
+    font-size: 1.2em;
+    font-weight: 900;
+    line-height: .8em;
+    width: 7em;
+}
+
+.showLowsButton:hover {
+    grid-area: advButton;
+    align-self: center;
+    justify-self: center;
+    background-color: #fff0;
+    outline: none;
+    overflow: hidden;
+    padding: .3em;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    white-space: nowap;
+    text-decoration: none;
+    text-transform: none;
+    color:  rgba(255, 53, 103, 0.57);
+    border: solid .2em  rgba(255, 53, 103, 0.58);
     border-radius: .4em;
     font-size: 1.2em;
     font-weight: 900;
