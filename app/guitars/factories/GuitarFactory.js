@@ -2,13 +2,15 @@ angular
     .module("GuitarPricerApp")
     .factory("GuitarFactory", function (ebayKey, $http, $sce) {
 
-
-
         return Object.create(null, {
-
+            // function to remove outliers from search results
             "removeOutliers": {
+                // pass in array of prices and standard deviation of those prices
                 value: function (array, standardDeviation) {
+                    // get the average of the prices passed in 
                     let avgPrice = this.getAverage(array)
+                    // use the .filter() method to remove prices from the array
+                    // that do not fall within the standard deviation 
                     return array.filter( price => {
                         if (price > (avgPrice - standardDeviation) || price < (avgPrice + standardDeviation)) {
                             return price
@@ -17,54 +19,100 @@ angular
                 }
             },
 
+            // function that returns standard deviation
             "getStandardDeviation": {
+                // pass in an array of prices
                 value: function (array) {
+                    // set divisor to the number of prices in the array
                     let divisor = array.length
+                    //  get the average price of the prices
                     let avgPrice = this.getAverage(array)
+                    // create a new array holding squared value of the
+                    // difference between each price in the price array
+                    // and the average price
                     let squaredDifferences = array.map(price => {
                         let difference = price - avgPrice
                         let squaredDifference = difference * difference
                         return squaredDifference
                     })
+                    // use the .reduce() method to get the sum of all of the squared
+                    // differences
                     let dividend = squaredDifferences.reduce(function (accumulator, currentValue ) {
                         return accumulator + currentValue
                     })
+                    // firt step of final calculation, divide sum of squared differences
+                    // by the length of the array.
                     let stdDevAvg = (dividend/divisor)
+                    // get the square root of qoutient and remove any uneeded 
+                    // decimals and then return the standard deviation
                     return Math.sqrt(stdDevAvg).toFixed(2)
                 }
             },
 
+            // function to get the average price
             "getAverage": {
+                // pass in an array of prices
                 value: function (array) {
+                    // set divisor to length of array
                     let divisor = array.length
+                    // set divident to sum of the prices with the help of 
+                    // .reduce() method
                     let dividend = array.reduce(function (accumulator, currentValue) {
                         return accumulator + currentValue
                     })
+                    // get the qoutient and remove uneeded decimals
+                    // and return the average price
                     return (dividend/divisor).toFixed(2)
                 }
             },
 
+            // function to convert the object returned by the ebay API call
+            // into an array of just guitar objects
             "ebayObjToGuitarArray": {
+                // pass in the object from ebay
                 value: function (fatObject) {
+                    // use dot notation to retreive the array of guitars from the object
                     let searchResultsArray = fatObject.data.findCompletedItemsResponse[0].searchResult[0].item
+                    // return that array of guitars
                     return searchResultsArray
                 }
             },
 
+            // function that will convert the array of guitars
+            // into an array of prices
             "guitarsToPrices": {
+                // pass in the array of guitars
                 value: function (array) {
+                    // use .map() method to create a new array containing prices
                     return array.map(guitar => {
+                        // define a variable to hold the price of each
+                        // guitar passed into the map method
+                        // use dot notation to retreive the price from the 
+                        // guitar object
                         let guitarPrice = parseFloat(guitar.sellingStatus[0].convertedCurrentPrice[0].__value__)
+                        // return the price to the new array
                         return guitarPrice
                     })
                 }
             },
 
+            // function to remove results from the search results
+            // that are not guitars or are broken guitars
             "titleFilter": {
+                // pass in the array of guitars
                 value: function (array) {
 
+                    // function that returns a variable holding
+                    // a boolean true if the guitar title is ok.
+                    // the function returns false if the title
+                    // holds any string data representing words
+                    // that indicate the item is either not
+                    // a guitar or a broken guitar
                     let titleCheck = function (title) {
+                        // variable to hold boolean
                         let titleClearance = true
+                        // list of words that will set title clearance
+                        // to false
                         let titleRestrictions = [
                             "parts", 
                             "for parts", 
@@ -78,23 +126,44 @@ angular
                             "repair"
                         ]
 
-                
+                        // use a for loop to to itterate through the list of 
+                        // restriced words and check the title agaisnt them
                         for (let i = 0; i < titleRestrictions.length; i++) {
+                            // use .search() method within an if statement to 
+                            // check and see if the title contains a restriced
+                            // word
                             if (title.search(`${titleRestrictions[i]}`) !== -1) {
                                 titleClearance = false
                             }
                         }
 
+                        // Epiphone is the subsidiary company of gibson
+                        // that produces cheaper models of gibson guitars.
+                        // ebay users will include gibson in the title
+                        // of the their epiphone in an attempt to make it
+                        // seem more valuable. 
+                        // Use an if statement to set title clearance to 
+                        // false if the guitar title has been subjected to
+                        // such trickery. We don't epiphone guitars being
+                        // included in results for Gibson guitars, that would
+                        // give an innacurate search result.
+                        // use the .search() method to check the title for gibson,
+                        // then again for epiphone, if it contains both, set 
+                        // title clearance to false
                         if (title.search("gibson") !== -1) {
                             if (title.search("epiphone") !== -1) {
                                 titleClearance = false
                             }
                         }
-
+                        // return title clearance
                         return titleClearance
                     }
 
+                    // use .filter() method to return an array of guitars
+                    // whose title clearance evaluates to true. 
                     return array.filter(guitar => {
+                        // title data is not a string when extracted
+                        // make it one with JSON.stringify
                         let guitarTitle = JSON.stringify(guitar.title[0].toLowerCase())
 
                         let titleClearance = titleCheck(guitarTitle)
@@ -106,11 +175,15 @@ angular
                 }
             },
 
+            // create a function a prepares the users advanced search entry
+            // for the beay API call
             "filterAdvancedSearch": {
+                // pass in the user search data
                 value: function (guitarBrand, guitarModel, 
                     acousticOrElectric, vintageCheck, condition, finish, year, guitarOrBass, country) {
                             
-            
+                    // an array of objects. Each object contains similiar 
+                    // ebay condition IDs for guitar conditions 
                     let valueObjects = [
                         {
                             "value1": 4000,
@@ -125,12 +198,22 @@ angular
                         },
                     ]
 
+                    // empty array to hold ebay category IDs 
+                    // guitar user searched for
                     let categoriesArray = []
+                    // empty variable to hold price category of users guitar
                     let selectedValueObj = null
+                    // empty variable to hold the condtion values of the users
+                    // guitar
                     let conditionValuesArray = []
+                    // empty variable to hold keywords for ebay API call
                     let keyWordsString = ""
+                    // empty variable to hold categories for ebay API call
                     let categoriesString = ""
 
+                    // use if statements to check data the user has entered 
+                    // about the guitar and push the corresponding ebay 
+                    // category IDs into the predefined category array
                     if (vintageCheck === "yes") {
                         if (guitarOrBass === "bass") {
                             categoriesArray.push(118984)
@@ -159,7 +242,9 @@ angular
                         }
                     }
 
-
+                    // use if statements to assign the value object
+                    // the corresponds with the inputed condition of the users
+                    // guitar to the predfined variable
                     if (condition === "Excellent") {
                         selectedValueObj = valueObjects[0]
                     } else if (condition === "Good") {
@@ -168,27 +253,46 @@ angular
                         selectedValueObj = valueObjects[2]
                     }
 
+                    // use a for in loop to itterate through the value
+                    // object and push the values into the predefined
+                    // condition value array.
+                    // this array will contain all the ebay condition IDs
+                    // that correspond to the users guitar
                     for (key in selectedValueObj) {
                         conditionValuesArray.push(selectedValueObj[key])
                     }
 
-
+                    // use the .replace() method to convert all spaces to to plus signs
+                    // in the user inputed fields. This prepares the strings
+                    // for the ebay API call.
                     let brandString = guitarBrand.replace(/ {2}/g, "+").replace(/ /g, "+")
                     let modelString = guitarModel.replace(/ {2}/g, "+").replace(/ /g, "+")
                     let finishString = finish.replace(/ {2}/g, "+").replace(/ /g, "+")
                     let yearString = year.replace(/ {2}/g, "").replace(/ /g, "").replace(/'/g, "")
 
+                    // contruct the keyword string to be sent to the API call
                     keyWordsString = brandString + "+" + modelString
 
+                    // use .forEach() to itterate through the 
+                    // categories array. build a string to pass into the 
+                    // ebay API call containing the guitars category.
                     let i = 0
                     categoriesArray.forEach( category => {
+                        // if there is more than one category, ebay requires we
+                        // number the categories, starting with 0. use an if statement
+                        // to check if there is more than one category and build
+                        // the string accordingly.
                         if (categoriesArray.length > 1) {
                             categoriesString += `categoryId(${i})=${category}&`
-                            i++} else {
+                            i++
+                        // if there is just one category, we don't needs to number it
+                        } else {
                             categoriesString += `categoryId=${category}&`
                         }
                     })
 
+                    // pass the prepared search info into the advanced search function.
+                    // after the search completes, return the search data
                     return this.advancedSearch(keyWordsString, categoriesString, finishString, yearString, conditionValuesArray, country).then(data => {
                         return data
                     })
@@ -196,47 +300,67 @@ angular
                 }
             },
 
+            // function for basic search
             "basicSearch":{
+                // pass in the user's search (it is a string)
                 value: function (userSearch) {
+                    // construct target URL for api call.
+                    // use interpolation to pass in the ebay
+                    //  api key and the search keywords
                     let url = `http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findCompletedItems&SERVICE-VERSION=1.7.0&SECURITY-APPNAME=${ebayKey}&RESPONSE-DATA-FORMAT=XML&categoryId(0)=33034&categoryId(1)=33021&categoryId(2)=4713&itemFilter(0).name=SoldItemsOnly&itemFilter(0).value(0)=true&itemFilter(1).name=Condition&itemFilter(1).value(0)=Used&itemFilter(1).value(1)=2500&itemFilter(1).value(2)=3000&itemFilter(1).value(3)=4000&itemFilter(1).value(4)=5000&itemFilter(1).value(5)=6000&itemFilter(2).name=ExcludeCategory&itemFilter(2).value(0)=181223&itemFilter(2).value(1)=47067&REST-PAYLOAD&keywords=${userSearch}`
+                    // since ebay requires jsonp,
+                    // we will need to use angular's security directive 
+                    // to create a trusted url that the angular will accept.
                     let trustedUrl = $sce.trustAsResourceUrl(url)
+                    // invoke API request on return
                     return $http.jsonp(trustedUrl, 
                         {jsonpCallbackParam: "callback"})
                         .then(response => {
 
-                   
+                            // convert object returned by ebay into an array of guitars
                             let initialSearchResults = this.ebayObjToGuitarArray(response)
 
+                            // if there were search results, began to peform logic on them
                             if (response.data.findCompletedItemsResponse[0].searchResult[0].item) {
                                 
-                                
+                                // filter out guitars whose titles contain restricted words
                                 let refinedResultsArray = this.titleFilter(initialSearchResults)
 
+                                // if there is more than once search result, perform the contained logic
                                 if (refinedResultsArray.length > 1) {
-
+                                    // convert array of guitars to an array of prices
                                     let guitarPricesArray = this.guitarsToPrices(refinedResultsArray) 
-
+                                    // get standard deviation of guitar prices
                                     let stdDev = this.getStandardDeviation(guitarPricesArray)
-                                    
-                                    let refinedPriceArray = [
-
-                                    ]
+                                    // empty array to hold prices
+                                    let refinedPriceArray = []
+                                    // on very rare occasions the search will return two guitars of
+                                    // the same value, resulting in a standard deviation of 0
+                                    // if this happens, we can not remove outliers because there
+                                    // are none. use the predefined refinedPriceArray variable
+                                    // to hold the new array without outliers,
+                                    // or the rare case when we do not need to remove outliers
                                     if (stdDev !== "0.00") {
                                         refinedPriceArray = this.removeOutliers(guitarPricesArray, stdDev)
                                     } else {
                                         refinedPriceArray = guitarPricesArray
                                     }
 
+                                    // create a variable to hold the number of search results
                                     let numberOfMatches = parseInt(refinedPriceArray.length)
-
+                                    // if there was more than one search result(post removing outliers
+                                    // and restriced title guitars) perform logic
                                     if (numberOfMatches > 1 ) {
-
+                                        // get average price
                                         let avgPrice = this.getAverage(refinedPriceArray)
+                                        // get price range low
                                         let lowPrice = (parseFloat(avgPrice) - parseFloat(stdDev)).toFixed(2)
                                         if (lowPrice < 0) {
                                             lowPrice = .99
                                         }
+                                        // get price range high
                                         let highPrice = (parseFloat(avgPrice) + parseFloat(stdDev)).toFixed(2)
+                                        // put search results in an object
                                         let results = [
                                             {
                                                 "avgPrice": avgPrice,
@@ -245,12 +369,13 @@ angular
                                                 "searchCount": numberOfMatches
                                             }
                                         ]
-
+                                        // return the search results
                                         return results
-
+                                    // if there was only one search refined result, perform this logic
                                     } else {
+                                        // set average price to the only search result
                                         let avgPrice = refinedPriceArray[0]
-
+                                        // set the price range high and low to false
                                         let results = [
                                             {
                                                 "avgPrice": avgPrice,
@@ -259,11 +384,12 @@ angular
                                                 "searchCount": 1  
                                             }
                                         ]
-
+                                        // return the price
                                         return results
                                     }
-
+                                // if there was just one result, return the price
                                 } else {
+
                                     let prices = this.guitarsToPrices(refinedResultsArray)
                                     let avgPrice = prices[0]
 
@@ -278,7 +404,7 @@ angular
 
                                     return results
                                 }
-
+                            // if the search returned to results let the user know ヽ(͡◕ ͜ʖ ͡◕)ﾉ
                             } else {
                                 alert("no search results")
                             }
@@ -287,40 +413,61 @@ angular
                 }
             },
 
+            // create a function that will return the advanced search prices
             "advancedSearch":{
+                // pass in the required data for the API call
                 value: function (keyWords, categories, finish, year, conditionValues, country) {
+                    // construct the taret url for the API call
                     let url = `http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findCompletedItems&SERVICE-VERSION=1.7.0&SECURITY-APPNAME=${ebayKey}&RESPONSE-DATA-FORMAT=XML&${categories}itemFilter(0).name=SoldItemsOnly&itemFilter(0).value(0)=true&itemFilter(1).name=ExcludeCategory&itemFilter(1).value(0)=181223&itemFilter(1).value(1)=47067&REST-PAYLOAD&keywords=${keyWords}`
+                    // use the angular security directive to make the
+                    // url trusted
                     let trustedUrl = $sce.trustAsResourceUrl(url)
+                    // invoke the api call on function return
                     return $http.jsonp(trustedUrl,
                         {jsonpCallbackParam: "callback"})
                         .then(response => {
-
+                            // convert ebay object to object of guitars
                             let initialSearchResults = this.ebayObjToGuitarArray(response)
+                            // create an empty array to hold the final prices
                             let finalPrices = []
 
+                            // if there were search results, perform the logic
+                            // if there were no search results a single object containing all boolean falses
+                            // will be pushed into the final prices array
                             if (response.data.findCompletedItemsResponse[0].searchResult[0].item) {
-
+                                // filter out guitars with restricted title words
                                 let refinedResultsArray = this.titleFilter(initialSearchResults)
-
+                                // if there is more than once search result perform the logic
+                                // if there is only one guitar found, a single object with the lone
+                                // price will be pushed into the final prices array
                                 if (refinedResultsArray.length > 1) {
-
+                                    // get an array of guitar prices
                                     let guitarPricesArray = this.guitarsToPrices(refinedResultsArray) 
+                                    
                                     let stdDev = this.getStandardDeviation(guitarPricesArray)
-
+                                    // empty variable to hold refined prices
                                     let refinedPriceArray = []
 
+                                    // on very rare occasions the search will return two guitars of
+                                    // the same value, resulting in a standard deviation of 0
+                                    // if this happens, we can not remove outliers because there
+                                    // are none. use the predefined refinedPriceArray variable
+                                    // to hold the new array without outliers,
+                                    // or the rare case when we do not need to remove outliers
                                     if (stdDev !== "0.00") {
                                         refinedPriceArray = this.removeOutliers(guitarPricesArray, stdDev)
                                     } else {
                                         refinedPriceArray = guitarPricesArray
                                     }
 
+                                    // capture number of search results
                                     let mainNumberOfMatches = refinedPriceArray.length
 
+                                    // if there were more than one search result, perform logic
                                     if (mainNumberOfMatches > 1) {
-
+                                        // get average price
                                         let mainAvgPrice = this.getAverage(refinedPriceArray)
-
+                                        // get highs and lows
                                         let lowPrice = (parseFloat(mainAvgPrice) - parseFloat(stdDev)).toFixed(2)
                                         let highPrice = (parseFloat(mainAvgPrice) + parseFloat(stdDev)).toFixed(2)
 
@@ -328,6 +475,7 @@ angular
                                             lowPrice = .99
                                         }
 
+                                        // put prices in an object
                                         let mainPrices = {
                                             "priceCategory": "main",
                                             "avgPrice": mainAvgPrice,
@@ -336,8 +484,11 @@ angular
                                             "numberOfMatches": mainNumberOfMatches
                                         }
 
+                                        // push main prices into the final prices array
                                         finalPrices.push(mainPrices)
 
+                                        // make a new array with .filter() method that contains
+                                        // only guitars made in the country the user specified
                                         let matchingCountryArray = refinedResultsArray.filter(guitar => {
                                             let lowerCaseTitle = guitar.title[0].toLowerCase()
                                             let lowerCaseCountry = country.toLowerCase()
@@ -345,13 +496,15 @@ angular
                                                 return guitar
                                             }
                                         })
-    
+                                        
+                                        // do the same for the year of production
                                         let matchingYearsArray = refinedResultsArray.filter(guitar => {
                                             if (guitar.title[0].search(year) !== -1) {
                                                 return guitar
                                             }  
                                         })
-    
+                                        
+                                        // and for the guitar finish
                                         let matchingFinishesArray = refinedResultsArray.filter(guitar => {
                                             let lowerCaseTitle = guitar.title[0].toLowerCase()
                                             let lowerCaseFinish = finish.toLowerCase()
@@ -359,7 +512,8 @@ angular
                                                 return guitar
                                             }    
                                         })
-    
+                                        
+                                        // and also for the condition of the guitar
                                         let matchingConditionArray = refinedResultsArray.filter(guitar => {
                                             if (guitar.hasOwnProperty("condition") === true) {
                                                 let guitarCondition = parseInt(guitar.condition[0].conditionId[0])
@@ -374,7 +528,14 @@ angular
                                                 }
                                             }
                                         })
-    
+                                        
+                                        // if a country of origin was inputed by the user, perform
+                                        // the same logic perform for the main prices to gather price
+                                        // info on the guitars from the country of origin and then
+                                        // push that into the final prices array.
+                                        // if there was only one result, or no results,
+                                        // the object pushed into the final prices array will
+                                        // contain boolean false in place of absent price info
                                         if (country !== "n/a") {
                                             
                                             if (matchingCountryArray.length > 0) {
@@ -460,7 +621,9 @@ angular
                                                 finalPrices.push(countryPrices)
                                             }
                                         }
-    
+                                        
+                                        // if the condition array has results, perform the same
+                                        // log we performed on the country of origin results
                                         if (matchingConditionArray.length > 0 ) {
 
                                             let matchingConditionPrices = this.guitarsToPrices(matchingConditionArray)
@@ -543,7 +706,8 @@ angular
     
                                             finalPrices.push(conditionPrices)
                                         }
-    
+                                        
+                                        // perform the same logic for the finish array as the country array
                                         if (finish !== "n/a") {
 
                                             if (matchingFinishesArray.length > 0) {
@@ -631,7 +795,9 @@ angular
                                                 finalPrices.push(finishPrices)
                                             }
                                         }
-    
+                                        
+                                        // perform the same logic for the year array as was performed on
+                                        // the finsh and country arrays
                                         if (year !== "n/a") {
                                             if (matchingYearsArray.length > 0) {
     
@@ -771,13 +937,3 @@ angular
             }
         })
     })
-
-
-
-
-
-
-
-
-
-

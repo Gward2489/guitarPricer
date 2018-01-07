@@ -16,8 +16,7 @@ angular.module("GuitarPricerApp").controller("NavCtrl",
 
         $scope.currentUserEmail = AuthFactory.getUser()
 
-
-        
+        // function to route user to registration/login portal
 
         $scope.routeToRegister = function () {
             $location.url("/auth/register")
