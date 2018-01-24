@@ -86,7 +86,7 @@
 ```
 1. You will need to obtain an ebay API KEY.
 2. You will need a google firebase account, with email auth enabled.
-3. Ensure you have a npm installed on your machine.
+3. Ensure you have npm installed on your machine.
 4. Clone the project and run npm install
 5. Copy the app.config.exmaple into a file called app.config.js
 6. Insert your key and auth info into the config file. 
@@ -97,7 +97,7 @@
 
 ### Specs By:
 [Nashville Software School](https://github.com/nashville-software-school)  
-[Steve Brownlee](https://github.com/chortlehoort)  
+[Steve Brownlee](https://github.com/stevebrownlee)  
 
 ### Contributors:
 [Garrett Ward](https://github.com/Gward2489)
