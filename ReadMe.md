@@ -29,7 +29,10 @@
 
 ### Basic search pages. 
 ##### If a user is logged in, a seperate nav bar is generated with more options for user activity.
-<img src="https://raw.githubusercontent.com/Gward2489/guitarPricer/master/grabs/gp3.png" width="800" style="border: 1px solid black;">
+<kbd>
+    <img    src="https://raw.githubusercontent.com/Gward2489/guitarPricer/master/grabs/gp3.png"    width="800">
+</kbd>
+
 <img src="https://raw.githubusercontent.com/Gward2489/guitarPricer/master/grabs/gp1.png" width="800">
 
 ### Basic search results. 
@@ -54,6 +57,8 @@
 ### User Guitar Display
 ##### angular and css grid are used to render the user's guitar collection in rows of three. The guitar's title is displayed, along with all available price information for the guitar. If a single result or no results are found for a users guitar, ng-if is employed to display the proper data. The user may also click on one of three buttons to view either average price info, high price info, or low price info.
 <img src="https://raw.githubusercontent.com/Gward2489/guitarPricer/master/grabs/gp5.png" width="800">
+
 ##### if there are high or low prices found for some categories and not others, ng-if is used to display the proper data
+
 <img src="https://raw.githubusercontent.com/Gward2489/guitarPricer/master/grabs/gp6.png" width="800">
 <img src="https://raw.githubusercontent.com/Gward2489/guitarPricer/master/grabs/gp7.png" width="800">
