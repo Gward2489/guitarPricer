@@ -57,19 +57,19 @@
 </kbd>
 
 ### Advanced Search Results
-##### Customized angular and vailla javascript are used to parse the data object returned by the ebay API call. The results are passed into multiple different functions to obtain averages and standard deviation for multiple sub-categories of the guitar. The number of results for each sub-category is displayed along with high and low prices. using ng-if, angular will tell the user if there is only one result for any given sub-category, and exclude the high and low prices if so. If there are no results for the sub-category, ng-if is used to tell the user there are no results matching their search.
+##### Customized angular and vailla javascript are used to parse the data object returned by the ebay API call. The results are passed into multiple functions to obtain averages and standard deviation for different sub-categories of the guitar. The number of results for each sub-category is displayed along with high and low prices. using ng-if, angular will tell the user if there is only one result for any given sub-category, and exclude the high and low prices if so. If there are no results for the sub-category, ng-if is used to tell the user there are no results matching their search.
 <kbd>
     <img    src="https://raw.githubusercontent.com/Gward2489/guitarPricer/master/grabs/gp9.png"    width="800">
 </kbd>
 
 ### User Guitar Submission
-##### angular and vanilla javascript are used to create an object holding all the data required to perform an advanced search for the given guitar. The object is sent to firebase and stored in the user's collection of guitars on submission. After submission, the user is routed to their current collection.
+##### Angular and vanilla javascript are used to create an object holding all the data required to perform an advanced search for the given guitar. The object is sent to firebase and stored in the user's collection of guitars on submission. After submission, the user is routed to their current collection.
 <kbd>
     <img    src="https://raw.githubusercontent.com/Gward2489/guitarPricer/master/grabs/gp10.png" width="800">
 </kbd>
 
 ### User Guitar Display
-##### angular and css grid are used to render the user's guitar collection in rows of three. The guitar's title is displayed, along with all available price information for the guitar. If a single result or no results are found for a users guitar, ng-if is employed to display the proper data. The user may also click on one of three buttons to view either average price info, high price info, or low price info.
+##### Angular and css grid are used to render the user's guitar collection in rows of three. The guitar's title is displayed, along with all available price information for the guitar. If a single result or no results are found for a users guitar, ng-if is employed to display the proper data. The user may also click on one of three buttons to view either average price info, high price info, or low price info.
 <kbd>
     <img    src="https://raw.githubusercontent.com/Gward2489/guitarPricer/master/grabs/gp5.png"    width="800">
 </kbd>
