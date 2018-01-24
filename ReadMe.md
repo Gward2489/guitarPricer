@@ -57,7 +57,7 @@
 </kbd>
 
 ### Advanced Search Results
-##### Customized angular and vailla javascript are used to parse the data object returned by the ebay API call. The results are passed into multiple functions to obtain averages and standard deviation for different sub-categories of the guitar. The number of results for each sub-category is displayed along with high and low prices. using ng-if, angular will tell the user if there is only one result for any given sub-category, and exclude the high and low prices if so. If there are no results for the sub-category, ng-if is used to tell the user there are no results matching their search.
+##### Customized angular and vailla javascript are used to parse the data object returned by the ebay API call. The results are passed into multiple functions to obtain averages and standard deviation for different sub-categories of the guitar. The number of results for each sub-category is displayed along with high and low prices. Using ng-if, angular will tell the user if there is only one result for any given sub-category, and exclude the high and low prices if so. If there are no results for the sub-category, ng-if is used to tell the user there are no results matching their search.
 <kbd>
     <img    src="https://raw.githubusercontent.com/Gward2489/guitarPricer/master/grabs/gp9.png"    width="800">
 </kbd>
@@ -74,10 +74,32 @@
     <img    src="https://raw.githubusercontent.com/Gward2489/guitarPricer/master/grabs/gp5.png"    width="800">
 </kbd>
 
-##### if there are high or low prices found for some categories and not others, ng-if is used to display the proper data
+##### If there are high or low prices found for some categories and not others, ng-if is used to display the proper data
 <kbd>
     <img    src="https://raw.githubusercontent.com/Gward2489/guitarPricer/master/grabs/gp6.png"    width="800">
 </kbd>
 <kbd>
     <img    src="https://raw.githubusercontent.com/Gward2489/guitarPricer/master/grabs/gp7.png"    width="800">
 </kbd>
+
+### How to run:
+```
+1. You will need to obtain an ebay API KEY.
+2. You will need a google firebase account, with email auth enabled.
+3. Ensure you have a npm installed on your machine.
+4. Clone the project and run npm install
+5. Copy the app.config.exmaple into a file called app.config.js
+6. Insert your key and auth info into the config file. 
+7. Go to: `https://www.npmjs.com/package/http-server` and install "http-server".  
+8. Navigate to the project folder in command line interface and type: `http-server -p 8080`  
+9. This will show at: `http://localhost:8080` in your internet browser.  
+```
+
+### Specs By:
+[Nashville Software School](https://github.com/nashville-software-school)  
+[Steve Brownlee](https://github.com/chortlehoort)  
+
+### Contributors:
+[Garrett Ward](https://github.com/Gward2489)
+
+
