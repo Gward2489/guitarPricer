@@ -164,7 +164,7 @@ angular
                     return array.filter(guitar => {
                         // title data is not a string when extracted
                         // make it one with JSON.stringify
-                        let guitarTitle = JSON.stringify(guitar.title[0].toLowerCase())
+                        let guitarTitle = JSON.stringify(guitar.title.toLowerCase())
 
                         let titleClearance = titleCheck(guitarTitle)
 
