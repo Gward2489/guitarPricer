@@ -417,13 +417,12 @@ angular
                 // pass in the required data for the API call
                 value: function (keyWords, categories, finish, year, conditionValues, country) {
                     // construct the taret url for the API call
-                    let url = `http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findCompletedItems&SERVICE-VERSION=1.7.0&SECURITY-APPNAME=${ebayKey}&RESPONSE-DATA-FORMAT=XML&${categories}itemFilter(0).name=SoldItemsOnly&itemFilter(0).value(0)=true&itemFilter(1).name=ExcludeCategory&itemFilter(1).value(0)=181223&itemFilter(1).value(1)=47067&REST-PAYLOAD&keywords=${keyWords}`
+
+                    let url = "http://localhost:5000/api/Guitars/" + categories + "/" + keyWords;
                     // use the angular security directive to make the
                     // url trusted
-                    let trustedUrl = $sce.trustAsResourceUrl(url)
                     // invoke the api call on function return
-                    return $http.jsonp(trustedUrl,
-                        {jsonpCallbackParam: "callback"})
+                    return $http.get(url)
                         .then(response => {
                             // convert ebay object to object of guitars
                             let initialSearchResults = this.ebayObjToGuitarArray(response)
@@ -489,7 +488,7 @@ angular
                                         // make a new array with .filter() method that contains
                                         // only guitars made in the country the user specified
                                         let matchingCountryArray = refinedResultsArray.filter(guitar => {
-                                            let lowerCaseTitle = guitar.title[0].toLowerCase()
+                                            let lowerCaseTitle = guitar.title.toLowerCase()
                                             let lowerCaseCountry = country.toLowerCase()
                                             if (lowerCaseTitle.search(lowerCaseCountry) !== -1) {
                                                 return guitar
@@ -498,14 +497,14 @@ angular
                                         
                                         // do the same for the year of production
                                         let matchingYearsArray = refinedResultsArray.filter(guitar => {
-                                            if (guitar.title[0].search(year) !== -1) {
+                                            if (guitar.title.search(year) !== -1) {
                                                 return guitar
                                             }  
                                         })
                                         
                                         // and for the guitar finish
                                         let matchingFinishesArray = refinedResultsArray.filter(guitar => {
-                                            let lowerCaseTitle = guitar.title[0].toLowerCase()
+                                            let lowerCaseTitle = guitar.title.toLowerCase()
                                             let lowerCaseFinish = finish.toLowerCase()
                                             if (lowerCaseTitle.search(lowerCaseFinish) !== -1) {
                                                 return guitar
@@ -515,7 +514,7 @@ angular
                                         // and also for the condition of the guitar
                                         let matchingConditionArray = refinedResultsArray.filter(guitar => {
                                             if (guitar.hasOwnProperty("condition") === true) {
-                                                let guitarCondition = parseInt(guitar.condition[0].conditionId[0])
+                                                let guitarCondition = parseInt(guitar.condition.conditionId)
                                                 let conditionClearance = false
                                                 conditionValues.forEach(condition => {
                                                     if (condition === guitarCondition) {
