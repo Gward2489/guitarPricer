@@ -72,7 +72,7 @@ angular
                 // pass in the object from ebay
                 value: function (fatObject) {
                     // use dot notation to retreive the array of guitars from the object
-                    let searchResultsArray = fatObject.data.findCompletedItemsResponse[0].searchResult[0].item
+                    let searchResultsArray = fatObject.data.findCompletedItemsResponse.searchResult.item
                     // return that array of guitars
                     return searchResultsArray
                 }
@@ -89,7 +89,7 @@ angular
                         // guitar passed into the map method
                         // use dot notation to retreive the price from the 
                         // guitar object
-                        let guitarPrice = parseFloat(guitar.sellingStatus[0].convertedCurrentPrice[0].__value__)
+                        let guitarPrice = parseFloat(guitar.sellingStatus.convertedCurrentPrice["#text"])
                         // return the price to the new array
                         return guitarPrice
                     })
@@ -307,21 +307,20 @@ angular
                     // construct target URL for api call.
                     // use interpolation to pass in the ebay
                     //  api key and the search keywords
-                    let url = `http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findCompletedItems&SERVICE-VERSION=1.7.0&SECURITY-APPNAME=${ebayKey}&RESPONSE-DATA-FORMAT=XML&categoryId(0)=33034&categoryId(1)=33021&categoryId(2)=4713&itemFilter(0).name=SoldItemsOnly&itemFilter(0).value(0)=true&itemFilter(1).name=Condition&itemFilter(1).value(0)=Used&itemFilter(1).value(1)=2500&itemFilter(1).value(2)=3000&itemFilter(1).value(3)=4000&itemFilter(1).value(4)=5000&itemFilter(1).value(5)=6000&itemFilter(2).name=ExcludeCategory&itemFilter(2).value(0)=181223&itemFilter(2).value(1)=47067&REST-PAYLOAD&keywords=${userSearch}`
+                    let url = "http://localhost:5000/api/Guitars/" + userSearch
+                    
                     // since ebay requires jsonp,
                     // we will need to use angular's security directive 
                     // to create a trusted url that the angular will accept.
-                    let trustedUrl = $sce.trustAsResourceUrl(url)
                     // invoke API request on return
-                    return $http.jsonp(trustedUrl, 
-                        {jsonpCallbackParam: "callback"})
+                    return $http.get(url)
                         .then(response => {
-
+                            console.log(response)
                             // convert object returned by ebay into an array of guitars
                             let initialSearchResults = this.ebayObjToGuitarArray(response)
 
                             // if there were search results, began to peform logic on them
-                            if (response.data.findCompletedItemsResponse[0].searchResult[0].item) {
+                            if (response.data.findCompletedItemsResponse.searchResult.item) {
                                 
                                 // filter out guitars whose titles contain restricted words
                                 let refinedResultsArray = this.titleFilter(initialSearchResults)
@@ -434,7 +433,7 @@ angular
                             // if there were search results, perform the logic
                             // if there were no search results a single object containing all boolean falses
                             // will be pushed into the final prices array
-                            if (response.data.findCompletedItemsResponse[0].searchResult[0].item) {
+                            if (response.data.findCompletedItemsResponse.searchResult.item) {
                                 // filter out guitars with restricted title words
                                 let refinedResultsArray = this.titleFilter(initialSearchResults)
                                 // if there is more than once search result perform the logic
