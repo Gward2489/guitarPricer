@@ -1,6 +1,6 @@
 angular
     .module("GuitarPricerApp")
-    .factory("GuitarFactory", function (ebayKey, $http, $sce) {
+    .factory("GuitarFactory", function ($http, $sce) {
 
         return Object.create(null, {
             // function to remove outliers from search results
