@@ -91,8 +91,8 @@ angular
                         // guitar object
                         let guitarPrice = parseFloat(guitar.sellingStatus.convertedCurrentPrice["#text"])
                         // return the price to the new array
-                        return guitarPrice
-                    })
+			return guitarPrice
+			})
                 }
             },
 
@@ -307,7 +307,7 @@ angular
                     // construct target URL for api call.
                     // use interpolation to pass in the ebay
                     //  api key and the search keywords
-                    let url = "http://localhost:5000/api/Guitars/" + userSearch
+                    let url = "https://serve.guitarpricer.site/api/Guitars/" + userSearch
                     
                     // since ebay requires jsonp,
                     // we will need to use angular's security directive 
@@ -418,7 +418,7 @@ angular
                 value: function (keyWords, categories, finish, year, conditionValues, country) {
                     // construct the taret url for the API call
 
-                    let url = "http://localhost:5000/api/Guitars/" + categories + "/" + keyWords;
+                    let url = "https://serve.guitarpricer.site/api/Guitars/" + categories + "/" + keyWords;
                     // use the angular security directive to make the
                     // url trusted
                     // invoke the api call on function return
